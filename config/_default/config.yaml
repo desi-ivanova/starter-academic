@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Desi R. Ivanova # Website name
-baseurl: 'desirivanova.netlify.app' # Website URL
+baseurl: 'https://desi-ivanova.github.io' # Website URL
 copyright: '' # Footer text, e.g. '© {year} Me'
 
 ############################
