@@ -70,7 +70,7 @@ email: ""
 highlight_name: false
 ---
 
-I'm interested in machine learning and statistics more broadly (particularly Bayesian). I'm first year [StatML](https://statml.io/) student at the University of Oxford, working with [https://www.robots.ox.ac.uk/~twgr/](Tom Rainforth) and [https://www.stats.ox.ac.uk/~teh/](Yee Whye Teh).
+I'm interested in machine learning and statistics more broadly (particularly Bayesian). I'm first year [StatML](https://statml.io/) student at the University of Oxford, working with [https://www.robots.ox.ac.uk/~twgr](Tom Rainforth) and [https://www.stats.ox.ac.uk/~teh](Yee Whye Teh).
 
 Before joining the StatML programme, I spent four years working as a quant researcher in the City of London. I worked in quantitative equity research and later in cross-asset systematic trading strategies structuring.
 
