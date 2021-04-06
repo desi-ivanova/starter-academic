@@ -74,4 +74,3 @@ Hi, I'm Desi.
 
 [StatML](https://statml.io/) 
 
-# {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
