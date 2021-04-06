@@ -28,11 +28,6 @@ experience:
     location: London
     date_start: '2016-07-01'
     date_end: '2020-08-01'
-    description: |2-
-        Responsibilities include:
-        
-        * Analysing
-        * Modelling
-        * Deploying
+    description: I joined UBS' Quantitative equity research team straight after my masters. In 2018 I moved to Goldman Sachs, where I spent 2 years in the Systematic Trading Strategies R\&D team (cross-asset). 
         
 ---
