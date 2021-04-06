@@ -3,6 +3,8 @@
 # Documentation: https://wowchemy.com/docs/page-builder/
 widget: experience
 
+active: false 
+
 # This file represents a page section.
 headless: true
 
@@ -22,7 +24,7 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-  - title: Quantitative researcher
+  - title: Quant researcher
     company: 
     company_url: ''
     location: London
