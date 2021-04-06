@@ -14,13 +14,13 @@ organizations:
   url: 
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: DPhil [@xCSML](http://csml.stats.ox.ac.uk). Former quant, former former gymnast.
 
 # Interests to show in About widget
 interests:
 - Probablisitic machine learning
-- 1
-- 2
+- Statistics and data science 
+- Sports (doing, watching and analytics)
 
 # Education to show in About widget
 education:
@@ -70,7 +70,13 @@ email: ""
 highlight_name: false
 ---
 
-Hi, I'm Desi. 
+I'm interested in machine learning and statistics more broadly (particularly Bayesian). I'm first year [StatML](https://statml.io/) student at the University of Oxford, working with [https://www.robots.ox.ac.uk/~twgr/](Tom Rainforth) and [https://www.stats.ox.ac.uk/~teh/](Yee Whye Teh).
+
+Before joining the StatML programme, I spent four years working as a quant researcher in the City of London. I worked in quantitative equity research and later in cross-asset systematic trading strategies structuring.
+
+I'm passionate about the proper use of statistics.
+
+
 
 [StatML](https://statml.io/) 
 
