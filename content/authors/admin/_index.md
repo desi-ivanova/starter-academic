@@ -14,7 +14,7 @@ organizations:
   url: 
 
 # Short bio (displayed in user profile at end of posts)
-bio: DPhil [@xCSML](http://csml.stats.ox.ac.uk). Former quant, former former gymnast.
+bio: DPhil [@OxCSML](http://csml.stats.ox.ac.uk). Former quant, former former gymnast.
 
 # Interests to show in About widget
 interests:
