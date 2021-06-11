@@ -6,7 +6,7 @@
 # Appearance
 
 theme: dark
-day_night: true
+day_night: false
 font: 'native'
 font_size: M
 
@@ -20,34 +20,30 @@ twitter: ''
 
 # Contact (edit or remove options as required)
 
-email: 
-phone: 
+email: desi.ivanova<at>stats.ox.ac.uk
+phone:
 address:
-  street: 
-  city: 
-  region: 
-  postcode: 
-  country: 
-  country_code: 
+  street:
+  city:
+  region:
+  postcode:
+  country:
+  country_code:
 coordinates:
-  latitude: 
-  longitude: 
-directions: 
+  latitude:
+  longitude:
+directions:
 office_hours:
-appointment_url: 'https://calendly.com'
+appointment_url:
 contact_links:
   - icon: twitter
     icon_pack: fab
     name: DM Me
     link: 'https://twitter.com/desirivanova'
-  - icon: keybase
+  - icon: linkedin
     icon_pack: fab
-    name: Chat on Keybase
-    link: 'https://keybase.io/'
-  - icon: comments
-    icon_pack: fas
-    name: Discuss on Forum
-    link: 'https://discourse.gohugo.io'
+    name: LinkedIn
+    link: 'https://www.linkedin.com/in/dr-ivanova/'
 
 # Site header
 
