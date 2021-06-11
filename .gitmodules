@@ -1,4 +1,0 @@
-[submodule "public"]
-	path = public
-	url = https://github.com/desi-ivanova/desi-ivanova.github.io.git
-	branch = master
