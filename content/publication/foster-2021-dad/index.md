@@ -59,8 +59,8 @@ url_code: 'https://github.com/ae-foster/dad'
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
   caption: "" #Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)
-  focal_point: ""
-  preview_only: true
+  focal_point: Right
+  # preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
