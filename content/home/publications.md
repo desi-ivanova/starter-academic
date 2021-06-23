@@ -38,3 +38,4 @@ design:
   #   4 = Citation (publication only)
   view: 4
 ---
+For a more complete list click [here]({{< ref "/publication" >}})
