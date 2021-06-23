@@ -11,15 +11,16 @@ role: DPhil Student in Statistics
 # Organizations/Affiliations to show in About widget
 organizations:
 - name: University of Oxford
-  url: 
+  url:
 
 # Short bio (displayed in user profile at end of posts)
 bio: DPhil [@OxCSML](http://csml.stats.ox.ac.uk). Former quant, former former gymnast.
 
 # Interests to show in About widget
 interests:
-- Probablisitic machine learning
-- Statistics and data science 
+- Probabilistic machine learning
+- Deep learning
+- Statistics and data science
 - Sports (doing, watching and analytics)
 
 # Education to show in About widget
@@ -57,7 +58,7 @@ social:
   link: https://www.linkedin.com/in/dr-ivanova/
 
 # Link to a PDF of your resume/CV.
-# To use: copy your resume to `static/media/resume.pdf`, enable `ai` icons in `params.toml`, 
+# To use: copy your resume to `static/media/resume.pdf`, enable `ai` icons in `params.toml`,
 # and uncomment the lines below.
 # - icon: cv
 #   icon_pack: ai
@@ -74,6 +75,4 @@ I'm interested in machine learning and statistics more broadly (particularly Bay
 
 Before joining the StatML CDT, I spent four years as a quant researcher in the City of London. I worked in quantitative equity research and later in cross-asset systematic trading strategies structuring.
 
-I'm passionate about the proper of statistics (both from modelling as well as interpretation perspectives). 
-
-
+I'm passionate about the proper use of statistics (both modelling and interpretation of results).

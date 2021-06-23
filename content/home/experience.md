@@ -3,7 +3,7 @@
 # Documentation: https://wowchemy.com/docs/page-builder/
 widget: experience
 
-active: false 
+active: false
 
 # This file represents a page section.
 headless: true
@@ -25,11 +25,11 @@ date_format: Jan 2006
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
   - title: Quant researcher
-    company: 
+    company:
     company_url: ''
     location: London
     date_start: '2016-07-01'
     date_end: '2020-08-01'
-    description: I joined UBS' Quantitative equity research team straight after my masters. In 2018 I moved to Goldman Sachs, where I spent 2 years in the Systematic Trading Strategies R\&D team (cross-asset). 
-        
+    description: I joined UBS' Quantitative equity research team straight after my masters. In 2018 I moved to Goldman Sachs, where I spent 2 years in the Systematic Trading Strategies R\&D team (cross-asset).
+
 ---
