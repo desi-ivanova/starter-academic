@@ -6,7 +6,7 @@ widget: pages
 # This file represents a page section.
 headless: true
 
-active: true
+active: false
 
 # Order that this section appears on the page.
 weight: 90
@@ -38,4 +38,3 @@ design:
   #   4 = Citation (publication only)
   view: 4
 ---
-For a more complete list click [here]({{< ref "/publication" >}})

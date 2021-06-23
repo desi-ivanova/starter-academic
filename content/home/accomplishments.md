@@ -3,7 +3,7 @@
 # Documentation: https://sourcethemes.com/academic/docs/page-builder/
 widget: accomplishments
 
-active: true
+active: false
 
 # This file represents a page section.
 headless: true
@@ -28,10 +28,10 @@ item:
 - certificate_url:
   date_end: ""
   date_start: "2018-10-01"
-  description: "Passed all 3 levels the CFA Program"
+  description: ""
   organization: CFA Institute
   organization_url: https://www.cfainstitute.org
-  title: CFA
+  title: Passed all 3 levels the CFA Program
   url: ""
 #- certificate_url: https://www.edx.org
 #  date_end: ""
