@@ -1,5 +1,6 @@
 ---
-title:
+date_format: Jan 2006
+title: Deep Q-Networks (paper review)
 
 event: Deep/Prob Seminar
 event_url:
