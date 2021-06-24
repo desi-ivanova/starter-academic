@@ -2,7 +2,7 @@
 title: Bayesian experimental design in real-time
 
 event: Quantess June Seminar
-event_url:
+event_url: https://www.eventbrite.co.uk/e/quantess-june-seminar-with-desi-ivanova-tickets-156228063343
 
 location: On-line
 #address:
@@ -63,8 +63,4 @@ date_format: Jan 2006
 time_format: ""
 ---
 
-- **Create** slides using Wowchemy's [*Slides*](https://wowchemy.com/docs/managing-content/#create-slides) feature and link using `slides` parameter in the front matter of the talk file
-- **Upload** an existing slide deck to `static/` and link using `url_slides` parameter in the front matter of the talk file
-- **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://wowchemy.com/docs/writing-markdown-latex/).
-
-Further event details, including [page elements](https://wowchemy.com/docs/writing-markdown-latex/) such as image galleries, can be added to the body of this page.
+Further event details & registration [here](https://www.eventbrite.co.uk/e/quantess-june-seminar-with-desi-ivanova-tickets-156228063343).
