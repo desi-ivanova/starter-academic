@@ -13,7 +13,7 @@ location: University of Oxford, UK
 #  postcode:
 #  country:
 
-summary: Review of the paper "Playing Atari with Deep Reinforcement Learning" by Mnih et al (2013).
+summary: Review of the paper "Playing Atari with Deep Reinforcement Learning" by Mnih et al (2013) which introduced deep Q-networks (DQN).
 abstract: ""
 
 # Talk start and end times.
