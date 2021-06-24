@@ -1,5 +1,4 @@
 ---
-date_format: Jan 2006
 title: Deep Q-Networks (paper review)
 
 event: Deep/Prob Seminar
@@ -23,7 +22,7 @@ date_end: "" #"2021-03-01T15:00:00Z"
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: "2021-03-01T00:00:00Z"
+publishDate: "" #"2021-03-01T00:00:00Z"
 
 authors: []
 tags: []
@@ -59,6 +58,9 @@ slides: ""
 #   Otherwise, set `projects = []`.
 projects:
 - []
+
+date_format: Jan 2006
+time_format: ""
 ---
 
 - **Create** slides using Wowchemy's [*Slides*](https://wowchemy.com/docs/managing-content/#create-slides) feature and link using `slides` parameter in the front matter of the talk file
