@@ -1,10 +1,10 @@
 ---
 title:
 
-event: Deep/Prob seminar
+event: Deep/Prob Seminar
 event_url:
 
-location: Oxford, UK
+location: University of Oxford, UK
 #address:
 #  street:
 #  city:
@@ -17,8 +17,8 @@ abstract: ""
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2021-03-01T13:00:00Z"
-date_end: "2021-03-01T15:00:00Z"
+date: "2021-03-24" #"2021-03-24T12:00:00Z"
+date_end: "" #"2021-03-01T15:00:00Z"
 all_day: false
 
 # Schedule page publish date (NOT talk date).
@@ -35,13 +35,13 @@ image:
   focal_point: Right
 
 links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/georgecushen
+#- icon: twitter
+#  name: Follow
+#  icon_pack: fab
+#  url: https://twitter.com/georgecushen
 url_code: ""
 url_pdf: ""
-url_slides: ""
+url_slides: "static/uploads/202103_deepprob_DQN.pdf"
 url_video: ""
 
 # Markdown Slides (optional).
@@ -49,7 +49,7 @@ url_video: ""
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
 #   Otherwise, set `slides = ""`.
-slides: example
+slides: ""
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
@@ -57,7 +57,7 @@ slides: example
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects:
-- example
+- []
 ---
 
 {{% callout note %}}
