@@ -41,7 +41,7 @@ links:
 #  url: https://twitter.com/georgecushen
 url_code: ""
 url_pdf: ""
-url_slides: "static/uploads/202103_deepprob_DQN.pdf"
+url_slides: "uploads/202103_deepprob_DQN.pdf"
 url_video: ""
 
 # Markdown Slides (optional).
@@ -59,12 +59,6 @@ slides: ""
 projects:
 - []
 ---
-
-{{% callout note %}}
-Click on the **Slides** button above to view the built-in slides feature.
-{{% /callout %}}
-
-Slides can be added in a few ways:
 
 - **Create** slides using Wowchemy's [*Slides*](https://wowchemy.com/docs/managing-content/#create-slides) feature and link using `slides` parameter in the front matter of the talk file
 - **Upload** an existing slide deck to `static/` and link using `url_slides` parameter in the front matter of the talk file
