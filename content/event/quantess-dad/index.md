@@ -41,8 +41,8 @@ links:
 #  url: https://twitter.com/georgecushen
 url_code: ""
 url_pdf: ""
-url_slides: "" #"uploads/202103_deepprob_DQN.pdf"
-url_video: ""
+url_video: "" #"uploads/202103_deepprob_DQN.pdf"
+url_slides: "https://docs.google.com/presentation/d/e/2PACX-1vSURtm9zKYgJdtJATPc39DwaAVHghM1eeNQhMSN99k5Wm31BGLUcvVzguhXI1sbDH0X4jUlKmMyxdhd/pub?start=false&loop=true&delayms=3000"
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
