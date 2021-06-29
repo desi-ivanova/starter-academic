@@ -2,9 +2,9 @@
 title: Bayesian experimental design in real-time
 
 event: Quantess June Seminar
-event_url: https://www.eventbrite.co.uk/e/quantess-june-seminar-with-desi-ivanova-tickets-156228063343
+event_url: https://quantesslondon.com
 
-location: On-line
+location: London (on-line)
 #address:
 #  street:
 #  city:
