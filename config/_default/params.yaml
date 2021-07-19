@@ -40,10 +40,10 @@ contact_links:
     icon_pack: fab
     name: DM Me
     link: 'https://twitter.com/desirivanova'
-  #- icon: linkedin
-  #  icon_pack: fab
-  #  name: LinkedIn
-  #  link: 'https://www.linkedin.com/in/dr-ivanova/'
+  - icon: linkedin
+    icon_pack: fab
+    name: LinkedIn
+    link: 'https://www.linkedin.com/in/dr-ivanova/'
 
 # Site header
 
