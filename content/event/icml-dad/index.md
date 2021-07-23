@@ -1,10 +1,10 @@
 ---
 title: Bayesian experimental design in real-time
 
-event: Quantess June Seminar
-event_url: https://quantesslondon.com
+event: ICML 2021
+event_url: https://icml.cc
 
-location: London (on-line)
+location: Vienna, Austria (on-line)
 #address:
 #  street:
 #  city:
@@ -12,13 +12,13 @@ location: London (on-line)
 #  postcode:
 #  country:
 
-summary: Discussion of our recent paper *Deep Adaptive Design* (with A. Foster, I. Malik and T. Rainforth).
+summary: "*Deep Adaptive Design: Amortizing Sequential Bayesian Experimental Design* (with A. Foster, I. Malik and T. Rainforth), long presentation in Bayesian Learning 1 session."
 abstract: ""
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2021-06-24T18:00:00Z"
-date_end: "2021-06-24T19:00:00Z"
+date: "2021-07-22T14:00:00Z"
+date_end: "2021-07-22T14:20:00Z"
 all_day: false
 
 # Schedule page publish date (NOT talk date).
@@ -40,9 +40,9 @@ links:
 #  icon_pack: fab
 #  url: https://twitter.com/georgecushen
 url_code: ""
-url_pdf: ""
-url_video: "" #"uploads/202103_deepprob_DQN.pdf"
-url_slides: "https://docs.google.com/presentation/d/e/2PACX-1vSURtm9zKYgJdtJATPc39DwaAVHghM1eeNQhMSN99k5Wm31BGLUcvVzguhXI1sbDH0X4jUlKmMyxdhd/pub?start=false&loop=true&delayms=3000"
+url_pdf: "http://proceedings.mlr.press/v139/foster21a.html"
+url_video: "https://icml.cc/virtual/2021/oral/9524" #"uploads/202103_deepprob_DQN.pdf"
+url_slides: "https://icml.cc/media/icml-2021/Slides/9523.pdf"
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
@@ -62,5 +62,3 @@ projects:
 date_format: Jan 2006
 time_format: ""
 ---
-
-Further event details & registration [here](https://www.eventbrite.co.uk/e/quantess-june-seminar-with-desi-ivanova-tickets-156228063343).
