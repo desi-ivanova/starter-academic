@@ -12,7 +12,7 @@ location: Vienna, Austria (on-line)
 #  postcode:
 #  country:
 
-summary: "*Deep Adaptive Design: Amortizing Sequential Bayesian Experimental Design* (with A. Foster, I. Malik and T. Rainforth), long presentation in Bayesian Learning 1 session."
+summary: "*Deep Adaptive Design: Amortizing Sequential Bayesian Experimental Design* (with A. Foster, I. Malik and T. Rainforth), long presentation at ICML 2021, Bayesian Learning 1 session."
 abstract: ""
 
 # Talk start and end times.
@@ -40,9 +40,9 @@ links:
 #  icon_pack: fab
 #  url: https://twitter.com/georgecushen
 url_code: ""
-url_pdf: "http://proceedings.mlr.press/v139/foster21a.html"
 url_video: "https://icml.cc/virtual/2021/oral/9524" #"uploads/202103_deepprob_DQN.pdf"
 url_slides: "https://icml.cc/media/icml-2021/Slides/9523.pdf"
+url_pdf: "http://proceedings.mlr.press/v139/foster21a.html"
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
