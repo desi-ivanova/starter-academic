@@ -4,7 +4,7 @@ title: "Deep Adaptive Design: Bayesian experimental design in real time"
 event: Oxford Machine Learning Summer School (OxML)
 event_url: https://icml.cc
 
-location: University of Oxford, UK (on-line)
+location: University of Oxford, UK
 #address:
 #  street:
 #  city:

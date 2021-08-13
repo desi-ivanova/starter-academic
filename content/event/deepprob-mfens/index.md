@@ -41,7 +41,7 @@ links:
 #  url: https://twitter.com/georgecushen
 url_code: ""
 url_pdf: "https://arxiv.org/pdf/2106.06356.pdf"
-url_slides: "https://docs.google.com/presentation/d/e/2PACX-1vSdKNf0eLklCoynu9mgkmK4D_OjMTfh6yaje0vjgJMeWon2xGg9rz9if73yVBUPBh7RfNCLc4H-luII/pub?start=false&loop=false&delayms=3000&slide=id.ge660514ee9_0_51"
+url_slides: "https://docs.google.com/presentation/d/e/2PACX-1vSdKNf0eLklCoynu9mgkmK4D_OjMTfh6yaje0vjgJMeWon2xGg9rz9if73yVBUPBh7RfNCLc4H-luII/pub?start=false&loop=false&delayms=3000&slide=id.p"
 url_video: ""
 
 # Markdown Slides (optional).

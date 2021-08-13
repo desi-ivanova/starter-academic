@@ -1,10 +1,10 @@
 ---
 title: Bayesian experimental design in real-time
 
-event: Quantess June Seminar
+event: Quantess June Seminar (virtual)
 event_url: https://quantesslondon.com
 
-location: London (on-line)
+location: London
 #address:
 #  street:
 #  city:
