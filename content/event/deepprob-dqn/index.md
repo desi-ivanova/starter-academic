@@ -4,7 +4,7 @@ title: Deep Q-Networks (paper review)
 event: Deep/Prob Seminar
 event_url:
 
-location: University of Oxford (on-line)
+location: University of Oxford
 #address:
 #  street:
 #  city:
