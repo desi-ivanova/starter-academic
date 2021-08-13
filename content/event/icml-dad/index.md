@@ -1,5 +1,5 @@
 ---
-title: Bayesian experimental design in real-time
+title: "Deep Adaptive Design: Amortizing Sequential Bayesian Experimental Design"
 
 event: ICML 2021
 event_url: https://icml.cc
