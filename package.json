@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "hugo-extended": "^0.88.1-patch1"
+  }
+}

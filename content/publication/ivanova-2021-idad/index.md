@@ -1,19 +1,19 @@
 ---
-title: "Implicit Deep Adaptive Design: Policy-Based Experimental Design without Likelihoods"
+title: "Deep Adaptive Design: Amortizing Sequential Bayesian Experimental Design"
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-- admin
 - Adam Foster
-- Steven Kleinegesse
-- Michael Gutmann
+- admin
+- Ilyas Malik
 - Tom Rainforth
 
 # Author notes (optional)
 author_notes:
-
+- "Equal contribution"
+- "Equal contribution"
 
 date: "2021-07-01T00:00:00Z"
 doi: ""
@@ -28,13 +28,13 @@ publishDate: "2021-01-01T00:00:00Z"
 publication_types: ["1"]
 
 # Publication name and optional abbreviated publication name.
-publication: Accepted at the 35th Conference on Neural Information Processing Systems
-publication_short: NeurIPS 2021
+publication: International Conference on Machine Learning
+publication_short: In *ICML* (long presentation)
 
-abstract: We introduce implicit Deep Adaptive Design (iDAD), a new method for performing adaptive experiments in *real-time* with *implicit* models. iDAD amortizes the cost of Bayesian optimal experimental design (BOED) by learning a design policy network upfront, which can then be deployed quickly at the time of the experiment. The iDAD network can be trained on any model which simulates differentiable samples, unlike previous design policy work that requires a closed form likelihood and conditionally independent experiments. At deployment, iDAD allows design decisions to be made in milliseconds, in contrast to traditional BOED approaches that require heavy computation during the experiment itself. We illustrate the applicability of iDAD on a number of experiments, and show that it provides a fast and effective mechanism for performing adaptive design with implicit models.
+abstract: We introduce Deep Adaptive Design (DAD), a method for amortizing the cost of adaptive Bayesian experimental design that allows experiments to be run in real-time. Traditional sequential Bayesian optimal experimental design approaches require substantial computation at each stage of the experiment. This makes them un- suitable for most real-world applications, where decisions must typically be made quickly. DAD addresses this restriction by learning an amortized design network upfront and then using this to rapidly run (multiple) adaptive experiments at deployment time. This network represents a design policy which takes as input the data from previous steps, and outputs the next design using a single forward pass; these design decisions can be made in milliseconds during the live experiment. To train the network, we introduce contrastive in- formation bounds that are suitable objectives for the sequential setting, and propose a customized network architecture that exploits key symmetries. We demonstrate that DAD successfully amortizes the process of experimental design, outperforming alternative strategies on a number of problems.
 
 # Summary. An optional shortened abstract.
-summary: iDAD is the first method that allows us to practically run BOED with implicit models.
+summary: DAD is the first policy-based approach to BOED that enables adaptive experiments to be performed in real-time.
 
 tags: []
 
@@ -46,19 +46,19 @@ featured: true
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf:
-url_code:
+url_pdf: 'https://arxiv.org/pdf/2103.02438.pdf'
+url_code: 'https://github.com/ae-foster/dad'
 #url_dataset: ''
 #url_poster: ''
 #url_project: ''
-url_slides: 'https://docs.google.com/presentation/d/e/2PACX-1vQ_93q9W15y4K0tAO0fqb8PzaFSGpPfcLqMNRIJI6IciN3DSuNh9GHEaMp8BE-bJ8pTxRJBjuIwumxe/pub?start=false&loop=false&delayms=3000'
+#url_slides: ''
 #url_source: ''
 #url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
-  caption: "" # Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)
+  caption: "" #Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)
   focal_point: Right
   # preview_only: false
 
