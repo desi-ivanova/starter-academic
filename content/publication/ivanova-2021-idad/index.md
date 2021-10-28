@@ -58,7 +58,7 @@ url_slides: 'https://docs.google.com/presentation/d/e/2PACX-1vQ_93q9W15y4K0tAO0f
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
-  caption: "" #Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)
+  caption: "" # Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)
   focal_point: Right
   # preview_only: false
 
