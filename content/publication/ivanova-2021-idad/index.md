@@ -31,20 +31,15 @@ publication_types: ["1"]
 publication: Accepted at the 35th Conference on Neural Information Processing Systems
 publication_short: NeurIPS 2021
 
-abstract: We introduce implicit Deep Adaptive Design (iDAD),
-a new method for performing adaptive experiments for  implicit models in real-time, based on the Bayesian optimal experimental design (BOED) framework.
-iDAD amortizes the cost of experimental design by learning a design  policy network upfront, which can then be deployed quickly at the time of the experiment.
-The iDAD network can be trained on any model which simulates differentiable samples, unlike previous design policy work that requires a closed form likelihood and conditionally independent experiments.
-At deployment-time, iDAD allows design decisions to be made in milliseconds, in contrast to traditional approaches to adaptive BOED that require heavy computation during the experiment itself.
-We illustrate the applicability of iDAD on a number of experiments, and show that it provides a fast and effective mechanism for performing adaptive design with implicit models.
+abstract: We introduce implicit Deep Adaptive Design (iDAD), a new method for performing adaptive experiments in *real-time* with *implicit* models. iDAD amortizes the cost of Bayesian optimal experimental design (BOED) by learning a design policy network upfront, which can then be deployed quickly at the time of the experiment. The iDAD network can be trained on any model which simulates differentiable samples, unlike previous design policy work that requires a closed form likelihood and conditionally independent experiments. At deployment, iDAD allows design decisions to be made in milliseconds, in contrast to traditional BOED approaches that require heavy computation during the experiment itself. We illustrate the applicability of iDAD on a number of experiments, and show that it provides a fast and effective mechanism for performing adaptive design with implicit models.
 
 # Summary. An optional shortened abstract.
-summary: iDAD is the first method that allows to practically run BOED with implicit models.
+summary: iDAD is the first method that allows us to practically run BOED with implicit models.
 
 tags: []
 
 # Display this page in the Featured widget?
-featured: false
+featured: true
 
 # Custom links (uncomment lines below)
 # links:
