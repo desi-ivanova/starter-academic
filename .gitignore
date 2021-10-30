@@ -1,8 +1,13 @@
 # IDEs
 .idea/
 
+.DS_Store
+
 # Hugo
 /resources/
 public/
 jsconfig.json
 node_modules/
+
+# Local Netlify folder
+.netlify

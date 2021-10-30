@@ -3,6 +3,8 @@
 # Documentation: https://wowchemy.com/docs/page-builder/
 widget: experience
 
+active: false
+
 # This file represents a page section.
 headless: true
 
@@ -22,24 +24,12 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-  - title: CEO
-    company: GenCoin
+  - title: Quant researcher
+    company:
     company_url: ''
-    location: California
-    date_start: '2017-01-01'
-    date_end: ''
-    description: |2-
-        Responsibilities include:
-        
-        * Analysing
-        * Modelling
-        * Deploying
-        
-  - title: Professor
-    company: University X
-    company_url: ''
-    location: California
-    date_start: '2016-01-01'
-    date_end: '2016-12-31'
-    description: Taught electronic engineering and researched semiconductor physics.
+    location: London
+    date_start: '2016-07-01'
+    date_end: '2020-08-01'
+    description: I joined UBS' Quantitative equity research team straight after my masters. In 2018 I moved to Goldman Sachs, where I spent 2 years in the Systematic Trading Strategies R\&D team (cross-asset).
+
 ---
