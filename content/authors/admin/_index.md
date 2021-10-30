@@ -68,11 +68,11 @@ social:
 email: ""
 
 # Highlight the author in author lists? (true/false)
-highlight_name: false
+highlight_name: true
 ---
 
-I'm interested in machine learning and statistics more broadly (particularly Bayesian). Currently, I'm on the [StatML](https://statml.io/) programme at the University of Oxford, working with [Tom Rainforth](https://www.robots.ox.ac.uk/~twgr) and [Yee Whye Teh](https://www.stats.ox.ac.uk/~teh).
+I'm interested in machine learning and statistics more broadly, particularly Bayesian. Currently, I'm on the [StatML](https://statml.io/) programme at the University of Oxford, working with [Tom Rainforth](https://www.robots.ox.ac.uk/~twgr) and [Yee Whye Teh](https://www.stats.ox.ac.uk/~teh).
 
-Before joining the StatML CDT, I spent four years as a quant researcher in the City of London. I worked in quantitative equity research and later in cross-asset systematic trading strategies structuring.
+Before joining the StatML CDT, I spent four years working in finance -- first in quantitative equity research at UBS and later in cross-asset systematic trading strategies structuring at Goldman Sachs.
 
-I'm passionate about the proper use of statistics (both modelling and interpretation of results).
+I'm passionate about the proper use of statistics (and machine learning) both during the data modelling stage, and, crucially, when evaluating and interpreting the results of such statistical analyses.
