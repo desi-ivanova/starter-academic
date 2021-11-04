@@ -47,8 +47,8 @@ featured: true
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: ''
-url_code: ''
+url_pdf: 'https://arxiv.org/pdf/2111.02329.pdf'
+url_code: 'https://github.com/desi-ivanova/idad'
 #url_dataset: ''
 #url_poster: ''
 #url_project: ''
