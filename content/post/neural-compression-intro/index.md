@@ -133,9 +133,9 @@ Learned image compression methods are competitive or outperforming traditional o
 
 The field of learnt image compression has undoubtedly made huge progress over the past few years.
 It is an active area of research, and many enhancements are being developed, e.g. better probabilistic models, better training objectives, per instance fine-tuning etc.
-However, two key challenges need to be addressed before these methods find their way into practice.
+However, two key challenges need to be addressed before these methods find their way into practice:
 - Computational cost: encoding and decoding can be too slow for practical applications.
-- Storage cost: encoder, decoder, and entropy model can have a lot of parameters, which would make them prohibitively expensive to store on end devices such as mobile phones.
+- Storage cost: encoder, decoder and entropy model typically have a lot of parameters, which could make them prohibitively expensive to store on end devices such as mobile phones.
 
 
 ## References
