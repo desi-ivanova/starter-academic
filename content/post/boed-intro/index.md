@@ -1,6 +1,6 @@
 ---
 title: Introduction to Bayesian Optimal Experimental Design
-subtitle: Hi
+subtitle: Static and adaptive design strategies
 
 # Summary for listings and search engines
 summary: Bayesian Optimal Experimental Design (BOED) is an elegant mathematical framework that enables us to design experiments optimally. This introductory post describes the BOED framework and the computational challenges associated with deploying it in applications.
@@ -39,4 +39,10 @@ categories:
 - ML
 ---
 
-Coming Soon :-)
+# Coming Soon :-)
+
+
+
+<!-- ## Information gain
+
+{{< figure library="true" src="information_gain.png" title="Amount of information contained in an experiment is quantified as the reduction in entropy from the prior to the posterior distribution of the parameter $\theta$." numbered="true">}} -->
