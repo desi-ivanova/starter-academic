@@ -20,7 +20,7 @@ lastmod: "2021-11-20T00:00:00Z"
 draft: false
 
 # Show this page in the Featured widget?
-featured: false
+featured: true
 
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
@@ -76,11 +76,10 @@ where $p(x)$ is the (unknown) image distribution. We can approximate the expecta
 
 #### Relaxed training objective and equivalence to VAEs
 
-Ball&#233 et al. (2017) replace the quantization step **during training** with additive uniform noise on the unit interval centred at $z$, i.e. $\hat{z} = Q(z)$ is substituted by $\tilde{z}$ with distribution $\tilde{z}|x \sim \mathcal{U}(\mathcal{E}\_\theta(x)-1/2, \mathcal{E}\_\theta(x)+1/2) =: q(\tilde{z}|x)$. The relaxed training objective can then be written as:
-
+Ball&#233 et al. (2017) replace the quantization step **during training** with additive uniform noise on the unit interval centred at $z$, i.e. $\hat{z} = Q(z)$ is substituted by $\tilde{z}$, sampled from a distribution $\tilde{z}|x \sim \mathcal{U}\big(\mathcal{E}\_\theta(x)-1/2, \mathcal{E}\_\theta(x)+1/2\big) =: q(\tilde{z}|x)$. The relaxed training objective can then be written as
 $$
 \begin{aligned}
-L(\theta, \psi, \zeta) = \mathbb{E}\_{p(x)q(\tilde{z}|x)}\big[-\log  p\_\zeta(\tilde{z}) + \lambda \lVert x - \mathcal{D}\_\psi(\tilde{z})\rVert^2\_2 \big],
+L(\theta, \psi, \zeta) = \mathbb{E}\_{p(x)q(\tilde{z}|x)}\big[-\log  p\_\zeta(\tilde{z}) + \lambda \lVert x - \mathcal{D}\_\psi(\tilde{z})\rVert^2\_2 \big].
 \end{aligned}
 $$
 
@@ -115,7 +114,7 @@ $$ -->
 
 #### Why not use a simple autoencoder?
 
-If you are new to the field of neural compression, you might be wondering (at least I was) why do we bother training a VAE. Indeed, recall that we introduced the uniform noise to deal with the non-differentiability of the quantization step. What if we simply skip quantization? A simple alternative compression pipeline would then be *"encode an image $x$ into a low-dimensional latent representation $z$ and store that losslessly; at decompression time use a decoder to reconstruct $x$ from $z$"*, which would correspond to training a standard autoencoder.
+If you are new to the field of neural compression, you might be wondering (at least I was) why do we bother training a VAE. Indeed, recall that we introduced the uniform noise to deal with the non-differentiability of the quantization step. What if we simply skip quantization? A simple alternative compression pipeline would then be *"encode an image $x$ into a low-dimensional latent representation $z$ and store that losslessly; at decompression time use a decoder to reconstruct $x$ from $z$"*, which would correspond to training a standard (i.e. not variational) autoencoder.
 
 The reason why this procedure will not work is that $z$ being low-dimensional is not sufficient for efficient compression; what we require is $z$ to be **low entropy**. We can have a low-dimensional latent representation $z$, which is high entropy, and vice-versa---$z$ can be the same dimension as $x$ but much lower entropy, making it easy to compress losslessly. To ensure that the latent $z$ is low-entropy we need to be able to calculate that entropy, $H(z)=-\mathbb{E}\_{p(z)}[\log p(z)]$, and to that end, we require the distribution $p(z)$. In other words, for efficient compression we require a full probabilistic model.
 
