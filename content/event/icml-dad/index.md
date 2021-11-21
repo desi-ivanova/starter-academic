@@ -4,7 +4,7 @@ title: "Deep Adaptive Design: Amortizing Sequential Bayesian Experimental Design
 event: ICML 2021
 event_url: https://icml.cc
 
-location: Vienna, Austria
+location: Vienna, Austria (virtual)
 #address:
 #  street:
 #  city:
