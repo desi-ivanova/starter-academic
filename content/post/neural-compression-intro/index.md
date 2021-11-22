@@ -123,7 +123,7 @@ The reason why this procedure will not work is that $z$ being low-dimensional is
 
 ## How good are learned image compression models?
 
-Learned image compression methods are competitive or outperforming traditional ones, such as JPEG and BPG, on the basis of standard performance metrics such as PSNR and MS-SSIM. The figure below is taken from  Hu et al. (2021) and shows rate-distortion curves for different approaches.
+Learned image compression methods are competitive or outperforming traditional ones, such as JPEG and BPG, on the basis of standard performance metrics such as peak signal-to-noise ratio (PSNR) and multi-scale structural similarity index measure (MS-SSIM). The figure below is taken from  Hu et al. (2021) and shows rate-distortion curves for different approaches.
 
 {{< figure library="true" src="neural_compression_performance.png" title="Rate-distortion curves achieved by traditional methods (JPEG and BPG) neural-based learned approaches (all the rest) on the Kodak dataset. **Source**: Hu et al. (2021)." numbered="true"  align="left">}}
 
