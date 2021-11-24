@@ -53,7 +53,7 @@ url_code: 'https://github.com/ae-foster/dad'
 #url_project: ''
 #url_slides: ''
 #url_source: ''
-#url_video: ''
+url_video: 'https://slideslive.com/38958620/deep-adaptive-design-amortizing-sequential-bayesian-experimental-design?ref=search'
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
