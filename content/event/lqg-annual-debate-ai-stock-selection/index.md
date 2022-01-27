@@ -68,4 +68,7 @@ time_format: ""
 You can register to attend the event [online (Zoom)](https://lqg.us7.list-manage.com/track/click?u=c38c3625fcea44c0031a29108&id=5737a47727&e=f589683ed7) ~~or [in person](https://www.eventbrite.co.uk/e/lqg-141221-in-person-annual-debate-1830-at-goldman-sachs-tickets-214680574377?mc_cid=aa3768d35d&mc_eid=f589683ed7)~~. If you don't have a pass-code, please [DM me](https://twitter.com/desirivanova) and consider subscribing to the LQG [mailing list](https://lqg.us7.list-manage.com/subscribe?u=c38c3625fcea44c0031a29108&id=afc50cbe3b)!
 
 Update: Due to Omicron, the event will now be online only.
+
+Update 2: By a narrow margin (57% vs 43%), I won the debate!
+
 <!-- using the code  **LQG20211214-OLO-Debate-GS-RG**. If you'd like to attend in person, please [DM me](https://twitter.com/desirivanova) for details on how to register. -->
