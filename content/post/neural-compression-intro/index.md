@@ -161,7 +161,7 @@ This blog is in no way an extensive introduction to the field of neural compress
   - J. Townsend's tutorial on rANS: ["A tutorial on the range variant of asymmetric numeral systems"](https://arxiv.org/pdf/2001.09186.pdf).
   - R. Bamler's course ["Data compression with deep probabilistic models"](https://robamler.github.io/teaching/compress21/).
 
-
+**Update**: ["An Introduction to Neural Data Compression"](https://arxiv.org/abs/2202.06533) (2022) by Y. Yang, S. Mandt and L. Theis is the best comprehensive introduction to the topic.
 
 
 <!-- Mentzer F., E. Agustsson, M. Tschannen, R. Timofte, and L. Van Gool, "Conditional probability models for deep image compression", In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018. -->
