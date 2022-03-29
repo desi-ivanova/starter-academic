@@ -18,10 +18,10 @@ bio: DPhil [@OxCSML](http://csml.stats.ox.ac.uk). Former quant, former former gy
 
 # Interests to show in About widget
 interests:
-- Probabilistic machine learning
-- Deep learning
+- Probabilistic machine learning, deep generative models
+- Information theory, optimal experimental design, neural compression
 - Statistics and data science
-- Sports (doing, watching and analytics)
+- Sports
 
 # Education to show in About widget
 education:
@@ -73,6 +73,8 @@ highlight_name: true
 
 I'm interested in machine learning and statistics more broadly, particularly Bayesian. Currently, I'm on the [StatML](https://statml.io/) programme at the University of Oxford, working with [Tom Rainforth](https://www.robots.ox.ac.uk/~twgr) and [Yee Whye Teh](https://www.stats.ox.ac.uk/~teh).
 
-Before joining the StatML CDT, I spent four years working in finance -- first in quantitative equity research at UBS and later in cross-asset systematic trading strategies structuring at Goldman Sachs.
+Before joining the StatML CDT, I spent four years in quant finance -- first in quantitative equity research at UBS and later in cross-asset systematic trading strategies structuring at Goldman Sachs.
 
-I'm passionate about the proper use of statistics (and machine learning) both during the data modelling stage, and, crucially, when evaluating and interpreting the results of such statistical analyses.
+I'm passionate about the **rigorous** use of statistics and machine learning in **applied settings**. Specifically, I firmly believe it is crucial to 1) incorporate domain knowledge when training data-driven models; 2) thoroughly evaluate these models against suitable baselines; and 3) properly interpret the results of statistical analyses.
+
+For more about my work, see my [talks](event) and [publications](publication). I'm very happy to collaborate and/or give a talk.
