@@ -34,7 +34,7 @@ publication_short: ReALML @ ICML2022
 abstract: The real-world testing of decisions made using causal machine learning models is an essential prerequisite for their successful application. We focus on evaluating and improving contextual treatment assignment decisions--these are personalised treatments applied to e.g. customers, each with their own contextual information, with the aim of maximising a reward. In this paper we introduce a model-agnostic framework for gathering data to evaluate and improve contextual decision making through Bayesian Experimental Design. Specifically, our method is used for the data-efficient evaluation of the regret of past treatment assignments. Unlike approaches such as A/B testing, our method avoids assigning treatments that are known to be highly sub-optimal, whilst engaging in some exploration to gather pertinent information. We achieve this by introducing an information-based design objective, which we optimise end-to-end. Our method applies to discrete and continuous treatments. Comparing our information-theoretic approach to baselines in several simulation studies demonstrates the superior performance of our proposed approach.
 
 # Summary. An optional shortened abstract.
-summary: Our method is used for the data-efficient evaluation of the regret of past treatment assignments. Unlike approaches such as A/B testing, our method avoids assigning treatments that are known to be highly sub-optimal, whilst engaging in some exploration to gather pertinent information. We achieve this by introducing an information-based design objective, which we optimise end-to-end..
+summary: Our method is used for the data-efficient evaluation of the regret of past treatment assignments. Unlike approaches such as A/B testing, our method avoids assigning treatments that are known to be highly sub-optimal, whilst engaging in some exploration to gather pertinent information. We achieve this by introducing an information-based design objective, which we optimise end-to-end.
 
 tags: []
 
@@ -51,7 +51,7 @@ url_pdf: 'https://arxiv.org/pdf/2207.05250.pdf'
 #url_dataset: ''
 #url_poster: ''
 #url_project: ''
-url_slides: 'https://docs.google.com/presentation/d/e/2PACX-1vQ_93q9W15y4K0tAO0fqb8PzaFSGpPfcLqMNRIJI6IciN3DSuNh9GHEaMp8BE-bJ8pTxRJBjuIwumxe/pub?start=false&loop=false&delayms=3000'
+#url_slides: ''
 #url_source: 'https://nips.cc/Conferences/2021/ScheduleMultitrack?event=26928'
 #url_video: ''
 
