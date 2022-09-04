@@ -75,6 +75,6 @@ I'm interested in machine learning and statistics more broadly, particularly Bay
 
 Before joining the StatML CDT, I spent four years in quant finance -- first in quantitative equity research at UBS and later in cross-asset systematic trading strategies structuring at Goldman Sachs.
 
-I'm passionate about the **rigorous** use of statistics and machine learning in **applied settings**. Specifically, I firmly believe it is crucial to 1) incorporate domain knowledge when training data-driven models; 2) thoroughly evaluate these models against suitable baselines; and 3) properly interpret the results of statistical analyses.
+I'm passionate about the **rigorous** use of statistics and machine learning in **applied settings**, specifically when obtaining more data is difficult and/or impossible. In such cases I firmly believe it is crucial to 1) incorporate domain knowledge when training data-driven models; 2) thoroughly evaluate these models against suitable baselines; and 3) properly interpret the results of statistical analyses.
 
-For more about my work, see my [talks](event) and [publications](publication). I'm very happy to collaborate and/or give a talk.
+For more about my work, see my [talks](event) and [publications](publication). I'm generally happy to collaborate and/or give a talk.

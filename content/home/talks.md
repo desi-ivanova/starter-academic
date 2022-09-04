@@ -9,7 +9,7 @@ headless: true
 active: true
 
 # Order that this section appears on the page.
-weight: 40
+weight: 60
 
 title: 'Upcoming Talks'
 subtitle:
@@ -24,7 +24,7 @@ content:
     author: ""
     category: ""
     tag: ""
-    exclude_featured: false
+    exclude_featured: true
     exclude_future: false
     exclude_past: true
     publication_type: ""
