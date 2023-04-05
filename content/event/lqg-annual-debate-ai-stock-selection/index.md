@@ -1,7 +1,7 @@
 ---
 title: "AI is better, stronger, faster at picking stocks for investment"
 
-event: London Quant Group Annual Debate
+event: London Quant Group (LQG) Annual Debate
 event_url: https://lqg.org.uk/2021-lqg-events/lqg-14-12-21-annual-debate-1830-at-goldman-sachs-london-ai-for-stock-selection/
 
 location: ~~Goldman Sachs (London) and~~ Online
