@@ -9,9 +9,9 @@ headless: true
 active: true
 
 # Order that this section appears on the page.
-weight: 60
+weight: 20
 
-title: 'Upcoming Talks'
+title: 'Upcoming Talks & Events'
 subtitle:
 
 content:

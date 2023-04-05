@@ -2,7 +2,7 @@
 title: "London Quant Group (LQG)"
 
 event: LQG April seminar
-event_url:
+event_url: https://lqg.org.uk
 
 location: London, UK
 #address:

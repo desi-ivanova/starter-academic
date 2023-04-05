@@ -18,7 +18,7 @@ location: University of Memphis, USA
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 date: "2023-05-09T14:00:00Z"
-date_end: "2023-05-09T14:20:00Z"
+date_end: "2023-05-09T15:00:00Z"
 all_day: false
 
 # Schedule page publish date (NOT talk date).

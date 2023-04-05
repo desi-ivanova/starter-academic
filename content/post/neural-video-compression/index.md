@@ -11,16 +11,16 @@ projects: []
 math: true
 
 # Date published
-date: "2023-03-20T00:00:00Z"
+date: "2023-04-08T00:00:00Z"
 
 # Date updated
 lastmod: "2023-20-20T00:00:00Z"
 
 # Is this an unpublished draft?
-draft: false
+draft: true
 
 # Show this page in the Featured widget?
-featured: true
+featured: false
 
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
@@ -46,23 +46,28 @@ categories:
 
 Repeat the paprs, point to goggle repo, include links
 
-### Notation
-- $x_i, i=1,\dots,F$ denotes a the $i$-th frame of a video that consists of a total of $F$ frames
-- $y_i = f_a(x_i, c)$ is a latent representation of $x_i$ obtained by passing it through an *image analysis transform* $f_a$, which may or may not depend on other context variables $c$.
-- $\hat{y}_i$ is the quantized latent reprsentation
-- $\hat{x}_i = f_s(\hat{y}_i, c)$ is the reconstruction of $x_i$ obtained by passing the quantized latent through a *image synthesis transform* $f_s$. The decoder may or may not depend on other context variables $c$.
+## Brief notes on neural video comression
 
-## Brief note on neural video comression
-Both papers do lossy video compression, where the compression pipelien is at a high level very similar
-- Every video frame is tranfored to a latent representation
-- Quantized latent representations are stored *losslessly* using na entropy model $P$
-- Quantized latents are mapped back to frames
+At a high level, the neural (or learnt) video compression pipeline, based on transform coding [CITE] consists of 3 components:
+- Analysis transform $f_a$, which transforms video frames to latent representations
+- Entropy model $P$, which is used to *losslessly* store the quantized representations to disk
+- Synthesis transform $f_s$, which maps quantized latents back to a video.
+
+#### Notation
+- $x_i, i=1,\dots, F$ denotes a the $i$-th frame of a video that consists of a total of $F$ frames
+- $y_i = f_a(x_i, c)$ are latent representations; $\hat{y}_i = \lfloor y_i \rceil$ is the quantized latent reprsentation.
+  -  Note: the analysis transform $f_a$ may or may not depend on other context variables $c$.
+- $\hat{x}_i = f_s(\hat{y}_i, c)$ is the reconstruction of $x_i$
+  - Note: the synthesis transform $f_s$ may or may not depend on other context variables $c$.
+- Q is the true distribution of the quantized latents $\hat{y}_i \sim Q$ (i.e. what we store to disk), and and $P$ is our model to approximate $Q$.
 
 
 ### The role of an entropy model
 
 
 ## Brief note on transformers
+
+?
 
 ## VCT: Main components (with code annotations)
 
