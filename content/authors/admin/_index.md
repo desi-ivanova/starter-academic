@@ -74,7 +74,7 @@ email: ""
 highlight_name: true
 ---
 
-I'm interested in machine learning and statistics more broadly, particularly Bayesian. Currently, I'm on the [StatML](https://statml.io/) programme at the University of Oxford, working with [Tom Rainforth](https://www.robots.ox.ac.uk/~twgr) and [Yee Whye Teh](https://www.stats.ox.ac.uk/~teh). I spent 2022 doing research internships first at Microsoft Reseach Cambdridge, where I worked on causal machine learning, and Meta AI (FAIR Labs) NYC, where I worked on neural data compression.
+I'm interested in machine learning and statistics more broadly, particularly Bayesian. Currently, I'm on the [StatML](https://statml.io/) programme at the University of Oxford, working with [Tom Rainforth](https://www.robots.ox.ac.uk/~twgr) and [Yee Whye Teh](https://www.stats.ox.ac.uk/~teh). I spent 2022 on two research internships: first one was at Microsoft Reseach Cambridge, where I focused on causal machine learning; the second one was at Meta AI (FAIR Labs) NYC, where I worked on neural data compression.
 
 Before joining the StatML CDT, I spent four years in quant finance -- first in quantitative equity research at UBS and later in cross-asset systematic trading strategies structuring at Goldman Sachs.
 
