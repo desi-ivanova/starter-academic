@@ -19,7 +19,7 @@ abstract: ""
 #   End time can optionally be hidden by prefixing the line with `#`.
 date: "2023-09-06T14:00:00Z"
 date_end: "2023-09-09T14:20:00Z"
-all_day: false
+all_day: true
 
 # Schedule page publish date (NOT talk date).
 publishDate: "2021-06-23T00:00:00Z"
@@ -40,9 +40,9 @@ links:
 #  icon_pack: fab
 #  url: https://twitter.com/georgecushen
 url_code: ""
-url_video: "https://icml.cc/virtual/2021/oral/9524" #"uploads/202103_deepprob_DQN.pdf"
-url_slides: "https://icml.cc/media/icml-2021/Slides/9523.pdf"
-url_pdf: "http://proceedings.mlr.press/v139/foster21a.html"
+url_video: "" #"uploads/202103_deepprob_DQN.pdf"
+url_slides: ""
+url_pdf: ""
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
