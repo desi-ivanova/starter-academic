@@ -1,10 +1,10 @@
 ---
-title: ELLIS RobustML Workshop
+title: "SIAM Conference on Uncertainty Quantification"
 
-event: ELLIS RobustML Workshop
-event_url: https://sites.google.com/view/ellis-robust-ml-workshop
+event: SIAM Conference on Uncertainty Quantification
+event_url: https://www.siam.org/conferences/cm/conference/uq24
 
-location: Aalto University, Finland
+location: Trieste, Italy
 #address:
 #  street:
 #  city:
@@ -17,8 +17,8 @@ summary: ""
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2023-09-23T09:00:00Z"
-date_end: "2023-09-24T18:00:00Z"
+date: "2024-02-27T09:00:00Z"
+date_end: "2024-03-01T18:00:00Z"
 all_day: false
 
 # Schedule page publish date (NOT talk date).
@@ -41,7 +41,7 @@ featured: true
 #  url: https://twitter.com/georgecushen
 # url_code: ""
 # url_video: "https://icml.cc/virtual/2021/oral/9524"
-url_slides: "https://docs.google.com/presentation/d/1g9tDiGw5p3RmfzHMSsV2DOCQllgfJcDJXy0G6B9DsVw/edit?usp=sharing"
+# url_slides: "https://icml.cc/media/icml-2021/Slides/9523.pdf"
 # url_pdf: "http://proceedings.mlr.press/v139/foster21a.html"
 
 # Markdown Slides (optional).
