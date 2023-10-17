@@ -1,10 +1,10 @@
 ---
-title: "SIAM Conference on Uncertainty Quantification (UQ24)"
+title: "One World Approximate Bayesian Computation (ABC) Seminar"
 
-event: SIAM Conference on Uncertainty Quantification
-event_url: https://www.siam.org/conferences/cm/conference/uq24
+event: One World Approximate Bayesian Computation (ABC) Seminar
+event_url: https://warwick.ac.uk/fac/sci/statistics/news/upcoming-seminars/abcworldseminar/
 
-location: Trieste, Italy
+location: Online
 #address:
 #  street:
 #  city:
@@ -17,9 +17,9 @@ summary: "Invited talk."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2024-02-27T09:00:00Z"
-date_end: "2024-03-01T18:00:00Z"
-all_day: true
+date: "2024-01-25T09:00:00Z"
+date_end: "2024-01-25T10:00:00Z"
+all_day: false
 
 # Schedule page publish date (NOT talk date).
 publishDate: "2023-10-16T00:00:00Z"
