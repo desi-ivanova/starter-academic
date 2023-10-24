@@ -1,5 +1,5 @@
 ---
-title: "Data efficient statistical learning"
+title: "Data Acquisition for Sample-Efficient Machine Learning"
 
 event: Statistical Machine Learning guest speaaker
 event_url:
@@ -49,7 +49,7 @@ featured: true
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
 #   Otherwise, set `slides = ""`.
-slides: ""
+slides: "https://docs.google.com/presentation/d/1sQ2SEqCbPpNaMJuZVo_EUy2loPiHE9BgPCD-unIE6IU/edit?usp=sharing"
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
