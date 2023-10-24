@@ -19,7 +19,7 @@ summary: "Guest speaker for Statistical Machine Learning course at UCL"
 #   End time can optionally be hidden by prefixing the line with `#`.
 date: "2023-10-23T17:00:00Z"
 date_end: "2023-10-23T18:00:00Z"
-all_day: true
+all_day: false
 
 # Schedule page publish date (NOT talk date).
 publishDate: "2023-10-16T00:00:00Z"
