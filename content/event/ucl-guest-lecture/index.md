@@ -1,8 +1,8 @@
 ---
 title: "Data efficient statistical learning"
 
-event: Statistical Machine Learning
-event_url: https://www.siam.org/conferences/cm/conference/uq24
+event: Statistical Machine Learning guest speaaker
+event_url:
 
 location: UCL, London
 #address:
