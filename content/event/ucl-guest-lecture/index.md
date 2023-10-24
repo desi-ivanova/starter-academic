@@ -41,7 +41,7 @@ featured: true
 #  url: https://twitter.com/georgecushen
 # url_code: ""
 # url_video: "https://icml.cc/virtual/2021/oral/9524"
-# url_slides: "https://icml.cc/media/icml-2021/Slides/9523.pdf"
+url_slides: "https://docs.google.com/presentation/d/1sQ2SEqCbPpNaMJuZVo_EUy2loPiHE9BgPCD-unIE6IU/edit?usp=sharing"
 # url_pdf: "http://proceedings.mlr.press/v139/foster21a.html"
 
 # Markdown Slides (optional).
@@ -49,7 +49,7 @@ featured: true
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
 #   Otherwise, set `slides = ""`.
-slides: "https://docs.google.com/presentation/d/1sQ2SEqCbPpNaMJuZVo_EUy2loPiHE9BgPCD-unIE6IU/edit?usp=sharing"
+# slides: ""
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
