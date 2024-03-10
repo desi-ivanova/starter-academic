@@ -1,10 +1,10 @@
 ---
-title: "SIAM Conference on Uncertainty Quantification (UQ24)"
+title: "I'll be at ICLR"
 
-event: SIAM Conference on Uncertainty Quantification
-event_url: https://www.siam.org/conferences/cm/conference/uq24
+event: ICLR 2024 Workshop on Data-centric Machine Learning Research (DMLR)
+event_url:
 
-location: Trieste, Italy
+location: Vienna, Austria
 #address:
 #  street:
 #  city:
@@ -12,17 +12,17 @@ location: Trieste, Italy
 #  postcode:
 #  country:
 
-summary: "Invited to give a talk at the **Challenges in Inversion and Model Calibration: From UQ to OED** minisymposium."
+summary: "*Step-DAD: Semi-Amortized Policy-Based Bayesian Experimental Design* was accepted at the Data-centric Machine Learning Research (DMLR) ICLR Workshop."
 # abstract:
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2024-02-27T09:00:00Z"
-date_end: "2024-03-01T18:00:00Z"
+date: "2024-05-07T09:00:00Z"
+date_end: "2024-05-11T18:00:00Z"
 all_day: true
 
 # Schedule page publish date (NOT talk date).
-publishDate: "2023-10-16T00:00:00Z"
+publishDate: "2024-01-01T00:00:00Z"
 
 authors: []
 tags: []
