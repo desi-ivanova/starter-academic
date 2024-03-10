@@ -29,7 +29,7 @@ publishDate: "2023-02-01T00:00:00Z"
 publication_types: ["1"]
 
 # Publication name and optional abbreviated publication name.
-publication: Pre-print
+publication: ICML
 publication_short:
 
 abstract: We formalize the problem of contextual optimization through the lens of Bayesian experimental design and propose CO-BED -- a general, model-agnostic framework for designing contextual experiments using information-theoretic principles. After formulating a suitable information-based objective, we employ black-box variational methods to simultaneously estimate it and optimize the designs in a single stochastic gradient scheme. We further introduce a relaxation scheme to allow discrete actions to be accommodated. As a result, CO-BED provides a general and automated solution to a wide range of contextual optimization problems. We illustrate its effectiveness in a number of experiments, where CO-BED demonstrates competitive performance even when compared to bespoke, model-specific alternatives.

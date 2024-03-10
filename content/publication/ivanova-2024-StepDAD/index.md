@@ -1,21 +1,21 @@
 ---
-title: "Modern Bayesian Experimental Design"
+title: "Step-DAD: Semi-Amortized Policy-Based Bayesian Experimental Design"
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-- Tom Rainforth
-- Adam Foster
 - admin
-- Freddie Bickford Smith
+- Marcel Hedman
+- Cong Guan
+- Tom Rainforth
 
 # Author notes (optional)
 # author_notes:
 # - "Equal contribution"
 # - "Equal contribution"
 
-date: "2023-03-01T00:00:00Z"
+date: "2023-02-11T00:00:00Z"
 doi: ""
 
 # Schedule page publish date (NOT publication's date).
@@ -28,10 +28,10 @@ publishDate: "2023-02-01T00:00:00Z"
 publication_types: ["1"]
 
 # Publication name and optional abbreviated publication name.
-publication: Statistical Science (to appear)
+publication: Pre-print
 publication_short:
 
-abstract: Bayesian experimental design (BED) provides a powerful and general framework for optimizing the design of experiments. However, its deployment often poses substantial computational challenges that can undermine its practical use. In this review, we outline how recent advances have transformed our ability to overcome these challenges and thus utilize BED effectively, before discussing some key areas for future development in the field.
+abstract: We develop a semi-amortized, policy-based, approach to Bayesian experimental design (BED) called Step-wise Deep Adaptive Design (Step-DAD). Like existing, fully amortized, policy-based BED approaches, Step-DAD trains a design policy upfront before the experiment. However, rather than keeping this policy fixed, Step-DAD periodically updates it as data is gathered, refining it to the particular experimental instance. This allows it to improve both the adaptability and the robustness of the design strategy compared with existing approaches.
 
 # Summary. An optional shortened abstract.
 summary:
@@ -39,14 +39,14 @@ summary:
 tags: []
 
 # Display this page in the Featured widget?
-featured: false
+featured: true
 
 # Custom links (uncomment lines below)
 # links:
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: 'https://arxiv.org/pdf/2302.14545.pdf'
+# url_pdf: 'https://arxiv.org/pdf/2302.14015.pdf'
 #url_code: 'https://github.com/desi-ivanova/idad'
 #url_dataset: ''
 #url_poster: ''

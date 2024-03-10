@@ -1,24 +1,21 @@
 ---
-title: "Differentiable Multi-Target Causal Bayesian Experimental Design"
+title: "Modern Bayesian Experimental Design"
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-- Yashas Annadani
-- Panagiotis Tigas
-- admin
-- Andrew Jesson
-- Yarin Gal
+- Tom Rainforth
 - Adam Foster
-- Stefan Bauer
+- admin
+- Freddie Bickford Smith
 
 # Author notes (optional)
 # author_notes:
 # - "Equal contribution"
 # - "Equal contribution"
 
-date: "2023-02-11T00:00:00Z"
+date: "2023-03-01T00:00:00Z"
 doi: ""
 
 # Schedule page publish date (NOT publication's date).
@@ -31,10 +28,10 @@ publishDate: "2023-02-01T00:00:00Z"
 publication_types: ["1"]
 
 # Publication name and optional abbreviated publication name.
-publication: ICML
+publication: Statistical Science
 publication_short:
 
-abstract: We introduce a gradient-based approach for the problem of Bayesian optimal experimental design to learn causal models in a batch setting -- a critical component for causal discovery from finite data where interventions can be costly or risky. Existing methods rely on greedy approximations to construct a batch of experiments while using black-box methods to optimize over a single target-state pair to intervene with. In this work, we completely dispose of the black-box optimization techniques and greedy heuristics and instead propose a conceptually simple end-to-end gradient-based optimization procedure to acquire a set of optimal intervention target-state pairs. Such a procedure enables parameterization of the design space to efficiently optimize over a batch of multi-target-state interventions, a setting which has hitherto not been explored due to its complexity. We demonstrate that our proposed method outperforms baselines and existing acquisition strategies in both single-target and multi-target settings across a number of synthetic datasets.
+abstract: Bayesian experimental design (BED) provides a powerful and general framework for optimizing the design of experiments. However, its deployment often poses substantial computational challenges that can undermine its practical use. In this review, we outline how recent advances have transformed our ability to overcome these challenges and thus utilize BED effectively, before discussing some key areas for future development in the field.
 
 # Summary. An optional shortened abstract.
 summary:
@@ -42,14 +39,14 @@ summary:
 tags: []
 
 # Display this page in the Featured widget?
-featured: true
+featured: false
 
 # Custom links (uncomment lines below)
 # links:
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: 'https://arxiv.org/pdf/2302.10607.pdf'
+url_pdf: 'https://arxiv.org/pdf/2302.14545.pdf'
 #url_code: 'https://github.com/desi-ivanova/idad'
 #url_dataset: ''
 #url_poster: ''

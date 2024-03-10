@@ -77,7 +77,8 @@ highlight_name: true
 I'm interested in machine learning and statistics more broadly, particularly Bayesian.
 Currently, I'm on the [StatML CDT](https://statml.io/) programme at the University of Oxford, working with [Tom Rainforth](https://www.robots.ox.ac.uk/~twgr) and [Yee Whye Teh](https://www.stats.ox.ac.uk/~teh).
 During my PhD I did two research internships: one at Microsoft Reseach Cambridge, where I focused on causal machine learning and one at Meta AI (FAIR Labs) NYC, where I worked on neural data compression.
-In April 2024 I will be starting as a Florence Nightingale Bicentenary Fellow at the department of Statistics, University of Oxford.
+I am expected to complete my PhD in early 2025.
+<!-- In April 2024 I will be starting as a Florence Nightingale Bicentenary Fellow at the department of Statistics, University of Oxford. -->
 
 Before joining the StatML CDT in late 2020, I spent four years in quant finance -- first in quantitative equity research at UBS and later in cross-asset systematic trading strategies structuring at Goldman Sachs.
 
