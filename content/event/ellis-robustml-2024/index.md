@@ -12,8 +12,8 @@ location: Helsinki, Finland
 #  postcode:
 #  country:
 
-summary: "I'm one of the organisers for the forthcoming ELLIS RobustML workshop, taking place in June at Aalto University (Helsinki, Finland). If you'd like to share suggestions for the event, please fill in this [**short survey**](https://forms.gle/CxZ1c758Yabkj5tEA)."
-# abstract:
+summary: "I'm one of the organisers for the forthcoming ELLIS RobustML workshop, taking place in June at Aalto University (Helsinki, Finland). If you'd like to share any thoughts or suggestions for the event, please fill in this [**short survey**](https://forms.gle/CxZ1c758Yabkj5tEA)."
+abstract: "I'm one of the organisers for the forthcoming ELLIS RobustML workshop, taking place in June at Aalto University (Helsinki, Finland). If you'd like to share any thoughts or suggestions for the event, please fill in this [**short survey**](https://forms.gle/CxZ1c758Yabkj5tEA)."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.

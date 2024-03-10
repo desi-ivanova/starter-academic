@@ -1,7 +1,7 @@
 ---
-title: "One World Approximate Bayesian Computation (ABC) Seminar"
+title: "One World Approximate Bayesian Computation (OWABC)"
 
-event: One World Approximate Bayesian Computation (ABC) Seminar
+event: One World Approximate Bayesian Computation seminar series
 event_url: https://warwick.ac.uk/fac/sci/statistics/news/upcoming-seminars/abcworldseminar/
 
 location: Online
@@ -12,7 +12,7 @@ location: Online
 #  postcode:
 #  country:
 
-summary: "[**OWABC seminar series**](https://warwick.ac.uk/fac/sci/statistics/news/upcoming-seminars/abcworldseminar/)"
+summary: "Giving a talk at the [**OWABC**](https://warwick.ac.uk/fac/sci/statistics/news/upcoming-seminars/abcworldseminar/) seminar series."
 # abstract:
 
 # Talk start and end times.
