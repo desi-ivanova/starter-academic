@@ -1,10 +1,10 @@
 ---
-title: "ELLIS RobustML Workshop"
+title: "ELLIS RobustLLM Workshop"
 
-event: ELLIS RobustML Workshop
+event: ELLIS RobustLLM Workshop
 event_url:
 
-location: Helsinki, Finland
+location: Oxford, UK
 #address:
 #  street:
 #  city:
@@ -12,13 +12,13 @@ location: Helsinki, Finland
 #  postcode:
 #  country:
 
-summary: "I'm one of the organisers for the forthcoming ELLIS RobustML workshop, taking place in June at Aalto University (Helsinki, Finland). If you'd like to share any thoughts or suggestions for the event, please fill in this [**short survey**](https://forms.gle/CxZ1c758Yabkj5tEA)."
-abstract: "I'm one of the organisers for the forthcoming ELLIS RobustML workshop, taking place in June at Aalto University (Helsinki, Finland). If you'd like to share any thoughts or suggestions for the event, please fill in this [**short survey**](https://forms.gle/CxZ1c758Yabkj5tEA)."
+summary: "I'm one of the organisers for the forthcoming ELLIS RobustLLM workshop, taking place in July (straight after ICML!) at the University of Oxford. If you'd like to share any thoughts or suggestions for the event, please fill in this [**short survey**](https://forms.gle/Qn2EUrPZAsEc4c2s5)."
+abstract: "I'm one of the organisers for the forthcoming ELLIS RobustLLM workshop, taking place in July (straight after ICML!) at the University of Oxford. If you'd like to share any thoughts or suggestions for the event, please fill in this [**short survey**](https://forms.gle/Qn2EUrPZAsEc4c2s5)."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2024-06-27T09:00:00Z"
-date_end: "2024-06-28T18:00:00Z"
+date: "2024-07-29T09:00:00Z"
+date_end: "2024-07-30T18:00:00Z"
 all_day: true
 
 # Schedule page publish date (NOT talk date).

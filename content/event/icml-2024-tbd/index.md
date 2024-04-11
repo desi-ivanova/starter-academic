@@ -1,10 +1,10 @@
 ---
-title: "ELLIS RobustML Workshop"
+title: "I'll be at ICML"
 
-event: ELLIS RobustML Workshop
+event: TBD
 event_url:
 
-location: Helsinki, Finland
+location: Vienna, Austria
 #address:
 #  street:
 #  city:
@@ -12,17 +12,17 @@ location: Helsinki, Finland
 #  postcode:
 #  country:
 
-summary: "I'm one of the organisers for the forthcoming ELLIS RobustML workshop, taking place in June at Aalto University (Helsinki, Finland). If you'd like to share any thoughts or suggestions for the event, please fill in this [**short survey**](https://forms.gle/CxZ1c758Yabkj5tEA)."
-abstract: "I'm one of the organisers for the forthcoming ELLIS RobustML workshop, taking place in June at Aalto University (Helsinki, Finland). If you'd like to share any thoughts or suggestions for the event, please fill in this [**short survey**](https://forms.gle/CxZ1c758Yabkj5tEA)."
+summary:
+# abstract:
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2024-06-27T09:00:00Z"
-date_end: "2024-06-28T18:00:00Z"
+date: "2024-07-21T09:00:00Z"
+date_end: "2024-07-27T18:00:00Z"
 all_day: true
 
 # Schedule page publish date (NOT talk date).
-publishDate: "2024-01-16T00:00:00Z"
+publishDate: "2024-03-01T00:00:00Z"
 
 authors: []
 tags: []
