@@ -9,7 +9,7 @@ last_name: Ivanova
 superuser: true
 
 # Role/position/tagline
-role: DPhil Student in Statistics
+role: Research Fellow in ML
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -17,7 +17,7 @@ organizations:
   url:
 
 # Short bio (displayed in user profile at end of posts)
-bio: DPhil [@OxCSML](http://csml.stats.ox.ac.uk). Former quant, former former gymnast.
+bio: Research Fellow [@OxCSML](http://csml.stats.ox.ac.uk). Former quant, former former gymnast.
 
 # Interests to show in About widget
 interests:
@@ -74,13 +74,13 @@ email: ""
 highlight_name: true
 ---
 
-I'm interested in machine learning and statistics more broadly, particularly Bayesian.
-Currently, I'm on the [StatML CDT](https://statml.io/) programme at the University of Oxford, working with [Tom Rainforth](https://www.robots.ox.ac.uk/~twgr) and [Yee Whye Teh](https://www.stats.ox.ac.uk/~teh).
-During my PhD I did two research internships: one at Microsoft Reseach Cambridge, where I focused on causal machine learning and one at Meta AI (FAIR Labs) NYC, where I worked on neural data compression.
-I am expected to complete my PhD in early 2025.
+I'm a Florence Nightingale Bicentennial Fellow at the Department of Statistics, University of Oxford.
+Prior to that I was a graduate student on the [StatML CDT](https://statml.io/) programme at the University of Oxford, working with [Tom Rainforth](https://www.robots.ox.ac.uk/~twgr) and [Yee Whye Teh](https://www.stats.ox.ac.uk/~teh).
+<!-- During my PhD I did two research internships: one at Microsoft Reseach Cambridge, where I focused on causal machine learning and one at Meta AI (FAIR Labs) NYC, where I worked on neural data compression.
+I am expected to complete my PhD in early 2025. -->
 <!-- In April 2024 I will be starting as a Florence Nightingale Bicentenary Fellow at the department of Statistics, University of Oxford. -->
-
-Before joining the StatML CDT in late 2020, I spent four years in quant finance -- first in quantitative equity research at UBS and later in cross-asset systematic trading strategies structuring at Goldman Sachs.
+During my PhD I've interned as a Research Scientist at Microsoft Reseach Cambridge, where I focused on causal machine learning, and at Meta AI (FAIR Labs) NYC, where I worked on neural data compression.
+Before StatML, I spent four years in quant finance -- first in quantitative equity research at UBS and later in cross-asset systematic trading strategies structuring at Goldman Sachs.
 
 <!-- I'm passionate about the **rigorous** use of statistics and machine learning in **applied settings**, specifically when obtaining more data is difficult and/or impossible. In such cases I firmly believe it is crucial to 1) incorporate domain knowledge when training data-driven models; 2) thoroughly evaluate these models against suitable baselines; and 3) properly interpret the results of statistical analyses. -->
 
