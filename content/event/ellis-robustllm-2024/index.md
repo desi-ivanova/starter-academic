@@ -12,8 +12,8 @@ location: Oxford, UK
 #  postcode:
 #  country:
 
-summary: "I'm one of the organisers for the forthcoming ELLIS RobustLLM workshop, taking place in July (straight after ICML!) at the University of Oxford. [**Details here**](https://sites.google.com/view/robustml2024/robust-llms-workshop)."
-abstract: "I'm one of the organisers for the forthcoming ELLIS RobustLLM workshop, taking place in July (straight after ICML!) at the University of Oxford. [**Details here**](https://sites.google.com/view/robustml2024/robust-llms-workshop)."
+summary: "I'm one of the organisers of the ELLIS Robust Large Language Models (RobustLLM) workshop, taking place at the University of Oxford. [**Details here**](https://sites.google.com/view/robustml2024/robust-llms-workshop)."
+abstract: "I'm one of the organisers of theELLIS Robust Large Language Models (RobustLLM) workshop, taking place at Keble College, University of Oxford. Details about the workshop, including speakers and accepted poster presentations can be [**found here**](https://sites.google.com/view/robustml2024/robust-llms-workshop)."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.

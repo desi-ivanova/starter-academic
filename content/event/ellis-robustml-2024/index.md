@@ -12,8 +12,8 @@ location: Helsinki, Finland
 #  postcode:
 #  country:
 
-summary: "I'm one of the organisers for the forthcoming ELLIS RobustML workshop, taking place in June at Aalto University (Helsinki, Finland). [**Details here**](https://sites.google.com/view/robustml2024/robust-ml-workshop)."
-abstract: "I'm one of the organisers for the forthcoming ELLIS RobustML workshop, taking place in June at Aalto University (Helsinki, Finland). [**Details here**](https://sites.google.com/view/robustml2024/robust-ml-workshop)."
+summary: "I'm one of the organisers of the ELLIS RobustML workshop, taking place at Aalto University (Helsinki, Finland). [**Details here**](https://sites.google.com/view/robustml2024/robust-ml-workshop)."
+abstract: "I'm one of the organisers for the forthcoming ELLIS RobustML workshop, taking place in June at Aalto University (Helsinki, Finland) and co-located with the [ELISE Wrap Up Conference](https://www.elise-ai.eu/events/elise-wrap-up-conference-ellis-community-event-27-28-june). Details about the workshop, including speakers and accepted poster presentations can be [**found here**](https://sites.google.com/view/robustml2024/robust-ml-workshop)."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
