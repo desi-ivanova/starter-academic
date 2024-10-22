@@ -8,10 +8,10 @@ summary: "There is huge value in developing new benchmarks and I think the one t
 projects: []
 
 # Date published
-date: "2024-10-21T00:00:00Z"
+date: "2024-10-22T00:00:00Z"
 
 # Date updated
-lastmod: "2024-10-21T00:00:00Z"
+lastmod: "2024-10-22T00:00:00Z"
 
 # Is this an unpublished draft?
 draft: false
@@ -64,7 +64,7 @@ Evaluate 25 language models on the new benchmarks. Model families include: Gemma
 
 The idea is to create a template for the questions in the original GSM8K dataset by identifying variables whose values can be modified, whilst preserving the structure and logic of the question. For each of these variables a domain of possible values is specified, along with a set of necessary conditions to ensure correctness of the new question and answer. Here’s an example of such a template:
 
-{{< figure library="true" src="gsm_template.png" title="Figure from Mirzadeh et al. (2024) https://arxiv.org/pdf/2410.05229." numbered="false">}}
+{{< figure library="true" src="template_gsm.png" title="Figure from Mirzadeh et al. (2024) https://arxiv.org/pdf/2410.05229." numbered="false">}}
 
 For their analysis, the authors select 100 questions from GSM8K and create such a template for each of them. They then sample 50 realisations from each template. This means that the GSM-Symbolic benchmark consists of  50 datasets of 100 samples each.
 
@@ -109,7 +109,7 @@ The total number of correct answers for each model follows a Binomial distributi
 
 To quantify what is “normal” variation (and hence uninteresting), we can construct confidence intervals (CI) for the point estimates of pm, which are provided in the second column of Table 1 in the Appendix of the paper. There are different ways to construct CI for the Binomial proportion. The Figure below shows Wilson score intervals. (See Appendix for more results.)
 
-TODO: ADD DATAWRAPPER CHART HERE
+<iframe title="95% confidence intervals for Binomial proportion " aria-label="Dot Plot" id="datawrapper-chart-s2DXE" src="https://datawrapper.dwcdn.net/s2DXE/9/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="607" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
 
 
 As expected, variation is higher for models with pm closer to 1/2 (e.g. Gemma-7b, Phi-2, Mistral-7b-v0.1), resulting in wider CIs. Conversely, models with pm is closer to 0 (Gemma2b) or 1 (GPT-4o, o1-preview) have substantially narrower CIs.
@@ -140,7 +140,7 @@ For ease of presentation, I’m going to assume that pm,symb is a fixed, preset 
 
 The statistically inclined reader will know that there’s a correspondence between confidence intervals and hypothesis tests. In short, if the CI computed above includes the value $p_{m,symb}$, we fail to reject the null hypothesis. If $p_{m,symb}$ falls outside the CI, we reject the null in favour of the alternative. We can read the results for these hypothesis tests from the next chart: 
 
-TODO: ADD DATAWRAPPER CHART HERE
+<iframe title="GSM-Symbolic and GSM8K along with 95% CI" aria-label="Dot Plot" id="datawrapper-chart-40qBB" src="https://datawrapper.dwcdn.net/40qBB/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="624" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
 
 
 We see that there are 4 models for which we are able to reject the null: Gemma-7b, Mistral-7b-instruct-v0.1, Phi-2 and Llama3-8b. Note that the performance of Llama3-8b on GSM-Symbolic appears to be statistically better than on GSM8K (with some minor technicalities on one- vs two-sided tests that I won’t get into here). 
@@ -188,7 +188,7 @@ I’d like to Momchil Konstantinov and Alex Coca for their feedback on this post
 #### Clopper-Pearson CIs
 For robustness purposes, here are the [Clopper-Pearson](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Clopper–Pearson_interval) confidence intervals as well:
 
-TODO: ADD DATAWRAPPER CHART HERE
+<iframe title="95% confidence intervals for Binomial proportion" aria-label="Dot Plot" id="datawrapper-chart-LkJtn" src="https://datawrapper.dwcdn.net/LkJtn/9/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="607" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
 
 The Clopper-Pearson CIs are slightly wider than those obtained using the Wilson score. Using Clopper-Pearson would not have changed any of the results presented in this post. 
 
