@@ -3,7 +3,7 @@ title: "On Some (Fixable) Limitations of 'Understanding the Limitations of Mathe
 subtitle: "Time to make statistics great again?"
 
 # Summary for listings and search engs
-summary: There is huge value in developing new benchmarks and I think the one that proposed in the paper 'GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models' by Apple is quite neat and useful! The accompanying analysis, in my opinion, can be substantially improved with the help of basic statistics. Without those we risk over-interpreting results and drawing misleading conclusions. I never thought I would be the one advocating for the use of hypothesis tests and p-values, but here we are... When it comes to language models evals, it is time to make statistics great again!
+summary: "There is huge value in developing new benchmarks and I think the one that proposed in the paper 'GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models' by Apple is quite neat and useful! The accompanying analysis, in my opinion, can be substantially improved with the help of basic statistics. Without those we risk over-interpreting results and drawing misleading conclusions. I never thought I would be the one advocating for the use of hypothesis tests and p-values, but here we are... When it comes to language models evals, it is time to make statistics great again!"
 # Link this post with a project
 projects: []
 
