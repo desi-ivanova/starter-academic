@@ -44,5 +44,5 @@ categories:
 <!-- # Coming Soon :-) -->
 BayesFlow is a Python library implementing amortized Bayesin inference workflows. It's based on Keras, which now supports TensorFlow, Jax and PyTorch as backends.
 
-In this [short tutorial](https://github.com/bayesflow-org/bayesflow/blob/dev/examples/michaelis_menten_BED_tutorial.ipynb), I show how to find optimal designs for a Michaelis-Menten system model.
+[In this short, self-contained tutorial](https://github.com/bayesflow-org/bayesflow/blob/dev/examples/michaelis_menten_BED_tutorial.ipynb), I show how to find optimal designs for a Michaelis-Menten model. 
 
