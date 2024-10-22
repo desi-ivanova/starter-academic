@@ -40,11 +40,11 @@ categories:
 - ML
 ---
 
-**You can also read this on [Substack](https://substack.com/home/post/p-150508215).**
+*You can also read this on [Substack](https://substack.com/home/post/p-150508215).*
 
 Apple’s recent paper "GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models" [1], has sparked another round of debates on social media about whether (large) language models (LMs) do real reasoning or not.
 
-After presenting this paper at a reading group last week, I thought I’d share my thoughts and findings from some additional analysis in a short post. Unlike most of the posts on social media, I’ll try to stay as far away as possible from the philosophical claims or hypotheses around what constitutes “true reasoning” vs “sophisticated pattern matching”. Instead, my aim is to provide a bit of statistical rigour to help us evaluate the claims and conclusions made in the paper.
+After presenting this paper at a reading group last week, I thought I’d share my thoughts and findings from some additional analysis in a ~short~ post. Unlike most of the posts on social media, I’ll try to stay as far away as possible from the philosophical claims or hypotheses around what constitutes “true reasoning” vs “sophisticated pattern matching”. Instead, my aim is to provide a bit of statistical rigour to help us evaluate the claims and conclusions made in the paper.
 
 
 **TLDR:** The emphasis on “non-negligible variance” or “increase in variance” throughout the paper appears to be an over-interpretation of normal statistical variation. Further, for 21 out of 25 models, there isn’t enough evidence to reject the null hypothesis that performance on GSM8K is equal to that on GSM-Symbolic. Of the 4 models where the null can be rejected, 3 perform worse on GSM-Symbolic, and 1 performs better.
@@ -56,9 +56,9 @@ After presenting this paper at a reading group last week, I thought I’d share 
 
 ### What does the paper do?
 
-Propose a new benchmark: GSM-Symbolic, which generates variants of GSM8K [2] — a well-established benchmark, containing grade school math word problems. GSM-Symbolic is designed to have the same distribution as the original GSM8K dataset. However, GSM-Symbolic is much less likely to have been leaked into model training sets (data contamination). Further, the paper introduces a way to control the difficulty of the questions, giving rise to 3 more datasets (one simpler and two more complex than GSM-Symbolic). A final benchmark, GSM-NoOp, is obtained by introducing  “seemingly relevant but ultimately irrelevant” information into GSM-Symbolic. 
+- **Propose a new benchmark:** GSM-Symbolic, which generates variants of GSM8K [2] — a well-established benchmark, containing grade school math word problems. GSM-Symbolic is designed to have the same distribution as the original GSM8K dataset. However, GSM-Symbolic is much less likely to have been leaked into model training sets (data contamination). Further, the paper introduces a way to control the difficulty of the questions, giving rise to 3 more datasets (one simpler and two more complex than GSM-Symbolic). A final benchmark, GSM-NoOp, is obtained by introducing  “seemingly relevant but ultimately irrelevant” information into GSM-Symbolic. 
 
-Evaluate 25 language models on the new benchmarks. Model families include: Gemma, Phi, Mistral and Llama (open weights), and GPT and o1 (proprietary, OpenAI).
+- **Evaluate 25 language models:** Model families include: Gemma, Phi, Mistral and Llama (open weights), and GPT and o1 (proprietary, OpenAI).
 
 ### How is the GSM-Symbolic benchmark constructed?
 
@@ -66,7 +66,7 @@ The idea is to create a template for the questions in the original GSM8K dataset
 
 {{< figure library="true" src="template_gsm.png" title="Figure from Mirzadeh et al. (2024) https://arxiv.org/pdf/2410.05229." numbered="false">}}
 
-For their analysis, the authors select 100 questions from GSM8K and create such a template for each of them. They then sample 50 realisations from each template. This means that the GSM-Symbolic benchmark consists of  50 datasets of 100 samples each.
+For their analysis, the authors select 100 questions from GSM8K and create such a template for each of them. They then sample 50 realisations from each template. This means that the GSM-Symbolic benchmark consists of **50 datasets of 100 samples each**.
 
 In what follows, I will write GSM8K to refer only to those 100 samples from the original GSM8K dataset that were used in the creation of the templates.
 
@@ -89,7 +89,7 @@ Models seem to really struggle with No-Ops, suggesting “deeper issues in their
 
 The results in support of this conclusion are presented in Section 4.1, which I’m quoting directly, highlighting the key points:
 
-> As shown, all models exhibit a non-negligible variance across different sets. […] It is interesting that this variation even exists […]. Another noteworthy observation is that the performance (represented by the dashed line in Fig. 2) on the original questions from the 100 examples of GSM8K used as templates is often more than one standard deviation away from the center of the GSM-Symbolic performance distribution, frequently on the right side of the distribution (this holds for 21 out of 25 models). One explanation for this could be data contamination […]
+> As shown, all models exhibit a **non-negligible variance** across different sets. […] It is **interesting that this variation even exists** […]. Another noteworthy observation is that the performance (represented by the dashed line in Fig. 2) on the original questions from the 100 examples of GSM8K used as templates is **often more than one standard deviation away from the center** of the GSM-Symbolic performance distribution, frequently on the right side of the distribution (this holds for 21 out of 25 models). **One explanation** for this could be data contamination […]
 
 I see two fixable limitations in this quote:
 
@@ -105,7 +105,7 @@ The rest of this section deals with the first point.
 
 Let’s begin by explaining why the observed variation is not just uninteresting, but actually expected. The GSM8K dataset consists of $N=100$ questions. Each of these questions is answered by 25 different models. It is reasonable to assume that for each model $m=1,…,25$, the answers to these questions are independent and identically distributed (i.i.d.) Bernoulli trials with a model-specific success probability $p_m$.
 
-The total number of correct answers for each model follows a Binomial distribution: $\text{Binomial}(100, p_m)$. The variance of this distribution is fully determined by the success probability $p_m$ and equals $N \cdot p_m \cdot (1-p_m)$. It is well-known and easy to see that this variance is maximised when $p_m=1/2$ and goes to 0 as $p_m$ goes to 0 or 1. (We’ll get to that point again in the next section!)
+The total number of correct answers for each model follows a Binomial distribution: $\text{Binomial}(100, p_m)$. The variance of this distribution is **fully determined by the success probability $p_m$** and equals $N \cdot p_m \cdot (1-p_m)$. It is well-known and easy to see that this **variance is maximised** when $p_m=1/2$ and goes to 0 as $p_m$ goes to 0 or 1. (We’ll get to that point again in the next section!)
 
 To quantify what is “normal” variation (and hence uninteresting), we can construct confidence intervals (CI) for the point estimates of pm, which are provided in the second column of Table 1 in the Appendix of the paper. There are different ways to construct CI for the Binomial proportion. The Figure below shows Wilson score intervals. (See Appendix for more results.)
 
@@ -165,13 +165,25 @@ Here we have 4 different datasets: the baseline GSM-Symbolic, an easier version 
 
 If we happen to have decreasing probabilities of success, i.e. $p_{m,-1} > p_{m,0} > p_{m,1} > p_{m,2} > 0.5$ as is the case for some of the models in Figure 6, then the corresponding variances must increase. Whether or not this decrease in probability of success has any relationship to the “reasoning abilities” of a model is beyond the scope of this blog :)
 
-To summarise: the emphasis on “non-negligible variance” and “increase in variance” throughout the paper appears to be an over-interpretation of normal statistical variation.
+**To summarise: the emphasis on “non-negligible variance” and “increase in variance” throughout the paper appears to be an over-interpretation of normal statistical variation.**
 
 ## Conclusion
 
 There’s huge value in developing new benchmarks and I think the proposed GSM-Symbolic is quite neat and useful! The accompanying analysis, in my opinion, can be substantially improved with the help of basic statistics. Without those we risk over-interpreting results and drawing misleading conclusions.
 
 I never thought I’d be the one advocating for the use of hypothesis tests and p-values, but here we are... When it comes to language models evals, it’s time to make statistics great again! 
+
+### Cite as
+```
+@article{
+    ivanova2024gsm, 
+    title = "On Some (Fixable) Limitations of 'Understanding the Limitations of Mathematical Reasoning in LLMs'", 
+    author = "Ivanova, Desi R", 
+    journal = "desirivanova.com", 
+    year = "2024",
+    url = "https://desirivanova.com/post/gsm-symbolic/"
+}
+```
 
 References 
 
@@ -204,14 +216,3 @@ p_{pool} = \frac{(100 p_{8k} + 5000p_{symb})}{100+5000} \quad \text{SE}(p_{pool}
 $$
 The test statistic (pm,8k - pm,symb) / SE(ppool)  is then approximately normal and is used co compute p-values, which I’ve done in [this spreadsheet](https://docs.google.com/spreadsheets/d/1Ul6ZgFXf_II5EFUCgnJ9hSIQYwHxogxYBmwDn_bA4sA/edit?usp=sharing). The results in this case are exactly the same as before:  we are able to reject the null for Gemma-7b, Mistral-7b-instruct-v0.1 and Phi-2 (performing worse), and Llama3-8b (performing better). 
 
-### Cite as
-```
-@article{
-    ivanova2024gsm, 
-    title = "On Some (Fixable) Limitations of 'Understanding the Limitations of Mathematical Reasoning in LLMs'", 
-    author = "Ivanova, Desi R", 
-    journal = "desirivanova.com", 
-    year = "2024",
-    url = "https://desirivanova.com/post/gsm-symbolic/"
-}
-```
