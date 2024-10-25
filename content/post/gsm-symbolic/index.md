@@ -44,7 +44,7 @@ categories:
 
 Apple’s recent paper "GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models" [1], has sparked another round of debates on social media about whether (large) language models (LMs) do real reasoning or not.
 
-I chose to present this paper at a reading group last week partly because of the attention it received on social media and partly because I think work on benchmarks is very important and does deserve attention.  Whilst I consider the claims and hypotheses around what constitutes “true reasoning” vs “sophisticated pattern matching” a limitation of this paper (a non-fixable one, as the discourse around this topic is both quite subjective and contentious), this post will focus solely on a very fixable limitation: the lack of statistical rigour when evaluating (language) models.  
+I chose to present this paper at a reading group last week partly because of the attention it received on social media and partly because I think work on benchmarks is very important and does deserve attention.  Whilst I consider the claims and hypotheses around what constitutes “true reasoning” vs “sophisticated pattern matching” a limitation of this paper (a **non-fixable** one, as the discourse around this topic is both quite subjective and contentious), this post will focus solely on a very **fixable** limitation: the lack of statistical rigour when evaluating (language) models.  
 
 
 **TLDR:** 
