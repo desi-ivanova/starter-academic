@@ -112,14 +112,14 @@ Let’s begin by explaining why the observed variation is not just uninteresting
 
 The total number of correct answers for each model follows a Binomial distribution: $\text{Binomial}(100, p_m)$. The variance of this distribution is **fully determined by the success probability $p_m$** and equals $N \cdot p_m \cdot (1-p_m)$. It is well-known and easy to see that this **variance is maximised** when $p_m=1/2$ and goes to 0 as $p_m$ goes to 0 or 1. (We’ll get to that point again in the next section!)
 
-To quantify what is “normal” variation (and hence uninteresting), we can construct confidence intervals (CI) for the point estimates of pm, which are provided in the second column of Table 1 in the Appendix of the paper. There are different ways to construct CI for the Binomial proportion. The Figure below shows Wilson score intervals. (See Appendix for more results.)
+To quantify what is “normal” variation (and hence uninteresting), we can construct confidence intervals (CI) for the point estimates of pm, which are provided in the second column of Table 1 in the Appendix of the paper. There are different ways to construct CI for the [Binomial proportion](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval). The Figure below shows [Wilson score](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) intervals. (See Appendix for more results.)
 
 <iframe title="95% confidence intervals for Binomial proportion " aria-label="Dot Plot" id="datawrapper-chart-s2DXE" src="https://datawrapper.dwcdn.net/s2DXE/9/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="607" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
 
 
 As expected, variation is higher for models with pm closer to 1/2 (e.g. Gemma-7b, Phi-2, Mistral-7b-v0.1), resulting in wider CIs. Conversely, models with pm is closer to 0 (Gemma2b) or 1 (GPT-4o, o1-preview) have substantially narrower CIs.
 
-So far we have not talked about any of the GSM-Symbolic results yet. Before we do, I hope that the above has made it clear that 1) variation in performance is expected and quantifiable, e.g. via confidence intervals; and 2) these confidence intervals are wider when pm is close to 0.5 and narrower when pm is close to 0 or 1.
+So far we have not talked about any of the GSM-Symbolic results yet. Before we do, I hope that the above has made it clear that **1)** variation in performance is expected and quantifiable, e.g. via confidence intervals; and **2)** these confidence intervals are wider when pm is close to 0.5 and narrower when pm is close to 0 or 1.
 
 Let’s now look at Figure 2 of the paper.
 
@@ -174,7 +174,7 @@ Here’s my attempt to come up with independent set of models. In each model fam
 With those two caveats, here is the hypothesis and results:
 
 $$
-H_0: p_{8k} = p_{symb} \quad\quad H_A^\text{two-sided}: p_{8k} \neq p_{symb} \text{ ~or~ } H_A^\text{one-sided}: p_{8k} < p_{symb},
+H_0: p_{8k} = p_{symb} \quad\quad H_A^\text{two-sided}: p_{8k} \neq p_{symb} ~\text{ or}~ H_A^\text{one-sided}: p_{8k} < p_{symb},
 $$
 where  $p_{8k}=[p_{1,8k}, \dots, p_{7,8k}]$ and $p_{symb}= [p_{1,symb}, \dots, p_{7,symb}]$.
 
