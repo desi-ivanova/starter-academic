@@ -49,7 +49,7 @@ Careful consideration of training-test overlap, with reasonable attempts to eval
 
 # Introduction
 
-A staggering volume of research papers on large language models (LLMs) is published daily. 
+A staggering volume of research papers on (large) language models (LMs) is published daily. 
 On the day of writing this (5th Nov 2024), 239 papers containing "LLM" or "Language Model" in their titles were 
 added to the Computer Science section of arXiv alone.
 This flood of publications makes it difficult to separate genuine insights from noise. 
@@ -57,7 +57,7 @@ This challenge is particularly pronounced in areas that lack precise definitions
 Given the empirical nature of the LLM research field, much is open to interpretation, making rigorous analysis essential to reduce bias and improve reliability.
 
 
-In this post, we argue that LLM researchers, especially those areas where core concepts lack established definitions, must more actively adopt statistical methods to assess claims rigorously.
+In this post, we argue that LM researchers, especially those areas where core concepts lack established definitions, must more actively adopt statistical methods to assess claims rigorously.
 Various techniques from classical statistics provide quantitative measures that can help validate and strengthen research findings.
 Leveraging these techniques will help move the field beyond anecdotal observations and philosophical arguments toward a more scientific understanding of model behavior.
 
@@ -88,7 +88,7 @@ As Zhang et al. (2024) highlight, reporting train-test overlap statistics is cru
 
 
 To illustrate these principles, we use [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229) as a case study---a recent paper that received substantial attention from the LLM research community (e.g. see [this](https://machinelearning.apple.com/research/gsm-symbolic), [this](https://www.reddit.com/r/singularity/comments/1g1zphu/apple_ai_researchers_question_openais_claims/), or [this](https://x.com/MFarajtabar/status/1844456880971858028)).
-The paper examines whether LLMs perform "formal reasoning" or rely on "sophisticated pattern matching". 
+The paper examines whether LMs perform "formal reasoning" or rely on "sophisticated pattern matching". 
 We review their methods, identify gaps in their analysis, and offer a more rigorous statistical assessment of their claims.
 
 
@@ -160,6 +160,7 @@ Model | 1 digit | 2 digits | 3 digits | 4 digits
 --- | --- | --- | --- | ---
 Phi-3.5-mini-instruct | 100% | 90.2% | 90.8% | 84.0%
 Llama-3-8B-Instruct | 100% | 100% | 100% | 95.3%
+
 *Table XX: CoT prompting, zero-shot.*
 
 More on this in Section XX. [TODO]
@@ -224,11 +225,11 @@ The table below compares the 95% Wilson score intervals to the approximate accur
 | GPT-4o                         | (89%, 98%)          | (91%, 98%)            |
 | o1-mini                        | (86%, 97%)          | (90%, 97%)            |
 | o1-preview                     | (90%, 98%)          | (88%, 96%)            |
+
 *Table XX: 95% Wilson score intervals for the point estimates of $p_m$ and reported ranges, approximated from Figure 1 in Mirzadeh et al. (2024), as well as Figures 10 and 12 from the appendix.*
 
-We note that our confidence intervals are generally wider than the reported ranges, i.e. under the iid Bernoulli assumption, the variation is actually **larger** than what is reported.
-This discrepancy is likely due to the correlations between questions, which can inflate the variability captured by the confidence intervals. 
-As initially suggested, a more precise estimation would involve modelling the probability of success on a question level, $p_{m,n}$, rather than assuming each question is equally likely to be answered correctly. 
+Note that our confidence intervals are wider than the implied ranges in the figures in the paper, i.e. under the iid Bernoulli assumption, the variation is actually **larger** than what is observed.
+This discrepancy is likely to be explained by the unmodelled correlations between questions---as initially suggested, a more reasonable assumption would be to model the probability of success on a question level, $p_{m,n}$, rather than assuming each question is equally likely to be answered correctly. 
 The analysis can be repeated once (if) the detailed question-level data becomes available.
 
 **Verdict:** The observed variability in GSM-Symbolic performance is not inherently surprising, and is in fact expected.
@@ -236,7 +237,8 @@ The analysis can be repeated once (if) the detailed question-level data becomes 
 
 ## 2. Performance decline on GSM-Symbolic
 
-The paper claims that LMs perform worse on GSM-Symbolic compared to GSM8K. Let's examine the evidence presented in Section 4.1, which we quote directly:
+The paper claims that LMs perform worse on GSM-Symbolic compared to GSM8K. 
+Let's examine the evidence presented in Section 4.1, which we quote directly:
 
 > Another noteworthy observation is that the performance (represented by the dashed line in Fig. 2) on the original questions from the 100 examples of GSM8K used as templates is **often more than one standard deviation away from the center** of the GSM-Symbolic performance distribution, frequently on the right side of the distribution (this holds for 21 out of 25 models). **One explanation** for this could be data contamination […]
 
@@ -245,20 +247,23 @@ First, the authors suggest data contamination as one possible explanation for th
 Second, they rely on a hand-wavy "one standard deviation" criterion to suggest that the decline in performance is significant, without proper statistical analysis. 
 We address both of these next. 
 
-### Alternative explanations
+### Alternative explanation: Distribution mismatch
 
 Mention somehwere: not mutually exclusive -- both can be true and should be evaluated.
 
-In addition to data contamination, another plausible explanation for the alleged performance discrepancy is a **distribution mismatch** between GSM8K and GSM-Symbolic.
+In addition to data contamination, another plausible explanation for the alleged performance discrepancy is a distribution mismatch between GSM8K and GSM-Symbolic. We note that these experiments are not mutually exclusive---both can be true at the same time and should be evaluated appropriately.
+
 Indeed, there is some evidence suggesting that GSM-Symbolic questions might be inherently more difficult.
-Looking at the example template (Figure 1 above), we can see that the proposed sampling ranges for variables **exclude** the original GSM8K values.
-For instance: the variable "total" is sampled from $[100, 500]$ whilst in the original question we have total$=62$; similarly, the variable "ans" is sampled from $[85, 200]$ whilst in the original question we have ans$=14$.
-In other words, it is impossible to generate the original GSM8K question from the proposed template.
+Looking at the example template (Figure 1 above), we see that the proposed sampling ranges for some variables **exclude** the original GSM8K values:
+- The variable `total` is sampled from $[100, 500]$ whilst in the original question we have `total=62`; similarly
+- The variable `ans` is sampled from $[85, 200]$ whilst in the original question we have `ans=14`.
 
-A more appropriate sampling domain for both "total" and "ans" might be $[50, 99]$.
-This seemingly small change in number ranges can significantly impact the performance of language models due to tokenisation.
+In other words, it is impossible to generate the original GSM8K question from the proposed symbolic template.
+A more appropriate sampling domain for both `total` and `ans` might be $[50, 99]$.
+
+[TODO: need to run the analsis and edit this to be realistic as opposed to this hypothetical example]
+This seemingly small change in number ranges can significantly impact the performance of LMs due to tokenisation.
 Consider how Phi-3.5-mini-instruct and Llama3-8b handle numbers differently: Phi-3.5-mini-instruct uses 2 tokens for numbers $[10, 99]$ and 3 tokens for numbers $[100, 500]$, whilst Llama3-8b uses just 1 token for all numbers in $[10, 500]$.
-
 To understand the impact, let's model the probability of making mistakes during arithmetic operations.
 Assume there's a base error probability $\epsilon$ per token operation, which increases linearly with the total number of tokens involved.
 For $N$ total tokens in an operation, the error probability becomes $(N-1)\epsilon$ (so that adding two numbers each taking 1 token we have $N=2$ and the error probability is $\epsilon$).
@@ -270,63 +275,52 @@ Phi-3.5-mini-instruct, on the other hand, would be correct with probability $(1-
 Taking $\epsilon=0.01$ as an example gives us a correct solution probability of $97.03\%$ for Llama3-8b, and only $85.74\%$ for Phi-3.5-mini-instruct.
 If all numbers are in the range $[10, 99]$, the probability of correct solution remains $97.03\%$ for Llama3-8b and goes up to $91.27\%$ for Phi-3.5-mini-instruct.
 
-If the number ranges in GSM-Symbolic are systematically chosen to be larger than those in GSM8K (and don't even include the original question values), then we cannot claim that both datasets come from the same distribution.
+If the number ranges in GSM-Symbolic are systematically chosen to be larger than those in GSM8K (and don't even include the original question values), then it cannot claimed that the datasets come from the same distribution.
 Tokenisation is one mechansim that explains why this matters; larger number ranges in GSM-Symbolic may inherently disadvantage certain (and eventually all) models, potentially explaining some of the observed performance differences between models and datasets.
 
 > We have also observed the performance of LLMs deteriorating as question complexity increases.
 
-The same analysis is applicable to more complex questions; e.g. adding one extra clause, even if it takes only one operation --> similalry for 2 
-
-do a table!
+The same analysis is applicable to more complex questions; e.g. adding one extra clause, even if it takes only one operation --> similalry for 2 clauses;
 
 --> Say reasoning: translating the text to a sequence of operations; what the paper tests is whether models can do that *and* perofrm the operations correctly. The rest of this post will not deal with reasoning; 
 
-### Statistical significance?
+**Verdict:** TODO
 
-For many models in Figure 2, the dashed line is in the right tail of the distribution. Additionally, Figure 3 of the paper reports substantial performance decrease for many other models. Can we claim that there is a statistically significant difference in model performance between GSM-Symbolic and GSM8K?
+### Is the decline in performance statistically significant?
+
+For the purpose of this analysis, let's **assume** that GSM8K and GSM-Symbolic come from the same distribution.
+
+For many models in Figure 2, the dashed line is in the right tail of the distribution. Additionally, Figure 3 of the paper, reproduced below, reports substantial performance decrease for many other models. 
 
 {{< figure library="true" src="fig3_gsm.png" title="Figure from Mirzadeh et al. (2024) https://arxiv.org/pdf/2410.05229." numbered="false">}}
 
-
-Even assuming GSM8K and GSM-Symbolic come from the same distribution, the results presented lack statistical rigour:
-
-Additionally, the claims about performance differences on GSM-Symbolic compared to GSM8K are not supported by formal statistical testing. Without a certain level of statistical rigour, it is impossible to distinguish between genuine phenomena and random variation in the data. 
-
-The rest of this section aims to provide the statistical rigour needed to properly analyze these results.
-
-
-### Hypothesis testing
-
-To assess whether there are statistically significant differences in model performance between GSM8K and GSM-Symbolic, we can use hypothesis testing.
-For each model $m$, we want to test whether its success probability on GSM8K, $p_{m,8k}$ equals its success probability on GSM-Symbolic, $p_{m,symb}$. This equality forms our null hypothesis. Our alternative hypothesis can take two forms:
+The right tool to determine whether these differences are statistically significant is hypothesis testing.
+For each model $m$, we want to test whether its success probability on GSM8K, $p_{m, 8k}$ equals its success probability on GSM-Symbolic, $p_{m,symb}$. 
+This equality forms our *null hypothesis*. 
+Our *alternative hypothesis* can take two forms:
 
 - Two-sided: The success probabilities are different
 $$
 H_0: p_{m, 8k} = p_{m, symb} \quad\quad\quad H^\text{two-sided}_A: p_{m, 8k} \neq p_{m, symb}.
 $$
-- One-sided: The success probability on GSM8K is greater than on GSM-Symbolic
+- One-sided: The success probability on GSM8K is greater than that on GSM-Symbolic
 $$
 H_0: p_{m, 8k} = p_{m, symb} \quad\quad\quad H^\text{one-sided}_A: p_{m, 8k} < p_{m, symb}.
 $$
 
-Want to asssess this for each model independently, we use a two-sample test for the Binomial proportion. We use the normal approximation (i.e. a two-sample t-test) for those models where $N \cdot p_m \geq 10$ and $N \cdot (1-p_m) \geq 10$ ( the rule of thumb is that the approximation is good); and exact test otherwise (this is only for the OpenAI models)
+We use Fisher exact test for the binomial proportion for all models:
 
+{{< figure library="true" src="fisher_pvalues.png" title="Fisher exact test: p-values for two-sided and one-sided tests across models. We use (*) to indicate models for which the null can be rejected at the 5% significance level in favour of the two-sided alternative." numbered="false">}}
 
-Common choices of significance level for statistical test are 5% and 1%.
+At the $5\%$ significance level, we see that there are 4 models for which we are able to reject the null: Gemma-7b, Mistral-7b-instruct-v0.1, Phi-2 and Llama3-8b. 
+Note that the performance of Llama3-8b on GSM-Symbolic appears to be statistically better than on GSM8K.
 
-The results of these hypothesis tests at the 5% significance level can be read from the following chart (the results at the 1% level are included in the Appendix):
-
-
-We see that there are 4 models for which we are able to reject the null: Gemma-7b, Mistral-7b-instruct-v0.1, Phi-2 and Llama3-8b. Note that the performance of Llama3-8b on GSM-Symbolic appears to be statistically better than on GSM8K (with some minor technicalities on one- vs two-sided tests that I won’t get into here). 
-
-This analysis is by no means perfect (e.g. we haven’t discussed things like multiple testing,, which I might do in another post), but it does provide a degree of rigour, which I find increasingly necessary in LLM research. Especially when talking about concepts like “reasoning” that don’t have well-established definitions.
-
-**To summarise: analysing models independently, 21 out of 25 models show statistically equivalent performance on GSM8K and GSM-Symbolic.**
+To summarise: analysing models independently, 21 out of 25 models show statistically equivalent performance on GSM8K and GSM-Symbolic.
 
 
 ### Paired hypothesis test
 
-A few people correctly pointed out the trend that that many models perform worse on GSM-Symbolic than on GSM8K. To assess the statistical significance of this systematic trend, we can conduct what is known as a paired difference test. The Wilcoxon signed-rank test would be an appropriate one to apply in our case with two important caveats.  
+There is a trend that that many models perform worse on GSM-Symbolic than on GSM8K. To assess the statistical significance of this systematic trend, we can conduct what is known as a paired difference test. The Wilcoxon signed-rank test would be an appropriate one to apply in our case with two important caveats.  
 
 **Caveat 1**: Non-independent data. It will be incorrect to perform the test on all 25 models as these are not independent. There are several types of dependence to consider. Most obviously, the base models and their instruct-tuned version are clearly related (e.g. Gemma2-9b and Gemma2-9b-it). I’d also argue that different sizes within the same model family cannot be considered independent (e.g. mini-small-medium for Phi or 2b-9b-27b for Gemma); minor version updates (e.g. Mistral v0.1 vs 0.3, Phi 3 vs 3.5) will also likely be correlated. So although we have a sample of 25 models, the “effective” sample size is much, much smaller. 
 
