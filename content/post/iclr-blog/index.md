@@ -52,18 +52,18 @@ Careful consideration of training-test overlap, with reasonable attempts to eval
 A staggering volume of research papers on (large) language models (LMs) is published daily. 
 On the day of writing this (5th Nov 2024), 239 papers containing "LLM" or "Language Model" in their titles were 
 added to the Computer Science section of arXiv alone.
-This flood of publications makes it difficult to separate genuine insights from noise. 
-This challenge is particularly pronounced in areas that lack precise definitions (e.g. "reasoning"). 
-Given the empirical nature of the LLM research field, much is open to interpretation, making rigorous analysis essential to reduce bias and improve reliability.
+This flood of publications makes it difficult to separate genuine insights from noise, especially in areas lacking precise definitions, such as "reasoning". 
+Given the empirical nature of LLM research, much is open to interpretation, making rigorous 
+analysis crucial to reduce bias and improve the reliability of findings.
 
 
-In this post, we argue that LM researchers, especially those areas where core concepts lack established definitions, must more actively adopt statistical methods to assess claims rigorously.
-Various techniques from classical statistics provide quantitative measures that can help validate and strengthen research findings.
-Leveraging these techniques will help move the field beyond anecdotal observations and philosophical arguments toward a more scientific understanding of model behavior.
+In this post, we argue that LM researchers---especially those working in areas where core concepts lack established definitions---must adopt statistical methods to improve the rigor of their empirical evaluations.
+Leveraging techniques from classical statistics, such as confidence intervals and hypothesis tests, will help move the field beyond anecdotal observations and philosophical arguments toward a more scientific understanding of model behavior.
 
+To illustrate this in practice, we outline three key elements of rigorous empirical evaluation and apply them to [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229)---a recent paper that examines whether LMs perform "formal reasoning" or rely on "sophisticated pattern matching".
+<!-- We review their methods, identify gaps in their analysis, and offer a more rigorous statistical assessment of their claims. -->
 
-
-### Elements of Rigorous Empirical Evaluation:
+# Elements of Rigorous Empirical Evaluation
 
 We identify three key elements that are necessary for rigorous empirical evaluation:
 
@@ -88,7 +88,7 @@ As Zhang et al. (2024) highlight, reporting train-test overlap statistics is cru
 
 
 To illustrate these principles, we use [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229) as a case study---a recent paper that received substantial attention from the LLM research community (e.g. see [this](https://machinelearning.apple.com/research/gsm-symbolic), [this](https://www.reddit.com/r/singularity/comments/1g1zphu/apple_ai_researchers_question_openais_claims/), or [this](https://x.com/MFarajtabar/status/1844456880971858028)).
-The paper examines whether LMs perform "formal reasoning" or rely on "sophisticated pattern matching". 
+The paper examines whether LLMs perform "formal reasoning" or rely on "sophisticated pattern matching". 
 We review their methods, identify gaps in their analysis, and offer a more rigorous statistical assessment of their claims.
 
 
