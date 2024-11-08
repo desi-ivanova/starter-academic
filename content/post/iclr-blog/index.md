@@ -65,8 +65,6 @@ To illustrate this in practice, we outline three key elements of rigorous empiri
 
 # Elements of Rigorous Empirical Evaluation
 
-We identify three key elements that are necessary for rigorous empirical evaluation:
-
 1. Clear articulation of assumptions and consideration of alternative explanations.
 2. Quantification of uncertainty in results through appropriate statistical measures.
 3. Careful consideration of train-test overlap, with reasonable attempts to evaluate on "out-of-sample" datasets when possible.
@@ -94,7 +92,7 @@ We review their methods, identify gaps in their analysis, and offer a more rigor
 
 # Summary of [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229)
 
-Overall, the paper makes two technical contributions: (1) a new benchmark, called GSM-Symbolic, for evaluating mathematical reasoning of LMs, and (2) an empirical evaluation of 25 LMs on this new benchmark to assess their reasoning capabilities.
+The paper makes two technical contributions: (1) a new benchmark, called GSM-Symbolic, for evaluating mathematical reasoning of LMs, and (2) an empirical evaluation of 25 LMs on this new benchmark to assess their reasoning capabilities.
 
 ## 1. What is the new benchmark and how is it constructed?
 
@@ -136,9 +134,9 @@ The paper concludes that LMs “are not performing formal reasoning”.
 
 # Critical analysis and re-evaluation
 
-## 1. Performance variability: expected or surprising?
+## 1. Performance variability: Why is variability not (that) surprising?
 
-> As shown, all models exhibit a **non-negligible variance** across different sets. […] It is **interesting that this variation even exists** […]. (page XX)
+> As shown, all models exhibit a **non-negligible variance** across different sets. […] It is **interesting that this variation even exists** […]. *Mirzadeh et al. (2024)*
 
 The authors emphasise the "non-negligible variance" in model performance across different GSM-Symbolic datasets, framing it as surprising. But is it?
 
@@ -150,25 +148,23 @@ In other words, this assumes that LMs never make arithmetic mistakes---a very st
 
 **Is this assumption valid?** 
 For humans, it clearly is not. 
-Even when solving the same problem with different numbers, humans can make arithmetic mistakes.
+Even when solving the same problem with different numbers or subjects, humans can make (non-reasoning related) errors, such as arithmetic mistakes or copying a number incorrectly.
 The same applies to LMs. [todo: quote some papers that look into this??]
 
-We can demonstrate this empirically with a simple experiment. 
-The table below shows how two LMs perform on basic addition problems with varying digit lengths (e.g. "What is 147 + 562?"). Consistent with prior literature [??], as the numbers get larger, accuracy declines, showing that simple arithmetic isn't perfectly reliable.
+The table below demonstrates empirically that LMs do indeed make arithmetic mistakes.
+The task is basic addition of two numbers with varying digit lengths (e.g. "What is 147 + 562?"). Consistent with prior literature [CITE], as the numbers get larger, accuracy declines, showing that simple arithmetic is not perfectly reliable.
 
 Model | 1 digit | 2 digits | 3 digits | 4 digits
 --- | --- | --- | --- | ---
 Phi-3.5-mini-instruct | 100% | 90.2% | 90.8% | 84.0%
 Llama-3-8B-Instruct | 100% | 100% | 100% | 95.3%
 
-*Table XX: CoT prompting, zero-shot.*
-
-More on this in Section XX. [TODO]
+*Table XX. Accuracy (zero-shot, CoT prompting) on a simple addition task. The larger model (Llama-3-8B-Instruct) is more accurate. For llama, numbers upto 3 digits are a single token, and 4-digit numbers are 2 tokens. For Phi, a $d$-digit number takes $d$ tokens. More on this in Section XX. [TODO]*
 
 **Is performing arithmetic part of reasoning?** 
 Solving a word math problem consists of two steps: (1) translating the text to a sequence of operations, and (2) performing the operations correctly.
-Whilst the first step clearly requires reasoning ability, we argue that the second is more mechanical in nature. 
-The authors could have isolated "pure reasoning" capabilities by providing models with calculator access, which would have reduced (though likely not fully eliminated) the confounding effect of arithmetic errors in their evaluation.
+Whilst the first step clearly requires reasoning ability, we argue that the second is more mechanical in nature and should not be considered as part of reasoning.
+To isolate "pure reasoning" capabilities, models could be provided with a calculator, which would help reduce (though not completely eliminate) the confounding effect of arithmetic errors.
 
 ### When is variability *expected*?
 
@@ -240,7 +236,7 @@ The analysis can be repeated once (if) the detailed question-level data becomes 
 The paper claims that LMs perform worse on GSM-Symbolic compared to GSM8K. 
 Let's examine the evidence presented in Section 4.1, which we quote directly:
 
-> Another noteworthy observation is that the performance (represented by the dashed line in Fig. 2) on the original questions from the 100 examples of GSM8K used as templates is **often more than one standard deviation away from the center** of the GSM-Symbolic performance distribution, frequently on the right side of the distribution (this holds for 21 out of 25 models). **One explanation** for this could be data contamination […]
+> Another noteworthy observation is that the performance (represented by the dashed line in Fig. 2) on the original questions from the 100 examples of GSM8K used as templates is **often more than one standard deviation away from the center** of the GSM-Symbolic performance distribution, frequently on the right side of the distribution (this holds for 21 out of 25 models). **One explanation** for this could be data contamination […]. *Mirzadeh et al. (2024)*
 
 There are two issues with the above quote. 
 First, the authors suggest data contamination as one possible explanation for the performance decline, but do not explore other plausible explanations.
