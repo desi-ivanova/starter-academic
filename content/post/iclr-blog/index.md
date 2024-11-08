@@ -81,11 +81,14 @@ A second essential step is quantifying uncertainty, using tools like error bars 
 Additionally, although often criticized, hypothesis tests and p-values can serve as an initial, coarse filter to distinguish signal from noise, laying the groundwork for deeper exploration into the practical significance of the reported results.
 
 
-Finally, evaluating models on entirely unseen ("out-of-sample") data is essential for accurately assessing their true capabilities. Unfortunately, determining the extent of train-test overlap is both challenging and frequently overlooked. Many language models lack transparency in this area, with benchmark datasets often *leaked* (or *contaminated*) during training, resulting in biased evaluations and inflated performance metrics. 
-As Zhang et al. (2024) highlight, reporting train-test overlap statistics is crucial for ensuring the validity of model evaluations.
+Finally, evaluating models on entirely unseen ("out-of-sample") data is essential for accurately assessing their true 
+capabilities. 
+Unfortunately, identifying the extent of train-test overlap in LMs is both difficult and often neglected. Many language models are not transparent about this issue, and benchmark datasets frequently get *leaked* (or *contaminated*) during training, leading to biased evaluations and inflated performance metrics (XXX, Zhang et al. 2024). 
+As Zhang et al. (2024) highlight, reporting train-test overlap statistics is crucial for ensuring the validity of model 
+evaluations.
 
 
-To illustrate these principles, we use [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229) as a case study---a recent paper that received substantial attention from the LLM research community (e.g. see [this](https://machinelearning.apple.com/research/gsm-symbolic), [this](https://www.reddit.com/r/singularity/comments/1g1zphu/apple_ai_researchers_question_openais_claims/), or [this](https://x.com/MFarajtabar/status/1844456880971858028)).
+To illustrate these three principles, we use [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229) as a case study---a recent paper that received substantial attention from the LLM research community (e.g. see [this](https://machinelearning.apple.com/research/gsm-symbolic), [this](https://www.reddit.com/r/singularity/comments/1g1zphu/apple_ai_researchers_question_openais_claims/), or [this](https://x.com/MFarajtabar/status/1844456880971858028)).
 The paper examines whether LLMs perform "formal reasoning" or rely on "sophisticated pattern matching". 
 We review their methods, identify gaps in their analysis, and offer a more rigorous statistical assessment of their claims.
 
@@ -245,14 +248,14 @@ We address both of these next.
 
 ### Alternative explanation: Distribution mismatch
 
-Mention somehwere: not mutually exclusive -- both can be true and should be evaluated.
+In addition to data contamination, another plausible explanation for the alleged performance discrepancy is a distribution mismatch between GSM8K and GSM-Symbolic. 
+We note that the two explanations are not mutually exclusive---both can be true at the same time and should be evaluated appropriately.
 
-In addition to data contamination, another plausible explanation for the alleged performance discrepancy is a distribution mismatch between GSM8K and GSM-Symbolic. We note that these experiments are not mutually exclusive---both can be true at the same time and should be evaluated appropriately.
-
-Indeed, there is some evidence suggesting that GSM-Symbolic questions might be inherently more difficult.
-Looking at the example template (Figure 1 above), we see that the proposed sampling ranges for some variables **exclude** the original GSM8K values:
-- The variable `total` is sampled from $[100, 500]$ whilst in the original question we have `total=62`; similarly
-- The variable `ans` is sampled from $[85, 200]$ whilst in the original question we have `ans=14`.
+The paper does not examine or discuss the potential distribution mismatch, making it impossible to draw definitive conclusions without access to the templates used.
+However, there is evidence indicating that the distribution of GSM-Symbolic questions differs from that of GSM8K, and that GSM-Symbolic is indeed more difficult.
+Looking at the example template (Figure 1 above), we see that the sampling ranges for some variables **exclude** the original GSM8K values:
+- The variable `total` is sampled from $[100, 500]$, whilst in the original question we have `total=62`.
+- The variable `ans` is sampled from $[85, 200]$, whilst in the original question we have `ans=14`.
 
 In other words, it is impossible to generate the original GSM8K question from the proposed symbolic template.
 A more appropriate sampling domain for both `total` and `ans` might be $[50, 99]$.
@@ -286,12 +289,12 @@ The same analysis is applicable to more complex questions; e.g. adding one extra
 
 For the purpose of this analysis, let's **assume** that GSM8K and GSM-Symbolic come from the same distribution.
 
-For many models in Figure 2, the dashed line is in the right tail of the distribution. Additionally, Figure 3 of the paper, reproduced below, reports substantial performance decrease for many other models. 
+For many models in Figure 2, the dashed line is in the right tail of the distribution. Additionally, Figure 3 of the paper, reproduced below, reports substantial performance decrease for many other models. So is the performance decline statistically significant, or could it be attributed to normal variation?
 
 {{< figure library="true" src="fig3_gsm.png" title="Figure from Mirzadeh et al. (2024) https://arxiv.org/pdf/2410.05229." numbered="false">}}
 
 The right tool to determine whether these differences are statistically significant is hypothesis testing.
-For each model $m$, we want to test whether its success probability on GSM8K, $p_{m, 8k}$ equals its success probability on GSM-Symbolic, $p_{m,symb}$. 
+For each model $m$, we want to test whether its success probability on GSM8K, denoted $p_{m, 8k}$, equals its success probability on GSM-Symbolic, denoted $p_{m,symb}$. 
 This equality forms our *null hypothesis*. 
 Our *alternative hypothesis* can take two forms:
 
@@ -301,7 +304,7 @@ H_0: p_{m, 8k} = p_{m, symb} \quad\quad\quad H^\text{two-sided}_A: p_{m, 8k} \ne
 $$
 - One-sided: The success probability on GSM8K is greater than that on GSM-Symbolic
 $$
-H_0: p_{m, 8k} = p_{m, symb} \quad\quad\quad H^\text{one-sided}_A: p_{m, 8k} < p_{m, symb}.
+H_0: p_{m, 8k} = p_{m, symb} \quad\quad\quad H^\text{one-sided}_A: p_{m, 8k} > p_{m, symb}.
 $$
 
 We use Fisher exact test for the binomial proportion for all models:
@@ -311,7 +314,7 @@ We use Fisher exact test for the binomial proportion for all models:
 At the $5\%$ significance level, we see that there are 4 models for which we are able to reject the null: Gemma-7b, Mistral-7b-instruct-v0.1, Phi-2 and Llama3-8b. 
 Note that the performance of Llama3-8b on GSM-Symbolic appears to be statistically better than on GSM8K.
 
-To summarise: analysing models independently, 21 out of 25 models show statistically equivalent performance on GSM8K and GSM-Symbolic.
+Analysing models independently, 21 out of 25 models show statistically equivalent performance on GSM8K and GSM-Symbolic.
 
 
 ### Paired hypothesis test
