@@ -47,7 +47,7 @@ categories:
 level of train-test overlap. 
 Careful consideration of training-test overlap, with reasonable attempts to evaluate on out-of-sample data when possible-->
 
-# Introduction
+# 1. Introduction
 
 A staggering volume of research papers on (large) language models (LMs) is published daily. 
 On the day of writing this (5th Nov 2024), 239 papers containing "LLM" or "Language Model" in their titles were 
@@ -63,7 +63,7 @@ Leveraging techniques from classical statistics, such as confidence intervals an
 To illustrate this in practice, we outline three key elements of rigorous empirical evaluation and apply them to [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229)---a recent paper that examines whether LMs perform "formal reasoning" or rely on "sophisticated pattern matching".
 <!-- We review their methods, identify gaps in their analysis, and offer a more rigorous statistical assessment of their claims. -->
 
-# Elements of Rigorous Empirical Evaluation
+# 2. Elements of Rigorous Empirical Evaluation
 
 1. Clear articulation of assumptions and consideration of alternative explanations.
 2. Quantification of uncertainty in results through appropriate statistical measures.
@@ -89,15 +89,14 @@ evaluations.
 
 
 To illustrate these three principles, we use [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229) as a case study---a recent paper that received substantial attention from the LLM research community (e.g. see [this](https://machinelearning.apple.com/research/gsm-symbolic), [this](https://www.reddit.com/r/singularity/comments/1g1zphu/apple_ai_researchers_question_openais_claims/), or [this](https://x.com/MFarajtabar/status/1844456880971858028)).
-The paper examines whether LLMs perform "formal reasoning" or rely on "sophisticated pattern matching". 
 We review their methods, identify gaps in their analysis, and offer a more rigorous statistical assessment of their claims.
 
 
-# Summary of [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229)
+# 3. Summary of [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229)
 
 The paper makes two technical contributions: (1) a new benchmark, called GSM-Symbolic, for evaluating mathematical reasoning of LMs, and (2) an empirical evaluation of 25 LMs on this new benchmark to assess their reasoning capabilities.
 
-## 1. What is the new benchmark and how is it constructed?
+## 3.1 What is the new benchmark and how is it constructed?
 
 The authors propose GSM-Symbolic, a variant of the well-established GSM8K benchmark for grade school math word problems (Cobbe et al., 2021). Since GSM8K has likely leaked into many LMs' training sets due to its popularity, GSM-Symbolic aims to match its distribution whilst eliminating (or reducing) train-test overlap.
 
@@ -118,7 +117,7 @@ This means that GSM-Symbolic and each of its 4 variants (GSM-M1, GSM-P1, GSM-P2,
 
 Throughout this post, when we refer to "GSM8K", we specifically mean those 100 original GSM8K questions that were used to create the templates, not the full GSM8K dataset.
 
-## 2. What are the key findings and conclusions from the empirical evaluation?
+## 3.2 What are the key findings and conclusions from the empirical evaluation?
 
 The evaluated model families include Gemma, Phi, Mistral and Llama (open weights), and GPT and o1 (proprietary, OpenAI). Of the open weights models, one can be considered "medium" size (Gemma2 27B params), and all the rest can be considered "small" (9B params or less).
 The metrics reported are average accuracy across the 50 versions of each dataset and the standard deviation of these accuracies.
@@ -135,15 +134,15 @@ The key findings are:
 
 The paper concludes that LMs “are not performing formal reasoning”.
 
-# Critical analysis and re-evaluation
+# 4. Critical analysis and re-evaluation
 
-## 1. Performance variability: Why is variability not (that) surprising?
+## 4.1 Performance variability: Why is variability not (that) surprising?
 
 > As shown, all models exhibit a **non-negligible variance** across different sets. […] It is **interesting that this variation even exists** […]. *Mirzadeh et al. (2024)*
 
 The authors emphasise the "non-negligible variance" in model performance across different GSM-Symbolic datasets, framing it as surprising. But is it?
 
-### When is variability *not expected*?
+### 4.1.1 When is variability *not expected*?
 
 Variability would indeed be unexpected if each resampled question was effectively the same as the original. 
 The implicit assumption here is that if an LM solves (or fails to solve) a given question once, it should always solve (or fail to solve) it when presented with the same problem but with different numbers. 
@@ -159,7 +158,7 @@ The task is basic addition of two numbers with varying digit lengths (e.g. "What
 
 Model | 1 digit | 2 digits | 3 digits | 4 digits
 --- | --- | --- | --- | ---
-Phi-3.5-mini-instruct | 100% | 90.2% | 90.8% | 84.0%
+Phi-3.5-mini-instruct | 100% | 93.0% | 90.8% | 84.0%
 Llama-3-8B-Instruct | 100% | 100% | 100% | 95.3%
 
 *Table XX. Accuracy (zero-shot, CoT prompting) on a simple addition task. The larger model (Llama-3-8B-Instruct) is more accurate. For llama, numbers upto 3 digits are a single token, and 4-digit numbers are 2 tokens. For Phi, a $d$-digit number takes $d$ tokens. More on this in Section XX. [TODO]*
@@ -169,7 +168,7 @@ Solving a word math problem consists of two steps: (1) translating the text to a
 Whilst the first step clearly requires reasoning ability, we argue that the second is more mechanical in nature and should not be considered as part of reasoning.
 To isolate "pure reasoning" capabilities, models could be provided with a calculator, which would help reduce (though not completely eliminate) the confounding effect of arithmetic errors.
 
-### When is variability *expected*?
+### 4.1.2 When is variability *expected*?
 
 If we (rightfully) reject the assumption that LMs are infallible in arithmetic, performance variability across datasets becomes entirely expected.
 Even if a model applies consistent reasoning, it may still make arithmetic errors, leading to natural performance variation.
@@ -234,7 +233,7 @@ The analysis can be repeated once (if) the detailed question-level data becomes 
 **Verdict:** The observed variability in GSM-Symbolic performance is not inherently surprising, and is in fact expected.
 
 
-## 2. Performance decline on GSM-Symbolic
+## 4.2 Performance decline on GSM-Symbolic
 
 The paper claims that LMs perform worse on GSM-Symbolic compared to GSM8K. 
 Let's examine the evidence presented in Section 4.1, which we quote directly:
@@ -246,7 +245,7 @@ First, the authors suggest data contamination as one possible explanation for th
 Second, they rely on a hand-wavy "one standard deviation" criterion to suggest that the decline in performance is significant, without proper statistical analysis. 
 We address both of these next. 
 
-### Alternative explanation: Distribution mismatch
+### 4.2.1 Alternative explanation: Distribution mismatch
 
 In addition to data contamination, another plausible explanation for the alleged performance discrepancy is a distribution mismatch between GSM8K and GSM-Symbolic. 
 We note that the two explanations are not mutually exclusive---both can be true at the same time and should be evaluated appropriately.
@@ -285,7 +284,7 @@ The same analysis is applicable to more complex questions; e.g. adding one extra
 
 **Verdict:** TODO
 
-### Is the decline in performance statistically significant?
+### 4.2.2 Considering each model independently: Is the decline in performance statistically significant?
 
 For the purpose of this analysis, let's **assume** that GSM8K and GSM-Symbolic come from the same distribution.
 
@@ -317,9 +316,9 @@ Note that the performance of Llama3-8b on GSM-Symbolic appears to be statistical
 Analysing models independently, 21 out of 25 models show statistically equivalent performance on GSM8K and GSM-Symbolic.
 
 
-### Paired hypothesis test
+### 4.2.3 Considering all models together: Is the decline in performance statistically significant?
 
-There is a trend that that many models perform worse on GSM-Symbolic than on GSM8K. To assess the statistical significance of this systematic trend, we can conduct what is known as a paired difference test. The Wilcoxon signed-rank test would be an appropriate one to apply in our case with two important caveats.  
+There is a trend that that many models perform worse on GSM-Symbolic than on GSM8K. To assess the statistical significance of this systematic trend, we can conduct what is known as a *paired* difference test. The Wilcoxon signed-rank test would be an appropriate one to apply in our case with two important caveats.  
 
 **Caveat 1**: Non-independent data. It will be incorrect to perform the test on all 25 models as these are not independent. There are several types of dependence to consider. Most obviously, the base models and their instruct-tuned version are clearly related (e.g. Gemma2-9b and Gemma2-9b-it). I’d also argue that different sizes within the same model family cannot be considered independent (e.g. mini-small-medium for Phi or 2b-9b-27b for Gemma); minor version updates (e.g. Mistral v0.1 vs 0.3, Phi 3 vs 3.5) will also likely be correlated. So although we have a sample of 25 models, the “effective” sample size is much, much smaller. 
 
@@ -353,7 +352,7 @@ where  $p_{8k}=[p_{1,8k}, \dots, p_{7,8k}]$ and $p_{symb}= [p_{1,symb}, \dots, p
 **To summarise: analysing the results of models jointly, there appears to be some evidence of differences in performance.**
 
 
-## 3. Performance decreases and increasing variance with question complexity
+## 4.3 Performance decreases and increasing variance with question complexity
 
 The paper highlights this on multiple occasions, most notably in Section 4.3. Some examples include:
 
@@ -371,7 +370,10 @@ If we happen to have decreasing probabilities of success, i.e. $p_{m,-1} > p_{m,
 
 **To summarise: the emphasis on “non-negligible variance” and “increase in variance” throughout the paper appears to be an over-interpretation of normal statistical variation.**
 
-## Conclusion
+## 4.4 M1, P1, P2 and No-Op results
+
+
+## 5. Conclusion
 
 There’s huge value in developing new benchmarks and I think the proposed GSM-Symbolic is quite neat and useful! The accompanying analysis, in my opinion, can be substantially improved with the help of basic statistics. Without those we risk over-interpreting results and drawing misleading conclusions.
 
@@ -417,7 +419,7 @@ Valmeekam, K., Olmo, A., Sreedharan, S., & Kambhampati, S. (2022, November). Lar
 
 ### Acknowledgement 
 
-I’d like to Momchil Konstantinov and Alex Coca, Ilija Ilievski and Adam Goliński for their feedback on this post.
+I’d like to Alex Coca, Adam Goliński, Roumen Popov, and ... for their feedback on this post.
 
 ### Appendix
 
