@@ -193,7 +193,7 @@ This variance is maximised when $p_m=1/2$ and goes to $0$ as $p_m$ approaches $0
 To quantify what constitutes "normal" variation under our assumption, we can construct confidence intervals (CI) for the point estimates of $p_m$ (these are reported in the second column of Table 1 in the Appendix of the paper). 
 There are different ways to construct CI for the [Binomial proportion](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval). Figure XX below shows [Wilson score](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) intervals. (See Appendix for more results.)
 
-{{< figure library="true" src="wilson_0.95ci.png" title="95% Wilson score intervals for the point estimates of $p_m$." numbered="false">}}
+{{< figure library="true" src="wilson_0.95.png" title="95% Wilson score intervals for the point estimates of $p_m$." numbered="false">}}
 
 As expected, models with success probabilities closer to $1/2$ (e.g. Gemma-7b, Phi-2, Mistral-7b-v0.1) exhibit wider confidence intervals, reflecting higher variability. Conversely, models with success probabilities closer to 0 or 1 (Gemma2b, GPT-4o, o1-preview) have substantially narrower intervals.
 
