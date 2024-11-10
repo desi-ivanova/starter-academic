@@ -429,6 +429,7 @@ Paragraph about p-values should go somehwere. Things to say:
 
 #### Clopper-Pearson CIs
 For robustness purposes, here are the [Clopper-Pearson](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Clopper–Pearson_interval) confidence intervals as well:
+{{< figure library="true" src="clopper_0.95.png" title="95% Clopper-Pearson intervals for the point estimates of $p_m$." numbered="false">}}
 
 <iframe title="95% confidence intervals for Binomial proportion" aria-label="Dot Plot" id="datawrapper-chart-LkJtn" src="https://datawrapper.dwcdn.net/LkJtn/9/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="607" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
 
@@ -447,6 +448,8 @@ $$
 The test statistic (pm,8k - pm,symb) / SE(ppool)  is then approximately normal and is used co compute p-values, which I’ve done in [this spreadsheet](https://docs.google.com/spreadsheets/d/1Ul6ZgFXf_II5EFUCgnJ9hSIQYwHxogxYBmwDn_bA4sA/edit?usp=sharing). The results in this case are exactly the same as before:  we are able to reject the null for Gemma-7b, Mistral-7b-instruct-v0.1 and Phi-2 (performing worse), and Llama3-8b (performing better). 
 
 #### 99% Confidence intervals (hypothesis test at the 1% confidence level)
+
+{{< figure library="true" src="wilson_0.99.png" title="99% Wilson score intervals for the point estimates of $p_m$." numbered="false">}}
 
 <iframe title="GSM-Symbolic and GSM8K along with 99% CI" aria-label="Dot Plot" id="datawrapper-chart-4DrS6" src="https://datawrapper.dwcdn.net/4DrS6/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="624" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
 
