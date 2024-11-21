@@ -222,11 +222,13 @@ Conversely, models with success probabilities closer to 0 or 1 (Gemma2b, GPT-4o,
 
 **Assuming** that GSM8K and GSM-Symbolic come from the same distributions (more on that in Section 4.2.1), let’s look at Figure 2 of the paper.
 
-{% include figure.html 
+{{< figure library="true" src="fig2_gsm.png" title="<b>Figure 2 from Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite>.</b> Note that the $x$-axis scales are different for different models." numbered="false">}}
+
+<!-- {% include figure.html 
   path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/fig2_gsm.png" 
   class="img-fluid" 
   caption="<b>Figure 2 from Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite>.</b> Note that the $x$-axis scales are different for different models."
-%}
+%} -->
 
 For the models shown in this figure, the GSM8K accuracy ($$p^{8K}_{m}$$, represented by the dashed line) varies from 74% for the weakest model, Llama3-8B-instruct, to 95% for the strongest model, GPT-4o. 
 The range of accuracies achieved on the 50 GSM-Symbolic datasets is relatively *wide* for Llama3-8B-instruct (approximately between 69% and 81%) and relatively *narrow* for GPT-4o (approximately between 91% and 98%).
@@ -234,8 +236,7 @@ Importantly, for both models, **the variation in GSM-Symbolic performance falls 
 We visualise this in the next figure, showing the overlap between the 95% Wilson score CIs for $$p^{8K}_{m}$$ and the accuracy ranges on GSM-Symbolic for the models that had results reported in the paper (note that this does not include all 25 models).
 
 
-{{< figure library="true" src="ci_vs_reported.png" title="<b>95% Wilson score confidence intervals for the point estimates of $p^{8K}_{m}$ (red), along with the average (over 50 datasets) point estimate of $p^{Symb}_{m}$ (blue).</b> he latter ranges are not explicitly reported; we approximate them from the histograms in Figure 1 of Mirzadeh et al. (2024), as well as Figures 10 and 12 from the Appendix of the paper. 
-  Since such histograms are not available for all models, we only show the subset of the models for which they are." numbered="false">}}
+{{< figure library="true" src="ci_vs_reported.png" title="<b>95% Wilson score confidence intervals for the point estimates of $p^{8K}_{m}$ (red), along with the average (over 50 datasets) point estimate of $p^{Symb}_{m}$ (blue).</b> he latter ranges are not explicitly reported; we approximate them from the histograms in Figure 1 of Mirzadeh et al. (2024), as well as Figures 10 and 12 from the Appendix of the paper. Since such histograms are not available for all models, we only show the subset of the models for which they are." numbered="false">}}
 
 <!-- {% include figure.html 
   path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/ci_vs_reported.png" 
@@ -365,13 +366,8 @@ For the purpose of this analysis, let's **assume** that GSM8K and GSM-Symbolic d
 For many models in Figure 2, the dashed line is in the right tail of the distribution. 
 Additionally, Figure 3 of the paper, reproduced below, reports substantial performance decrease for many other models. So is the performance decline statistically significant, or could it be attributed to normal variation?
 
-{{< figure library="true" src="template_gsm.png" title="<b>Figure 1 from Mirzadeh et al. (2024).</b>" numbered="false">}}
+{{< figure library="true" src="fig3_gsm.png" title="Figure 3 from Mirzadeh et al. (2024).</b>" numbered="false">}}
 
-{% include figure.html 
-  path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/fig3_gsm.png" 
-  class="img-fluid" 
-  caption="<b>Figure 3 from Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite>.</b>"
-%}
 
 The right tool to determine whether these differences are statistically significant is hypothesis testing.
 For each model $m$, we want to test whether its success probability on GSM8K, denoted $$p^{8K}_{m}$$, equals its success probability on GSM-Symbolic, denoted $$p^{Symb}_{m}$$. 
