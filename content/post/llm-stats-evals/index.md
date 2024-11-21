@@ -164,12 +164,7 @@ Consistent with prior literature (e.g. Muffo et al., 2023; Yuan et al., 2023), w
 We go beyond digit length and also consider how the number of **carry operations** affects performance on this simple addition task. 
 The figure below illustrates how the probability of answering a question correctly is affected by the number of digits $d$ of the numbers being added and the number of carry operations involved in the sum.
 
-{{< figure library="true" src="addition_accuracy.png" title="<b>Accuracy of Llama-3-8B-Instruct and Phi-3.5-mini-instruct on a simple addition task of adding two $d$-digit numbers.</b> 
-  The plot illustrates how the probability of answering a question correctly ($y$-axis) is affected by the total number of digits involved ($2d$, $x$-axis), and the total number of carry operations involved in that sum (colour of the points).  
-  Point size reflects the total number of tokens (for Phi, total digits equal total tokens; for Llama, numbers up to 3 digits are 1 token and up to 6 digits are 2 tokens). 
-  For this illustration, we group questions by number of digits and carry operations, and plot the average accuracy over 512 samples. 
-  Groups containing fewer than 10 questions are excluded. 
-  Detailed results of the logistic regressions are available in the Appendix." numbered="false">}}
+{{< figure library="true" src="addition_accuracy.png" title="<b>Accuracy of Llama-3-8B-Instruct and Phi-3.5-mini-instruct on a simple addition task of adding two $d$-digit numbers.</b> The plot illustrates how the probability of answering a question correctly ($y$-axis) is affected by the total number of digits involved ($2d$, $x$-axis), and the total number of carry operations involved in that sum (colour of the points).Point size reflects the total number of tokens (for Phi, total digits equal total tokens; for Llama, numbers up to 3 digits are 1 token and up to 6 digits are 2 tokens). For this illustration, we group questions by number of digits and carry operations, and plot the average accuracy over 512 samples. Groups containing fewer than 10 questions are excluded. Detailed results of the logistic regressions are available in the Appendix." numbered="false">}}
 
 
 The regression results indicate that LM performance is negatively affected by both the number of digits and the number of carry operations in the sum. 
@@ -212,12 +207,14 @@ We denote this estimate as $$p^{8K}_{m}$$ to indicate that it is computed from t
 There are different ways to construct CI for the [Binomial proportion](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval). The next figure shows [Wilson score](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) intervals, with more results included in the Appendix. 
 To put this variability into perspective, we also include the average of the 50 point estimates for the model performance on GSM-Symbolic, which we denote as $$p^{Symb}_{m}$$. <d-footnote>Similarly to $p^{8K}_{m}$, we obtain maximum likelihood estimates of $p^{Symb}_{m}$ from the average accuracy on GSM-Symbolic, reported in Table 1 of the paper.</d-footnote>
 
-{% include figure.html 
+{{< figure library="true" src="wilson_0.95.png" title="<b>95% Wilson score confidence intervals for the point estimates of $p^{8K}_{m}$ (red dots), along with the average (over 50 datasets) point estimate of $p^{Symb}_{m}$ (blue triangles).</b>" numbered="false">}}
+
+<!-- {% include figure.html 
   path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/wilson_0.95.png" 
   class="img-fluid" 
   title="95% Wilson score confidence intervals" 
   caption="<b>95% Wilson score confidence intervals for the point estimates of $p^{8K}_{m}$ (red dots), along with the average (over 50 datasets) point estimate of $p^{Symb}_{m}$ (blue triangles).</b> The point estimates of $p^{8K}_{m}$ and $p^{Symb}_{m}$ are estimated from the data reported in Table 1 of the Appendix of Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite>." 
-%}
+%} -->
 
 
 As expected, models with success probabilities closer to $1/2$ (e.g. Gemma-7b, Phi-2, Mistral-7b-v0.1) exhibit wider confidence intervals, reflecting higher variability. 
@@ -236,34 +233,17 @@ The range of accuracies achieved on the 50 GSM-Symbolic datasets is relatively *
 Importantly, for both models, **the variation in GSM-Symbolic performance falls well within the Wilson score CIs of GSM8K performance that we calculated earlier!** 
 We visualise this in the next figure, showing the overlap between the 95% Wilson score CIs for $$p^{8K}_{m}$$ and the accuracy ranges on GSM-Symbolic for the models that had results reported in the paper (note that this does not include all 25 models).
 
-<!-- 
 
-| Model                          | 95% Wilson score CI | Reported ranges (approximate)  |
-|--------------------------------|---------------------|-----------------------|
-| Gemma2-2b-it                   | (37%, 56%)          | (34%, 48%)            |
-| Gemma2-9b-it                   | (79%, 92%)          | (71%, 85%)            |
-| Phi-2                          | (43%, 62%)          | (35%, 50%)            |
-| Phi-3-mini-128k-instruct       | (77%, 91%)          | (75%, 90%)            |
-| Phi-3-medium-128k-instruct     | (81%, 94%)          | (75%, 84%)            |
-| Mistral-7b-instruct-v0.1       | (33%, 52%)          | (23%, 38%)            |
-| Mathstral-7b-v0.1              | (71%, 87%)          | (71%, 81%)            |
-| Llama3-8b-instruct             | (65%, 82%)          | (69%, 81%)            |
-| GPT-4o                         | (89%, 98%)          | (91%, 98%)            |
-| o1-mini                        | (86%, 97%)          | (90%, 97%)            |
-| o1-preview                     | (90%, 98%)          | (88%, 96%)            |
+{{< figure library="true" src="ci_vs_reported.png" title="<b>95% Wilson score confidence intervals for the point estimates of $p^{8K}_{m}$ (red), along with the average (over 50 datasets) point estimate of $p^{Symb}_{m}$ (blue).</b> he latter ranges are not explicitly reported; we approximate them from the histograms in Figure 1 of Mirzadeh et al. (2024), as well as Figures 10 and 12 from the Appendix of the paper. 
+  Since such histograms are not available for all models, we only show the subset of the models for which they are." numbered="false">}}
 
-<div class="caption">
-95% Wilson score intervals for the point estimates of $p^{8K}_{m}$ and approximate reported ranges of point estimates of $p^{Symb}_{m}$, derived from Figure 1 in Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite>, as well as Figures 10 and 12 from the Appendix of the paper.
-</div> -->
-
-
-{% include figure.html 
+<!-- {% include figure.html 
   path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/ci_vs_reported.png" 
   class="img-fluid" 
   caption="<b>95% Wilson score confidence intervals for the point estimates of GSM8K accuracy, $p^{8K}_{m}$ (red), and range of accuracies achieved on the 50 GSM-Symbolic datasets, $p^{Symb}_{m}$ (blue).</b> 
   The latter ranges are not explicitly reported; we approximate them from the histograms in Figure 1 of Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite>, as well as Figures 10 and 12 from the Appendix of the paper. 
   Since such histograms are not available for all models, we only show the subset of the models for which they are." 
-%}
+%} -->
 
 Note that our confidence intervals tend to be wider than the implied ranges in the figures in the paper, i.e. under the i.i.d. Bernoulli assumption, the expected variation is actually **larger** than what is observed.
 This discrepancy is likely to be explained by the unmodelled correlations between answers to questions coming from the same template---as initially suggested, a more reasonable assumption would be to model the probability of success on a template level, $p_{m,n}$, rather than assuming each questions arising from different templates are equally likely to be answered correctly. 
@@ -385,6 +365,7 @@ For the purpose of this analysis, let's **assume** that GSM8K and GSM-Symbolic d
 For many models in Figure 2, the dashed line is in the right tail of the distribution. 
 Additionally, Figure 3 of the paper, reproduced below, reports substantial performance decrease for many other models. So is the performance decline statistically significant, or could it be attributed to normal variation?
 
+{{< figure library="true" src="template_gsm.png" title="<b>Figure 1 from Mirzadeh et al. (2024).</b>" numbered="false">}}
 
 {% include figure.html 
   path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/fig3_gsm.png" 
@@ -411,6 +392,7 @@ $$
 
 We use Fisher exact test for the binomial proportion for all models, reporting the p-values in the next figure.
 
+{{< figure library="true" src="template_gsm.png" title="<b>Figure 1 from Mirzadeh et al. (2024).</b>" numbered="false">}}
 
 {% include figure.html 
   path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/fisher_pvalues.png"
@@ -505,6 +487,7 @@ Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite> highlights the fa
 
 > [page 9] the increase in variance suggests that searching and pattern-matching become significantly harder for models as the difficulty increases.
 
+{{< figure library="true" src="template_gsm.png" title="<b>Figure 1 from Mirzadeh et al. (2024).</b>" numbered="false">}}
 
 {% include figure.html 
   path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/fig6_gsm.png" 
@@ -545,6 +528,8 @@ The decrease in probability of success as question complexity increases can be d
 
 All models perform substantially worse on the NoOp dataset compared to GSM8K, as shown in Figure 8 (a) of the paper:
 
+{{< figure library="true" src="template_gsm.png" title="<b>Figure 1 from Mirzadeh et al. (2024).</b>" numbered="false">}}
+
 {% include figure.html 
   path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/fig8_gsm.png" 
   class="img-fluid" 
@@ -552,6 +537,8 @@ All models perform substantially worse on the NoOp dataset compared to GSM8K, as
 %}
 
 We repeat the independent and paired tests and indeed find that all models perform significantly worse on the NoOp dataset compared to GSM8K.
+
+{{< figure library="true" src="template_gsm.png" title="<b>Figure 1 from Mirzadeh et al. (2024).</b>" numbered="false">}}
 
 {% include figure.html 
   path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/fisher_pvalues_NoOp.png"
