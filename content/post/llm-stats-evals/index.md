@@ -56,7 +56,7 @@ analysis crucial to reduce bias and improve the reliability of findings.
 In this post, we argue that LM researchers---especially those working in areas where core concepts lack established definitions---must adopt statistical methods to improve the rigor of their empirical evaluations.
 Leveraging techniques from classical statistics, such as confidence intervals and hypothesis tests, will help move the field beyond anecdotal observations and philosophical arguments toward a more scientific understanding of model behaviour.
 
-To illustrate this in practice, we outline three key elements of rigorous empirical evaluation and apply them to [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229) <d-cite key="mirzadeh2024gsm"></d-cite>---a recent paper that examines whether LMs perform "formal reasoning" or rely on "sophisticated pattern matching".
+To illustrate this in practice, we outline three key elements of rigorous empirical evaluation and apply them to [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229)---a recent paper that examines whether LMs perform "formal reasoning" or rely on "sophisticated pattern matching".
 
 # 2. Elements of Rigorous Empirical Evaluation
 
@@ -64,13 +64,13 @@ To illustrate this in practice, we outline three key elements of rigorous empiri
 2. Quantification of uncertainty in results through appropriate statistical measures.
 3. Careful consideration of train-test overlap, with reasonable attempts to evaluate on "out-of-sample" datasets when possible.
 
-> If one does not give thought to what the data would be like under the assumption that one’s theory is false, one is likely reinforcing confirmation bias rather than establishing the validity of the theory. *"Reproducibility, p-values, and type III errors: response to Mayo", Philip B. Stark (2022) <d-cite key="stark2022reproducibility"></d-cite>*
+> If one does not give thought to what the data would be like under the assumption that one’s theory is false, one is likely reinforcing confirmation bias rather than establishing the validity of the theory. *"Reproducibility, p-values, and type III errors: response to Mayo", Philip B. Stark (2022)*
 
 The first step in rigorous evaluation is to clarify assumptions and explore alternative explanations.
 Experiments can often be designed in ways that unintentionally favour the hypothesis being tested.
 By being upfront about assumptions, questioning their validity, and investigating alternative explanations, researchers will improve the reliability and robustness of their conclusions. 
 
-> In some sense it [the p-value] offers a first line of defence against being fooled by randomness, separating signal from noise [...]. *"It’s Not the P-Values’ Fault", Yoav Benjamini (2016) <d-cite key="benjamini2016not"></d-cite>*
+> In some sense it [the p-value] offers a first line of defence against being fooled by randomness, separating signal from noise [...]. *"It’s Not the P-Values’ Fault", Yoav Benjamini (2016)*
 
 A second essential step is quantifying uncertainty, using tools such as error bars and confidence intervals, which help us gauge the reliability of performance metrics by providing a range of plausible values.
 Additionally, although often criticised, hypothesis tests and p-values can serve as an initial, coarse filter to distinguish signal from noise, laying the groundwork for deeper exploration into the practical significance of the reported results.
@@ -78,7 +78,7 @@ Additionally, although often criticised, hypothesis tests and p-values can serve
 
 Finally, evaluating models on entirely unseen ("out-of-sample") data is essential for accurately assessing their true 
 capabilities. 
-Unfortunately, identifying the extent of train-test overlap in LMs is both difficult and often neglected. Many language models are not transparent about this issue, and benchmark datasets frequently get *leaked* (or *contaminated*) during training, leading to biased evaluations and inflated performance metrics (<d-cite key="zhang2024language"></d-cite>, Zhang et al. 2024). 
+Unfortunately, identifying the extent of train-test overlap in LMs is both difficult and often neglected. Many language models are not transparent about this issue, and benchmark datasets frequently get *leaked* (or *contaminated*) during training, leading to biased evaluations and inflated performance metrics. 
 As Zhang et al. (2024) highlight, reporting train-test overlap statistics is crucial for ensuring the validity of model 
 evaluations.
 
@@ -86,15 +86,15 @@ evaluations.
 To illustrate these three principles, we use [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229) as a case study---a recent paper that received substantial attention from the LLM research community with **millions of views** across social media platforms and the world-wide-web (e.g. see [this](https://machinelearning.apple.com/research/gsm-symbolic), [this](https://www.reddit.com/r/singularity/comments/1g1zphu/apple_ai_researchers_question_openais_claims/), or [this](https://x.com/MFarajtabar/status/1844456880971858028)).
 We review their methods, identify gaps in their analysis, and offer a more rigorous statistical assessment of their claims.
 
-**Note:** Whilst writing this blog post, a great overview of statistical methods suitable for evaluating LMs was published by Miller (2024) <d-cite key="miller2024adding"></d-cite>.
+**Note:** Whilst writing this blog post, a great overview of statistical methods suitable for evaluating LMs was published by Miller (2024).
 
 # 3. Summary of [Mirzadeh et al. (2024)](https://arxiv.org/pdf/2410.05229)
 
-Mirzadeh et al. (2024) <d-cite key="mirzadeh2024gsm"></d-cite> make two technical contributions: (1) a new benchmark, called GSM-Symbolic, for evaluating mathematical reasoning of LMs, and (2) an empirical evaluation of 25 LMs on this new benchmark to assess their reasoning capabilities.
+Mirzadeh et al. (2024) make two technical contributions: (1) a new benchmark, called GSM-Symbolic, for evaluating mathematical reasoning of LMs, and (2) an empirical evaluation of 25 LMs on this new benchmark to assess their reasoning capabilities.
 
 ## 3.1 What is the new benchmark and how is it constructed?
 
-The authors propose GSM-Symbolic, a variant of the well-established GSM8K benchmark for grade school math word problems <d-cite key="cobbe2021training"></d-cite>. Since GSM8K has likely leaked into many LMs' training sets due to its popularity, GSM-Symbolic aims to match its distribution whilst eliminating (or reducing) train-test overlap.
+The authors propose GSM-Symbolic, a variant of the well-established GSM8K benchmark for grade school math word problems (Cobbe et al., 2021). Since GSM8K has likely leaked into many LMs' training sets due to its popularity, GSM-Symbolic aims to match its distribution whilst eliminating (or reducing) train-test overlap.
 
 The authors also construct four variants of GSM-Symbolic by modifying question difficulty:
 - GSM-M1: An easier version that removes one clause from each question.
@@ -104,17 +104,11 @@ The authors also construct four variants of GSM-Symbolic by modifying question d
 To generate GSM-Symbolic and the variants, the authors create "templates" from GSM8K questions by identifying modifiable variables whilst preserving the underlying logic. 
 Each variable has a specified domain and constraints to ensure valid questions and answers. Here's an example template:
 
-{{< figure library="true" src="template_gsm.png" title="<b>Figure 1 from Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite>.</b>" numbered="false">}}
+{{< figure library="true" src="template_gsm.png" title="<b>Figure 1 from Mirzadeh et al. (2024).</b>" numbered="false">}}
 
-<!-- {% include figure.html 
-  path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/template_gsm.png" 
-  class="img-fluid" 
-  caption=">"
-%} -->
 
 For their analysis, the authors select 100 questions from GSM8K and create such a template for each of them.
 Whilst the paper does not specify their selection method, we think that these questions were sampled randomly from GSM8K's test set.
-<!-- suppose -> assume , I think is more formal -  DRI: it's not an assumption, but a guess. -->
 By sampling values for the variables, 50 new questions are generated from each template. 
 This means that GSM-Symbolic and each of its 4 variants (GSM-M1, GSM-P1, GSM-P2, and GSM-NoOp) contain **50 datasets of 100 questions each**.
 
@@ -150,7 +144,7 @@ All code will be made available on GitHub.
 
 ## 4.1 Performance variability: Why is variability not (that) interesting?
 
-> As demonstrated, all models show a **significant variance** across different sets. […] It is **noteworthy that this variation even occurs** […]. <d-cite key="mirzadeh2024gsm"></d-cite>, emphasis added.
+> As demonstrated, all models show a **significant variance** across different sets. […] It is **noteworthy that this variation even occurs** […]. Mirzadeh et al. (2024); emphasis added.
 
 The authors emphasise the "non-negligible variance" in model performance across different GSM-Symbolic datasets, framing it as surprising. But is it?
 
@@ -166,21 +160,17 @@ Even when solving the same problem with different numbers or subjects, humans ca
 The same applies to LMs. 
 
 We demonstrate this empirically by looking at the performance of LMs on a basic addition task with varying **digit lengths** (e.g. "What is 147 + 562?"). 
-Consistent with prior literature (see e.g. <d-cite key="muffo2023evaluating"></d-cite>, <d-cite key="yuan2023well"></d-cite>), we find that as the numbers get larger, accuracy declines, thus showing that simple arithmetic is not perfectly reliable.
+Consistent with prior literature (e.g. Muffo et al., 2023; Yuan et al., 2023), we find that as the numbers get larger, accuracy declines, thus showing that simple arithmetic is not perfectly reliable.
 We go beyond digit length and also consider how the number of **carry operations** affects performance on this simple addition task. 
 The figure below illustrates how the probability of answering a question correctly is affected by the number of digits $d$ of the numbers being added and the number of carry operations involved in the sum.
 
-{% include figure.html 
-  path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/addition_accuracy.png" 
-  class="img-fluid" 
-  title="Accuracy of Llama-3-8B-Instruct and Phi-3.5-mini-instruct on a simple addition task" 
-  caption="<b>Accuracy of Llama-3-8B-Instruct and Phi-3.5-mini-instruct on a simple addition task of adding two $d$-digit numbers.</b> 
+{{< figure library="true" src="addition_accuracy.png" title="<b>Accuracy of Llama-3-8B-Instruct and Phi-3.5-mini-instruct on a simple addition task of adding two $d$-digit numbers.</b> 
   The plot illustrates how the probability of answering a question correctly ($y$-axis) is affected by the total number of digits involved ($2d$, $x$-axis), and the total number of carry operations involved in that sum (colour of the points).  
   Point size reflects the total number of tokens (for Phi, total digits equal total tokens; for Llama, numbers up to 3 digits are 1 token and up to 6 digits are 2 tokens). 
   For this illustration, we group questions by number of digits and carry operations, and plot the average accuracy over 512 samples. 
   Groups containing fewer than 10 questions are excluded. 
-  Detailed results of the logistic regressions are available in the Appendix." 
-%}
+  Detailed results of the logistic regressions are available in the Appendix." numbered="false">}}
+
 
 The regression results indicate that LM performance is negatively affected by both the number of digits and the number of carry operations in the sum. 
 In other words, as the numbers get larger and the number of carry operations increases, accuracy declines.
