@@ -185,7 +185,7 @@ Even if a model applies consistent reasoning, it may still make arithmetic error
 
 **How much variation is expected?**  
 By now, it should be clear that the answer to this question depends on the assumptions we make about the data.
-One reasonable assumption we could make is that each model $$m=1, \dots, 25$$, answers each question $$n=1,\dots,100$$ correctly with some probability $p_{m,n}$.
+One reasonable assumption we could make is that each model $m=1, \dots, 25$, answers each question $n=1,\dots,100$ correctly with some probability $p_{m,n}$.
 Unfortunately, since the paper does not provide question-level performance data, for the purposes of this analysis, we must further assume that this probability is constant across questions, that is $p_{m,n}=p_m$ for all $n$. 
 
 Thus, an LM answering questions is modelled as an independent and identically distributed Bernoulli trial with a model-specific success probability $p_m$.
@@ -205,16 +205,10 @@ The number of correct answers (out of 100 questions) on the GSM8K questions are 
 We denote this estimate as $$p^{8K}_{m}$$ to indicate that it is computed from the GSM8K dataset.
 
 There are different ways to construct CI for the [Binomial proportion](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval). The next figure shows [Wilson score](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) intervals, with more results included in the Appendix. 
-To put this variability into perspective, we also include the average of the 50 point estimates for the model performance on GSM-Symbolic, which we denote as $$p^{Symb}_{m}$$. <d-footnote>Similarly to $p^{8K}_{m}$, we obtain maximum likelihood estimates of $p^{Symb}_{m}$ from the average accuracy on GSM-Symbolic, reported in Table 1 of the paper.</d-footnote>
+To put this variability into perspective, we also include the average of the 50 point estimates for the model performance on GSM-Symbolic, which we denote as $p^{Symb}_{m}$. <d-footnote>Similarly to $p^{8K}_{m}$, we obtain maximum likelihood estimates of $p^{Symb}_{m}$ from the average accuracy on GSM-Symbolic, reported in Table 1 of the paper.</d-footnote>
 
-{{< figure library="true" src="wilson_0.95.png" title="<b>95% Wilson score confidence intervals for the point estimates of $p^{8K}_{m}$ (red dots), along with the average (over 50 datasets) point estimate of $p^{Symb}_{m}$ (blue triangles).</b>" numbered="false">}}
+{{< figure library="true" src="wilson_0.95.png" title="<b>95% Wilson score confidence intervals for the point estimates of $$p^{8K}_{m}$$ (red dots), along with the average (over 50 datasets) point estimate of $$p^{Symb}_{m}$$ (blue triangles).</b>" numbered="false">}}
 
-<!-- {% include figure.html 
-  path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/wilson_0.95.png" 
-  class="img-fluid" 
-  title="95% Wilson score confidence intervals" 
-  caption="<b>95% Wilson score confidence intervals for the point estimates of $p^{8K}_{m}$ (red dots), along with the average (over 50 datasets) point estimate of $p^{Symb}_{m}$ (blue triangles).</b> The point estimates of $p^{8K}_{m}$ and $p^{Symb}_{m}$ are estimated from the data reported in Table 1 of the Appendix of Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite>." 
-%} -->
 
 
 As expected, models with success probabilities closer to $1/2$ (e.g. Gemma-7b, Phi-2, Mistral-7b-v0.1) exhibit wider confidence intervals, reflecting higher variability. 
@@ -388,18 +382,7 @@ $$
 
 We use Fisher exact test for the binomial proportion for all models, reporting the p-values in the next figure.
 
-{{< figure library="true" src="template_gsm.png" title="<b>Figure 1 from Mirzadeh et al. (2024).</b>" numbered="false">}}
-
-{% include figure.html 
-  path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/fisher_pvalues.png"
-  class="img-fluid" 
-  title="Fisher exact test" 
-  caption="<b>Fisher exact test: p-values for two-sided and one-sided tests across models.</b>
-  The grey line represents the 5% significance level, and the black line represents the 1% significance level. 
-  Models marked with (*) indicate that the null hypothesis can be rejected at the 5% significance level in favor of the two-sided alternative; these models are Gemma-7b, Mistral-7b-instruct-v0.1, Phi-2, and Llama3-8b. 
-  The models for which the null hypothesis can be rejected in favour of the one-sided alternative are Gemma-7b, Mistral-7b-instruct-v0.1, and Phi-2. 
-  Llama3-8b performs statistically better on GSM-Symbolic than on GSM8K." 
-%}
+{{< figure library="true" src="fisher_pvalues.png" title="<b>Fisher exact test: p-values for two-sided and one-sided tests across models.</b> The grey line represents the 5% significance level, and the black line represents the 1% significance level. Models marked with (*) indicate that the null hypothesis can be rejected at the 5% significance level in favor of the two-sided alternative; these models are Gemma-7b, Mistral-7b-instruct-v0.1, Phi-2, and Llama3-8b. The models for which the null hypothesis can be rejected in favour of the one-sided alternative are Gemma-7b, Mistral-7b-instruct-v0.1, and Phi-2. Llama3-8b performs statistically better on GSM-Symbolic than on GSM8K." numbered="false">}}
 
 When analysing the models independently at the 5% significance level, we find that four models---Gemma-7b, Mistral-7b-instruct-v0.1, Phi-2, and Llama3-8b (indicated with (*) in the figure above)---exhibit statistically significant differences 
 in performance based on the two-sided test.
