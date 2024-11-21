@@ -8,16 +8,16 @@ summary: "As language models become increasingly sophisticated and existing benc
 projects: []
 
 # Date published
-date: "2024-10-22T00:00:00Z"
+date: "2024-11-21T00:00:00Z"
 
 # Date updated
-lastmod: "2024-10-22T00:00:00Z"
+lastmod: "2024-11-21T00:00:00Z"
 
 # Is this an unpublished draft?
 draft: false
 
 # Show this page in the Featured widget?
-featured: false
+featured: true
 
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
@@ -104,11 +104,13 @@ The authors also construct four variants of GSM-Symbolic by modifying question d
 To generate GSM-Symbolic and the variants, the authors create "templates" from GSM8K questions by identifying modifiable variables whilst preserving the underlying logic. 
 Each variable has a specified domain and constraints to ensure valid questions and answers. Here's an example template:
 
-{% include figure.html 
+{{< figure library="true" src="template_gsm.png" title="<b>Figure 1 from Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite>.</b>" numbered="false">}}
+
+<!-- {% include figure.html 
   path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/template_gsm.png" 
   class="img-fluid" 
-  caption="<b>Figure 1 from Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite>.</b>"
-%}
+  caption=">"
+%} -->
 
 For their analysis, the authors select 100 questions from GSM8K and create such a template for each of them.
 Whilst the paper does not specify their selection method, we think that these questions were sampled randomly from GSM8K's test set.
@@ -218,7 +220,7 @@ The number of correct answers (out of 100 questions) on the GSM8K questions are 
 We denote this estimate as $$p^{8K}_{m}$$ to indicate that it is computed from the GSM8K dataset.
 
 There are different ways to construct CI for the [Binomial proportion](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval). The next figure shows [Wilson score](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) intervals, with more results included in the Appendix. 
-To put this variability into perspective, we also include the average of the 50 point estimates for the model performance on GSM-Symbolic, which we denote as $p^{Symb}_{m}$. <d-footnote>Similarly to $p^{8K}_{m}$, we obtain maximum likelihood estimates of $p^{Symb}_{m}$ from the average accuracy on GSM-Symbolic, reported in Table 1 of the paper.</d-footnote>
+To put this variability into perspective, we also include the average of the 50 point estimates for the model performance on GSM-Symbolic, which we denote as $$p^{Symb}_{m}$$. <d-footnote>Similarly to $p^{8K}_{m}$, we obtain maximum likelihood estimates of $p^{Symb}_{m}$ from the average accuracy on GSM-Symbolic, reported in Table 1 of the paper.</d-footnote>
 
 {% include figure.html 
   path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/wilson_0.95.png" 
