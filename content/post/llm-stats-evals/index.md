@@ -206,7 +206,9 @@ We denote this estimate as $p^{8K}_{m}$ to indicate that it is computed from the
 
 There are different ways to construct CI for the [Binomial proportion](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval). The next figure shows [Wilson score](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) intervals, with more results included in the Appendix. 
 To put this variability into perspective, we also include the average of the 50 point estimates for the model performance on GSM-Symbolic, which we denote as $p^{Symb}_{m}$.[^1] 
-[^1]: Similarly to $p^{8K}_{m}$, we obtain maximum likelihood estimates of $p^{S}_{m}$ from the average accuracy on GSM-Symbolic, reported in Table 1 of the paper. 
+
+[^1]: Similarly to $p^{8K}_{m}$, we obtain maximum likelihood estimates of $p^{Symb}_{m}$ from the average accuracy on GSM-Symbolic, reported in Table 1 of the paper. 
+
 
 {{< figure library="true" src="wilson_0.95.png" title="<b>95% Wilson score confidence intervals for the point estimates of $p^{8K}_{m}$ (red dots), along with the average (over 50 datasets) point estimate of $p^{Symb}_{m}$ (blue triangles).</b>" numbered="false">}}
 
