@@ -264,7 +264,7 @@ Looking at the example template (Figure 1 from the paper, reproduced above), we 
 In other words, the original GSM8K question cannot be generated from the sampling ranges in the Symbolic template of Figure 1.
 In the next table, we propose more suitable ranges for all variables in the symbolic template, that ensure that the original question can be reproduced. 
 
-{{< table caption="Your caption here" >}}
+
 | Variable              | Symbolic range | Proposed range (ours) | Original value |
 |-----------------------|----------------|----------------|----------------|
 | `total` (toys)        | $(100, 500)$   | $(10, 100)$    | $62$             |
@@ -272,8 +272,8 @@ In the next table, we propose more suitable ranges for all variables in the symb
 | `y` (stuffed animals) | $(5, 100)$     | $(1, 20)$      | $8$              |
 | `z` (stacking rings)  | $(5, 100)$     | $(1, 20)$      | $9$              |
 | `ans` (bouncy balls)  | $(85, 200)$    | $(4, 40)$      | $14$             |
-{{< /table >}}
-<!-- {{< table caption="<b>The GSM-Symbolic sampling ranges for the variables from Figure 1 in Mirzadeh et al. (2024) (reproduced above) and our proposed sampling ranges.</b> We highlight that the original GSM8K question cannot be generated from the proposed symbolic template because the symbolic ranges do not include the original values, whereas our proposed ranges do. We also believe that the proposed ranges better align with the context of the variables (e.g. having between 4 and 40 bouncy balls is more realistic than having between 85 and 200).">}} -->
+
+##### <b>The GSM-Symbolic sampling ranges for the variables from Figure 1 in Mirzadeh et al. (2024) (reproduced above) and our proposed sampling ranges.</b> We highlight that the original GSM8K question cannot be generated from the proposed symbolic template because the symbolic ranges do not include the original values, whereas our proposed ranges do. We also believe that the proposed ranges better align with the context of the variables (e.g. having between 4 and 40 bouncy balls is more realistic than having between 85 and 200).
 
 
 Since accuracy decreases as the number of digits in arithmetic operations increases (as discussed in Section 4.1.1), we expect that our proposed smaller ranges would result in higher accuracy compared to the original template, assuming that the reasoning process is executed correctly.
@@ -294,23 +294,16 @@ For each example sampled from the corresponding ranges, we estimate the probabil
 |**Symbolic**    | 0.949 $\pm$ 0.004 | 0.941 $\pm$ 0.008 | 0.920 $\pm$ 0.008 | 0.821 $\pm$ 0.013 |
 | **Proposed (ours)**    | 0.955 $\pm$ 0.007 | 0.954 $\pm$ 0.006 | 0.950 $\pm$ 0.004 | 0.866 $\pm$ 0.009 |
 
-<div class="caption">
-<b>Results for Phi-3.5-mini-instruct model.</b> Mean and standard deviation of probabilities over 512 examples.
-</div>
+##### Results for Phi-3.5-mini-instruct model.</b> Mean and standard deviation of probabilities over 512 examples.
 
-<!-- I like these tables, but I prefer reporting standard error of the mean (SEM) instead of standard deviation because SEM decreases with the number of trials (the 512 examples here) as our estimate of the mean (the only thing we care about here) gets more accurate. So reporting the standard deviation is more aligned to when we are more interested in some distribution and not just the mean. This is personal preference and in literature both versions are used, actually I think standard deviation is more often, but I still prefer SEM.
-I think of each of the 512 examples as 512 measurements we make of the probability, so we want an estimate of the error of the measurements i.e. SEM and do not really care about the distribution of the errors of the measurements i.e. the standard deviation. 
-DRI: Very fair; I normally also report standard errors as these are much smaller (and reviewers like when things don't overlap); here the numbers are small any way, dividing by sqrt(512) means almost all will equal 0.000 (I've used 3 decimal places throughout).
--->
 
 |   Llama   | $x+y$       | $(x+y)+z$       | $(x+y+z)+ans$       | All 3 operations |
 |-------|----------|----------|----------|----------|
 | **Symbolic**  | 0.996 $\pm$ 0.001 | 0.995 $\pm$ 0.001 | 0.991 $\pm$ 0.002 | 0.982 $\pm$ 0.003 |
 | **Proposed (ours)**  | 0.997 $\pm$ 0.001 | 0.997 $\pm$ 0.001 | 0.996 $\pm$ 0.001 | 0.990 $\pm$ 0.001 |
 
-<div class="caption">
-<b>Results for Llama3-8b-instruct model.</b> Mean and standard deviation of probabilities over 512 examples.
-</div>
+
+##### <b>Results for Llama3-8b-instruct model.</b> Mean and standard deviation of probabilities over 512 examples.
 
 
 For the Llama3-8b-instruct model, the smaller sampling ranges that we propose have a minimal effect: the probability of correctly performing all 3 operations is only $0.8$ percentage points higher compared to the symbolic ranges.
@@ -375,10 +368,12 @@ The remaining 21 out of 25 models do not show a statistically significant differ
 ### 4.2.3 Considering all models together: Is the decline in performance statistically significant?
 
 Although for most models there is no significant difference in performance, there is a trend that many models perform worse on GSM-Symbolic compared to GSM8K. 
-To determine if this trend is statistically significant, we use the Wilcoxon signed-rank test, which is a non-parametric paired difference test.<d-footnote>The careful reader would notice that in the previous subsection, we used parametric tests. 
+To determine if this trend is statistically significant, we use the Wilcoxon signed-rank test, which is a non-parametric paired difference test.[^2] 
+
+[^2]: The careful reader would notice that in the previous subsection, we used parametric tests. 
 This was because we do not have access to question-level data which is necessary for a non-parametric test. 
 We would prefer non-parametric tests as they do not rely on distributional assumptions. 
-</d-footnote>
+
 
 Before applying the test, we acknowledge two caveats and attempt to address them.
 
@@ -401,7 +396,7 @@ This gives us two sets of 7 models, with differences between the two sets indica
 Whilst the test is valid, inaccurate measurements of the estimated success probabilities would lead to invalid conclusions.  
 
 
-Let's define the vectors of success probabilities on GSM8K and GSM-Symbolic as $$p^{8K}_{\text{subset}}=[p^{8K}_{1}, \dots, p^{8K}_{7}]$$ and $$p^{Symb}_{\text{subset}}= [p^{Symb}_{1}, \dots, p^{Symb}_{7}]$$, where the subscript $$\text{subset} \in \{\text{largest}, \text{smallest}\}$$.
+Let's define the vectors of success probabilities on GSM8K and GSM-Symbolic as $p^{8K}_{\text{subset}}=[p^{8K}_{1}, \dots, p^{8K}_{7}]$ and $p^{Symb}_{\text{subset}}= [p^{Symb}_{1}, \dots, p^{Symb}_{7}]$, where the subscript $\text{subset} \in \{\text{largest}, \text{smallest}\}$.
 As before, we perform one-sided and two-sided tests:
 
 - Two-sided: The success probabilities are different
@@ -423,9 +418,9 @@ The results of the hypothesis tests are given in the following table:
 | **Largest**          | 0.047          | 0.023         |
 | **Smallest**         | 0.078          | 0.039         |
 
-<div class="caption">
-<b>Results of the Wilcoxon signed-rank test for the two subsets of models.</b> At the $5\%$ significance level, there is evidence of statistically significant differences in performance between GSM8K and GSM-Symbolic.
-</div>
+
+##### <b>Results of the Wilcoxon signed-rank test for the two subsets of models.</b> At the 5% significance level, there is evidence of statistically significant differences in performance between GSM8K and GSM-Symbolic.
+
 
 For the **largest** subset of models, both tests show statistically significant differences (at the $5\%$ significance level but not at the $1\%$ level), indicating that GSM8K outperforms GSM-Symbolic in the one-sided test. 
 When looking at the **smallest** subset of models, the evidence for significant differences is somewhat weaker.
@@ -440,7 +435,7 @@ These differences could be due to several factors, including distribution mismat
 
 ## 4.3 Performance decrease and variance increase with question complexity
 
-Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite> highlights the fact that performance decreases and variance increases with question complexity on multiple occasions, most notably in Section 4.3. Some examples include:
+Mirzadeh et al. (2024) highlights the fact that performance decreases and variance increases with question complexity on multiple occasions, most notably in Section 4.3. Some examples include:
 
 > [page 3] We show that performance degradation and variance increase as the number of clauses increases, indicating that LLMs’ reasoning capabilities struggle […]
 
@@ -448,22 +443,18 @@ Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite> highlights the fa
 
 > [page 9] the increase in variance suggests that searching and pattern-matching become significantly harder for models as the difficulty increases.
 
-{{< figure library="true" src="template_gsm.png" title="<b>Figure 1 from Mirzadeh et al. (2024).</b>" numbered="false">}}
-
-{% include figure.html 
-  path="assets/img/2025-04-28-towards-more-rigorous-llm-evals/fig6_gsm.png" 
-  class="img-fluid" 
-  caption="<b>Figure 6 from Mirzadeh et al. (2024) <d-cite key='mirzadeh2024gsm'></d-cite>.</b> Note that the $x$-axis scales are different for different models."
-%}
+{{< figure library="true" src="fig6_gsm.png" title="<b>Figure 6 from Mirzadeh et al. (2024).</b>" numbered="false">}}
 
 
 The figure above shows the results for four datasets: the baseline GSM-Symbolic, GSM-M1 (Minus 1), which removes a clause, and GSM-P1 (Plus 1) and GSM-P2 (Plus 2), which add one and two clauses respectively. 
 It is reasonable to expect that a model will perform better on easier datasets and worse on more difficult ones.
-As before, we assume that a model $m$ answers questions of varying difficulty levels $$\text{dif}=-1, 0, 1, 2$$ as independent and identically distributed Bernoulli trials with a success probability of $$p^{\text{dif}}_{m}$$. 
-The distribution of the total number of correct answers follows a binomial distribution $$\text{Bin}(N=100, p^\text{dif}_{m})$$, with variance equal to $$N \cdot p^\text{dif}_{m} \cdot (1 - p^\text{dif}_{m})$$.
+As before, we assume that a model $m$ answers questions of varying difficulty levels $\text{dif}=-1, 0, 1, 2$ as independent and identically distributed Bernoulli trials with a success probability of $p^{\text{dif}}_{m}$. 
+The distribution of the total number of correct answers follows a binomial distribution $\text{Bin}(N=100, p^\text{dif}_{m})$, with variance equal to $N \cdot p^\text{dif}_{m} \cdot (1 - p^\text{dif}_{m})$.
 
-If the probabilities of success decrease with increasing question complexity, i.e. $$p^{\text{dif}=-1}_{m} > p^{\text{dif}=0}_{m} > p^{\text{dif}=1}_{m} > p^{\text{dif}=2}_{m} > 0.5$$, the corresponding variances *must increase*.<d-footnote>We note that the average success probability on GSM-P2, $p^{\text{dif}=2}_{m}$, does fall below 0.5 for the models in the first row of Figure 6. Our point is still valid in these cases since $p^{\text{dif}=2}_{m}$ is closer to 0.5 than $p^{\text{dif}=1}_{m}$ and hence the variability on GSM-P2 is still expected to be larger than on GSM-P1. We would expect to see decrease in variance in cases where $0.5 > p^{\text{dif}=-1}_{m} > p^{\text{dif}=0}_{m} > p^{\text{dif}=1}_{m} > p^{\text{dif}=2}_{m}$.</d-footnote> 
+If the probabilities of success decrease with increasing question complexity, i.e. $p^{\text{dif}=-1}_{m} > p^{\text{dif}=0}_{m} > p^{\text{dif}=1}_{m} > p^{\text{dif}=2}_{m} > 0.5$, the corresponding variances *must increase*.[^3]
 We believe that this is precisely what we observe in Figure 6: the increase in variance is a trivial consequence of the decrease in probabilities of success, rather than a sign of "pattern-matching" becoming harder.
+
+[^3]: We note that the average success probability on GSM-P2, $p^{\text{dif}=2}_{m}$, does fall below 0.5 for the models in the first row of Figure 6. Our point is still valid in these cases since $p^{\text{dif}=2}_{m}$ is closer to 0.5 than $p^{\text{dif}=1}_{m}$ and hence the variability on GSM-P2 is still expected to be larger than on GSM-P1. We would expect to see decrease in variance in cases where $0.5 > p^{\text{dif}=-1}_{m} > p^{\text{dif}=0}_{m} > p^{\text{dif}=1}_{m} > p^{\text{dif}=2}_{m}$.
 
 <!-- Why they are all bigger than 0.5? 
 I agree they have to be 0.5 so we can expect the variance to increase but what happens when they go below 0.5 like with Gemma2-9b-it, then they should again decrease the variance but this is not what we observe.
