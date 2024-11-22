@@ -219,7 +219,7 @@ Conversely, models with success probabilities closer to 0 or 1 (Gemma2b, GPT-4o,
 
 **Assuming** that GSM8K and GSM-Symbolic come from the same distributions (more on that in Section 4.2.1), let’s look at Figure 2 of the paper.
 
-{{< figure library="true" src="fig2_gsm.png" title="<b>Figure 2 from Mirzadeh et al. (2024).</b> Note that the $x$-axis scales are different for different models." numbered="false">}}
+{{< figure library="true" src="fig2_gsm.png" title="<b>Figure 2 from Mirzadeh et al. (2024).</b> Note that the x-axis scales are different for different models." numbered="false">}}
 
 
 For the models shown in this figure, the GSM8K accuracy ($p^{8K}_{m}$, represented by the dashed line) varies from 74% for the weakest model, Llama3-8B-instruct, to 95% for the strongest model, GPT-4o. 
@@ -228,7 +228,7 @@ Importantly, for both models, **the variation in GSM-Symbolic performance falls 
 We visualise this in the next figure, showing the overlap between the 95% Wilson score CIs for $p^{8K}_{m}$ and the accuracy ranges on GSM-Symbolic for the models that had results reported in the paper (note that this does not include all 25 models).
 
 
-{{< figure library="true" src="ci_vs_reported.png" title="<b>95% Wilson score confidence intervals for the point estimates of $p^{8K}_{m}$ (red), along with the average (over 50 datasets) point estimate of $p^{Symb}_{m}$ (blue).</b> The latter ranges are not explicitly reported; we approximate them from the histograms in Figure 1 of Mirzadeh et al. (2024), as well as Figures 10 and 12 from the Appendix of the paper. Since such histograms are not available for all models, we only show the subset of the models for which they are." numbered="false">}}
+{{< figure library="true" src="ci_vs_reported.png" title="<b>95% Wilson score confidence intervals for the point estimates of p<sup>8K</sup><sub>m</sub> (red), along with the average (over 50 datasets) point estimate of p<sup>Symb</sup><sub>m</sub> (blue).</b> The latter ranges are not explicitly reported; we approximate them from the histograms in Figure 1 of Mirzadeh et al. (2024), as well as Figures 10 and 12 from the Appendix of the paper. Since such histograms are not available for all models, we only show the subset of the models for which they are." numbered="false">}}
 
 
 Note that our confidence intervals tend to be wider than the implied ranges in the figures in the paper, i.e. under the i.i.d. Bernoulli assumption, the expected variation is actually **larger** than what is observed.
@@ -243,7 +243,7 @@ The analysis can be repeated once (if) the detailed question-level data becomes 
 The paper claims that LMs perform worse on GSM-Symbolic compared to GSM8K. 
 Let's examine the evidence presented in Section 4.1, which we quote directly:
 
-> Another noteworthy observation is that the performance (represented by the dashed line in Fig. 2) on the original questions from the 100 examples of GSM8K used as templates is **often more than one standard deviation away from the center** of the GSM-Symbolic performance distribution, frequently on the right side of the distribution (this holds for 21 out of 25 models). **One explanation** for this could be data contamination […]. <d-cite key='mirzadeh2024gsm'></d-cite>, emphasis added.
+> Another noteworthy observation is that the performance (represented by the dashed line in Fig. 2) on the original questions from the 100 examples of GSM8K used as templates is **often more than one standard deviation away from the center** of the GSM-Symbolic performance distribution, frequently on the right side of the distribution (this holds for 21 out of 25 models). **One explanation** for this could be data contamination […]. Mirzadeh et al. (2024); emphasis added.
 
 There are two issues with the above quote. 
 First, the authors suggest data contamination as one possible explanation for the performance decline, but do not explore other plausible explanations.
@@ -271,12 +271,11 @@ In the next table, we propose more suitable ranges for all variables in the symb
 | `y` (stuffed animals) | $(5, 100)$     | $(1, 20)$      | $8$              |
 | `z` (stacking rings)  | $(5, 100)$     | $(1, 20)$      | $9$              |
 | `ans` (bouncy balls)  | $(85, 200)$    | $(4, 40)$      | $14$             |
-
-<div class="caption">
-<b>The GSM-Symbolic sampling ranges for the variables from Figure 1 in Mirzadeh et al. (2024) (reproduced above) and our proposed sampling ranges.</b> 
+{{< table
+caption="<b>The GSM-Symbolic sampling ranges for the variables from Figure 1 in Mirzadeh et al. (2024) (reproduced above) and our proposed sampling ranges.</b> 
 We highlight that the original GSM8K question cannot be generated from the proposed symbolic template because the symbolic ranges do not include the original values, whereas our proposed ranges do.
-We also believe that the proposed ranges better align with the context of the variables (e.g. having between 4 and 40 bouncy balls is more realistic than having between 85 and 200).
-</div>
+We also believe that the proposed ranges better align with the context of the variables (e.g. having between 4 and 40 bouncy balls is more realistic than having between 85 and 200)."
+}}
 
 
 Since accuracy decreases as the number of digits in arithmetic operations increases (as discussed in Section 4.1.1), we expect that our proposed smaller ranges would result in higher accuracy compared to the original template, assuming that the reasoning process is executed correctly.
