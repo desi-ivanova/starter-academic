@@ -42,6 +42,7 @@ categories:
 - ML
 ---
 
+This is an extended and more thoughtful version of [On Some (Fixable) Limitations of "Understanding the Limitations of Mathematical Reasoning in LLMs"](https://desirivanova.com/post/gsm-symbolic/).
 
 # 1. Introduction
 
@@ -542,7 +543,8 @@ where $\mathbb{I}$ is the indicator function.
 The accuracy of model $m$, denoted as $p_m$, is then the expected value of $X_m$, i.e., $p_m = \mathbb{E}[X_m]$. 
 The variable $X_m$ follows a $Bernoulli(p_m)$ distribution.
 
-In fact, since we care about the difference in model performance on GSM8K and GSM-Symbolic, we postulate that we have two random variables  $V^{8K}$ and $V^{Symb}$, governed by two conditional distributions $\mathbb{P}^{8K}_{V \,|\, T}$ and $\mathbb{P}^{Symb}_{V \,|\, T}$, respectively. 
+In fact, since we care about the difference in model performance on GSM8K and GSM-Symbolic, we postulate that we have two random variables  $V^{8K}$ and $V^{Symb}$, governed by two conditional distributions $\mathbb{P}^{8K}_{V|T}$ 
+<!-- and $\mathbb{P}^{Symb}_{V \,|\, T}$, respectively.  -->
 These two distributions may be the same or different.
 
 This setup can be represented by the following directed probabilistic graphical model: 
