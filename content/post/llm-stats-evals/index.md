@@ -376,18 +376,18 @@ This gives us two sets of 7 models, with differences between the two sets indica
 Whilst the test is valid, inaccurate measurements of the estimated success probabilities would lead to invalid conclusions.  
 
 
-Let's define the vectors of success probabilities on GSM8K and GSM-Symbolic as $p^{8K}_{subset}=[p^{8K}_{1}, \dots, p^{8K}_{7}]$ and $p^{Symb}_{subset}= [p^{Symb}_{1}, \dots, p^{Symb}_{7}]$, where the subscript $subset \in \{largest, smallest\}$. As before, we perform one-sided and two-sided tests:
+Let's define the vectors of success probabilities on GSM8K and GSM-Symbolic as $p^{8K}_\text{subset}=[p^{8K}_1, \dots, p^{8K}_7]$ and $p^{Symb}_{subset}= [p^{Symb}_1, \dots, p^{Symb}_7]$, where the subscript $\text{subset} \in \{\text{largest}, \text{smallest}\}$. As before, we perform one-sided and two-sided tests:
 
 - Two-sided: The success probabilities are different
 $$
 \begin{aligned}
-H_0: p^{8K}_{subset} = p^{Symb}_{subset} \quad\quad\quad H_A^{two-sided}: p^{8K}_{subset} \neq p^{Symb}_{subset}.
+H_0: p^{8K}_\text{subset} = p^{Symb}_\text{subset} \quad\quad\quad H_A^{two-sided}: p^{8K}_\text{subset} \neq p^{Symb}_\text{subset}.
 \end{aligned}
 $$
 
 - One-sided: The success probability on GSM8K is greater than that on GSM-Symbolic
 $$
-H_0: p^{8K}_{subset} = p^{Symb}_{subset} \quad\quad\quad H_A^{one-sided}: p^{8K}_{subset} > p^{Symb}_{subset}.
+H_0: p^{8K}_\text{subset} = p^{Symb}_\text{subset} \quad\quad\quad H_A^{one-sided}: p^{8K}_\text{subset} > p^{Symb}_\text{subset}.
 $$
 
 The results of the hypothesis tests are given in the following table:
@@ -489,14 +489,17 @@ The frequentist approach we adopt here is particularly well-suited, as the Symbo
 
 Key findings from each subsection are summarised below:
 - [**Section 4.1**] We discussed the assumptions under which variability of performance on GSM-Symbolic is unexpected vs expected and quantifiable. We provided empirical evidence that variability is indeed expected.
+
 - [**Section 4.2**] We argued that distribution mismatch between the GSM8K and GSM-Symbolic datasets may explain some of the observed performance decline of models (in addition to contamination and "lack of reasoning"). 
 We also quantified the extent to which the performance degradation on GSM-Symbolic is actually statistically significant. Considering models individually, only 3 out of 25 models show a statistically significant performance decline on GSM-Symbolic (and 1 performs significantly better). Taken together, there is some evidence for a performance decline on GSM-Symbolic vs GSM8K.
 <!-- you mean weak evidence, right? :D 
 DRI lol, I wrote "statistically strong" as synonym for "statistically significant" (for which which there is some indeed). Maybe we say just "some evidence"? --> 
+
 - [**Section 4.3**] The observed increase in performance variance with rising question complexity is likely an over-interpretation of expected statistical artefacts. The decrease in success probability as complexity grows can be attributed to both increased reasoning difficulty and a higher likelihood of arithmetic errors.
 <!-- how about longer context windows make the task more difficult? So maybe the models are just forgetful, otherwise the reasoning is the same. This same happens with humans if they need to do all the calculations in their head. 
 DRI: Yeah good point! I'll add this as a possible explanation in the previous section too. Though worth saying that these are pretty short questions and I think they'll fit in the training context of all the models (but worth checking); issues tend to start arising when we start extrapolating beyond the training context length.
 -->
+
 - [**Section 4.4**] The performance decline on the GSM-NoOp dataset is highly statistically significant. We believe that investigating the NoOp results in more detail could provide genuine insights into the models' reasoning capabilities.
 <!-- the No-Op supports the context window problems again, especially if the No-Op results are worse then P2 or P1. To examine the context window idea, we can compare the question success based on the question length, but we need the actual questions for that. 
 Also, are some of the models known to be better at handling longer context windows? 
@@ -504,9 +507,9 @@ DRI: The context for all these questions is quite small, so I dont think it's a 
 -->
 
 **Final thoughts:** 
-We strongly believe that without a rigorous statistical framework, there is a substantial risk of over-interpreting results and drawing misleading conclusions.<d-footnote>Neither the Frequentist nor the Bayesian religion is perfect, but neglecting statistical analysis altogether would be the worst outcome.</d-footnote> 
-We hope that this blog post can serve as a tutorial and can help researchers to get into the habit of thinking about and performing proper statistical evaluations of LLMs!
+We strongly believe that without a rigorous statistical framework, there is a substantial risk of over-interpreting results and drawing misleading conclusions.[^5] We hope that this blog post can serve as a tutorial and can help researchers to get into the habit of thinking about and performing proper statistical evaluations of LLMs!
 
+[^5]: Neither the Frequentist nor the Bayesian religion is perfect, but neglecting statistical analysis altogether would be the worst outcome.
 
 <!-- ### Acknowledgement 
 I’d like to thank ... [TO BE ADDED LATER] -->
