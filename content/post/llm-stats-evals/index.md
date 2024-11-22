@@ -547,11 +547,17 @@ In fact, since we care about the difference in model performance on GSM8K and GS
 <!-- and $\mathbb{P}^{Symb}_{V \,|\, T}$, respectively.  -->
 These two distributions may be the same or different.
 
-$\mathbb{P}^{8K}_{V|T}$ and $\mathbb{P}^{Symb}_{V|T}$, respectively.  
+$\mathbb{P}^{8K}_{V|T}$ and $\mathbb{P}^{Symb}_{V|T}$.  
 
-$\mathbb{P}^{8K}_{V|T} \text{ and } \mathbb{P}^{Symb}_{V|T}$, respectively.
+$\mathbb{P}^{8K}_{V|T} \text{ and } \mathbb{P}^{Symb}_{V|T}$.
 
-$\mathbb{P}^{8K}_{V|T}$ \ and \ $\mathbb{P}^{Symb}_{V|T}$, respectively.  
+$\mathbb{P}^{8K}_{V|T}$ \ and \ $\mathbb{P}^{Symb}_{V|T}$.  
+
+\$\mathbb{P}^{8K}_{V|T}$ and $\mathbb{P}^{Symb}_{V|T}\$.  
+
+\(\mathbb{P}^{8K}_{V|T}$ and $\mathbb{P}^{Symb}_{V|T}\).  
+
+\[\mathbb{P}^{8K}_{V|T}$ and $\mathbb{P}^{Symb}_{V|T}\].  
 
 
 This setup can be represented by the following directed probabilistic graphical model: 
