@@ -216,16 +216,14 @@ Conversely, models with success probabilities closer to 0 or 1 (Gemma2b, GPT-4o,
 {{< figure library="true" src="fig2_gsm.png" title="<b>Figure 2 from Mirzadeh et al. (2024).</b> Note that the x-axis scales are different for different models." numbered="false">}}
 
 
-For the models shown in this figure, the GSM8K accuracy, $p_{m}^{8K}$, (represented by the dashed line) varies from 74% for the weakest model, Llama3-8B-instruct, to 95% for the strongest model, GPT-4o. The range of accuracies achieved on the 50 GSM-Symbolic datasets is relatively _wide_ for Llama3-8B-instruct (approximately between 69% and 81%) and relatively _narrow_ for GPT-4o (approximately between 91% and 98%).
-Importantly, for both models, **the variation in GSM-Symbolic performance falls well within the Wilson score CIs of GSM8K performance that we calculated earlier!**  We visualise this in the next figure, showing the overlap between the $95\%$ Wilson score CIs for $p^{8K}_{m}$ and the accuracy ranges on GSM-Symbolic for the models that had results reported in the paper (note that this does not include all 25 models).
+For the models shown in this figure, the GSM8K accuracy, $p_{m}^{8K}$, (represented by the dashed line) varies from 74% for the weakest model, Llama3-8B-instruct, to 95% for the strongest model, GPT-4o. The range of accuracies achieved on the 50 GSM-Symbolic datasets is relatively wide for Llama3-8B-instruct (approximately between 69% and 81%) and relatively narrow for GPT-4o (approximately between 91% and 98%).
+Importantly, for both models, the variation in GSM-Symbolic performance falls well within the Wilson score CIs of GSM8K performance that we calculated earlier! We visualise this in the next figure, showing the overlap between the 95% Wilson score CIs for $p^{8K}_{m}$ and the accuracy ranges on GSM-Symbolic for the models that had results reported in the paper (note that this does not include all 25 models).
 
 
 {{< figure library="true" src="ci_vs_reported.png" title="<b>95% Wilson score confidence intervals for the point estimates of p<sup>8K</sup><sub>m</sub> (red), along with the average (over 50 datasets) point estimate of p<sup>Symb</sup><sub>m</sub> (blue).</b> The latter ranges are not explicitly reported; we approximate them from the histograms in Figure 1 of Mirzadeh et al. (2024), as well as Figures 10 and 12 from the Appendix of the paper. Since such histograms are not available for all models, we only show the subset of the models for which they are." numbered="false">}}
 
 
-Note that our confidence intervals tend to be wider than the implied ranges in the figures in the paper, i.e. under the i.i.d. Bernoulli assumption, the expected variation is actually **larger** than what is observed.
-This discrepancy is likely to be explained by the unmodelled correlations between answers to questions coming from the same template---as initially suggested, a more reasonable assumption would be to model the probability of success on a template level, $p_{m,n}$, rather than assuming each questions arising from different templates are equally likely to be answered correctly. 
-The analysis can be repeated once (if) the detailed question-level data becomes available.
+Note that our confidence intervals tend to be wider than the implied ranges in the figures in the paper, i.e. under the i.i.d. Bernoulli assumption, the expected variation is actually larger than what is observed. This discrepancy is likely to be explained by the unmodelled correlations between answers to questions coming from the same template---as initially suggested, a more reasonable assumption would be to model the probability of success on a template level, $p_{m,n}$, rather than assuming each questions arising from different templates are equally likely to be answered correctly. The analysis can be repeated once (if) the detailed question-level data becomes available.
 
 **Verdict:** The observed variability in GSM-Symbolic performance is not inherently surprising, and we provide empirical evidence that it is indeed expected.
 <!-- ili3p wrote: An idea I had here, how is the variability in the "adding two numbers" task? Are the results also within the 95% CI of assuming Binomial distribution?  TODO: @DRI CHECK-->
@@ -330,7 +328,7 @@ Additionally, Figure 3 of the paper, reproduced below, reports substantial perfo
 {{< figure library="true" src="fig3_gsm.png" title="Figure 3 from Mirzadeh et al. (2024).</b>" numbered="false">}}
 
 
-The right tool to determine whether these differences are statistically significant is hypothesis testing. For each model $m$, we want to test whether its success probability on GSM8K, denoted $p^{8K}_{m}$, equals its success probability on GSM-Symbolic, denoted $p^{Symb}_{m}$. This equality forms our _null hypothesis_. Our _alternative hypothesis_ can take two forms:
+The right tool to determine whether these differences are statistically significant is hypothesis testing. For each model $m$, we want to test whether its success probability on GSM8K, denoted $p^{8K}_{m}$, equals its success probability on GSM-Symbolic, denoted $p^{Symb}_{m}$. This equality forms our null hypothesis. Our alternative hypothesis can take two forms:
 
 - Two-sided alternative: The success probabilities are different
 
@@ -434,7 +432,7 @@ As before, we assume that a model $m$ answers questions of varying difficulty le
 If the probabilities of success decrease with increasing question complexity, i.e. $p^{dif=-1}_{m} > p^{dif=0}_{m} > p^{dif=1}_{m} > p^{dif=2}_{m} > 0.5$, the corresponding variances *must increase*.[^3]
 We believe that this is precisely what we observe in Figure 6: the increase in variance is a trivial consequence of the decrease in probabilities of success, rather than a sign of "pattern-matching" becoming harder.
 
-[^3]: We note that the average success probability on GSM-P2, $p^{dif=2}\\_{m}$, does fall below 0.5 for the models in the first row of Figure 6. Our point is still valid in these cases since $p^{dif=2}\\_{m}$ is closer to 0.5 than $p^{dif=1}\\_{m}$ and hence the variability on GSM-P2 is still expected to be larger than on GSM-P1. We would expect to see decrease in variance in cases where $0.5 > p^{dif=-1}\\_{m} > p^{dif=0}\\_{m} > p^{dif=1}\\_{m} > p^{dif=2}\\_{m}$.
+[^3]: We note that the average success probability on GSM-P2, $p^{dif=2}_{m}$, does fall below 0.5 for the models in the first row of Figure 6. Our point is still valid in these cases since $p^{dif=2}_{m}$ is closer to 0.5 than $p^{dif=1}_{m}$ and hence the variability on GSM-P2 is still expected to be larger than on GSM-P1. We would expect to see decrease in variance in cases where $0.5 > p^{dif=-1}_{m} > p^{dif=0}_{m} > p^{dif=1}_{m} > p^{dif=2}_{m}$.
 
 
 
@@ -531,8 +529,7 @@ where $\mathbb{I}$ is the indicator function.
 The accuracy of model $m$, denoted as $p_m$, is then the expected value of $X_m$, i.e., $p_m = \mathbb{E}[X_m]$. 
 The variable $X_m$ follows a $Bernoulli(p_m)$ distribution.
 
-In fact, since we care about the difference in model performance on GSM8K and GSM-Symbolic, we postulate that we have two random variables  $V^{8K}$ and $V^{Symb}$, governed by two conditional distributions $\mathbb{P}^{8K}_{V \vert T}$ and 
-$\mathbb{P}^{Symb}_{V \vert T}$, respectively. 
+In fact, since we care about the difference in model performance on GSM8K and GSM-Symbolic, we postulate that we have two random variables  $V^{8K}$ and $V^{Symb}$, governed by two conditional distributions $\mathbb{P}^{8K}_{V | T}$ and $\mathbb{P}^{Symb}_{V | T}$, respectively. 
 These two distributions may be the same or different.
 
 This setup can be represented by the following directed probabilistic graphical model: 
