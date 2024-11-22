@@ -201,7 +201,7 @@ We denote this estimate as $p^{8K}_{m}$ to indicate that it is computed from the
 
 There are different ways to construct CI for the [Binomial proportion](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval). The next figure shows [Wilson score](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) intervals, with more results included in the Appendix. To put this variability into perspective, we also include the average of the 50 point estimates for the model performance on GSM-Symbolic, which we denote as $p^{Symb}_{m}$.[^1] 
 
-[^1]: Similarly to $p^{8K}\\_{m}$, we obtain maximum likelihood estimates of $p^{Symb}\\_{m}$ from the average accuracy on GSM-Symbolic, reported in Table 1 of the paper. 
+[^1]: Similarly to $p^{8K}_{m}$, we obtain maximum likelihood estimates of $p^{Symb}_{m}$ from the average accuracy on GSM-Symbolic, reported in Table 1 of the paper. 
 
 
 {{< figure library="true" src="wilson_0.95.png" title="<b>95% Wilson score confidence intervals for the point estimates of p<sup>8K</sup><sub>m</sub> (red dots), along with the average (over 50 datasets) point estimate of p<sup>Symb</sup><sub>m</sub> (blue triangles).</b>" numbered="false">}}
@@ -432,7 +432,7 @@ As before, we assume that a model $m$ answers questions of varying difficulty le
 If the probabilities of success decrease with increasing question complexity, i.e. $p^{dif=-1}_m > p^{dif=0}_m > p^{dif=1}_m > p^{dif=2}_{m} > 0.5$, the corresponding variances *must increase*.[^3]
 We believe that this is precisely what we observe in Figure 6: the increase in variance is a trivial consequence of the decrease in probabilities of success, rather than a sign of "pattern-matching" becoming harder.
 
-[^3]: We note that the average success probability on GSM-P2, $p^{dif}_m$
+[^3]: We note that the average success probability on GSM-P2, $p^{dif=2}_m$
  <!-- $p^{dif=2}_m$, does fall below 0.5 for the models in the first row of Figure 6. Our point is still valid in these cases since $p^{\text{dif=2}}_{m}$ is closer to 0.5 than $p^{dif=1}_{m}$ and hence the variability on GSM-P2 is still expected to be larger than on GSM-P1. We would expect to see decrease in variance in cases where  -->
 <!-- $0.5 > p^{dif=-1}_{m} > p^{dif=0}_{m} > p^{dif=1}_{m} > p^{dif=2}_{m}$. -->
 
