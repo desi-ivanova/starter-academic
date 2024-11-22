@@ -599,19 +599,11 @@ $$\mathbb{P}^{Symb}_{V | t_i} \quad \text{for} \quad 1 \le i \le 100$$
 
 - **Accuracy estimates**: from these observations, maximum likelihood estimates can be computed as 
 
-$$\hat{p}_m^{8K} = \frac{1}{100}\sum_{i=1}^{100} x^{8K}_{m,t_i}$$
-
-{{< math >}}
-$$\hat{p}_m^{8K} = \frac{1}{100}\sum_{i=1}^{100} x^{8K}_{m,{t_i}}$$
-{{< /math >}}
-
-{{< math >}}
-$$\hat{p}_m^{\text{8K}} = \frac{1}{100}\sum_{i=1}^{100} x^{\text{8K}}_{m, t_i}$$
-{{< /math >}}
-
-{{< math >}}
-$$\hat{p}_m^{\text{8K}} = \frac{1}{100}\sum_{i=1}^{100} x^{\text{8K}}_{m, t_i}$$
-{{< /math >}}
+\[
+\begin{aligned}
+\hat{p}_m^{8K} = \frac{1}{100}\sum_{i=1}^{100} {x^{8K}_{m,t_i}}
+\end{aligned}
+\]
 
 and 
 
