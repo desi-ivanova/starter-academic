@@ -432,7 +432,8 @@ As before, we assume that a model $m$ answers questions of varying difficulty le
 If the probabilities of success decrease with increasing question complexity, i.e. $p^{dif=-1}_{m} > p^{dif=0}_{m} > p^{dif=1}_{m} > p^{dif=2}_{m} > 0.5$, the corresponding variances *must increase*.[^3]
 We believe that this is precisely what we observe in Figure 6: the increase in variance is a trivial consequence of the decrease in probabilities of success, rather than a sign of "pattern-matching" becoming harder.
 
-[^3]: We note that the average success probability on GSM-P2, $p^{\text{dif=2}}_{m}$, does fall below 0.5 for the models in the first row of Figure 6. Our point is still valid in these cases since $p^{\text{dif=2}}_{m}$ is closer to 0.5 than $p^{\text{dif=1}}_{m}$ and hence the variability on GSM-P2 is still expected to be larger than on GSM-P1. We would expect to see decrease in variance in cases where 
+[^3]: We note that the average success probability on GSM-P2,$p_m$
+ <!-- $p^{dif=2}_m$, does fall below 0.5 for the models in the first row of Figure 6. Our point is still valid in these cases since $p^{\text{dif=2}}_{m}$ is closer to 0.5 than $p^{dif=1}_{m}$ and hence the variability on GSM-P2 is still expected to be larger than on GSM-P1. We would expect to see decrease in variance in cases where  -->
 <!-- $0.5 > p^{dif=-1}_{m} > p^{dif=0}_{m} > p^{dif=1}_{m} > p^{dif=2}_{m}$. -->
 
 
