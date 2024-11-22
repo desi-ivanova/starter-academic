@@ -264,6 +264,7 @@ Looking at the example template (Figure 1 from the paper, reproduced above), we 
 In other words, the original GSM8K question cannot be generated from the sampling ranges in the Symbolic template of Figure 1.
 In the next table, we propose more suitable ranges for all variables in the symbolic template, that ensure that the original question can be reproduced. 
 
+{{< table caption="Your caption here" >}}
 | Variable              | Symbolic range | Proposed range (ours) | Original value |
 |-----------------------|----------------|----------------|----------------|
 | `total` (toys)        | $(100, 500)$   | $(10, 100)$    | $62$             |
@@ -271,7 +272,8 @@ In the next table, we propose more suitable ranges for all variables in the symb
 | `y` (stuffed animals) | $(5, 100)$     | $(1, 20)$      | $8$              |
 | `z` (stacking rings)  | $(5, 100)$     | $(1, 20)$      | $9$              |
 | `ans` (bouncy balls)  | $(85, 200)$    | $(4, 40)$      | $14$             |
-{{< table caption="<b>The GSM-Symbolic sampling ranges for the variables from Figure 1 in Mirzadeh et al. (2024) (reproduced above) and our proposed sampling ranges.</b> We highlight that the original GSM8K question cannot be generated from the proposed symbolic template because the symbolic ranges do not include the original values, whereas our proposed ranges do. We also believe that the proposed ranges better align with the context of the variables (e.g. having between 4 and 40 bouncy balls is more realistic than having between 85 and 200).">}}
+{{< /table >}}
+<!-- {{< table caption="<b>The GSM-Symbolic sampling ranges for the variables from Figure 1 in Mirzadeh et al. (2024) (reproduced above) and our proposed sampling ranges.</b> We highlight that the original GSM8K question cannot be generated from the proposed symbolic template because the symbolic ranges do not include the original values, whereas our proposed ranges do. We also believe that the proposed ranges better align with the context of the variables (e.g. having between 4 and 40 bouncy balls is more realistic than having between 85 and 200).">}} -->
 
 
 Since accuracy decreases as the number of digits in arithmetic operations increases (as discussed in Section 4.1.1), we expect that our proposed smaller ranges would result in higher accuracy compared to the original template, assuming that the reasoning process is executed correctly.
