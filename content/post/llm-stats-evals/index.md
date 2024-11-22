@@ -377,10 +377,9 @@ Whilst the test is valid, inaccurate measurements of the estimated success proba
 
 
 Let's define the vectors of success probabilities on GSM8K and GSM-Symbolic as $p^{8K}_\text{subset}=[p^{8K}_1, \dots, p^{8K}_7]$
-
 and $p^{Symb}_\text{subset}=[p^{Symb}_1, \dots, p^{Symb}_7]$, 
-<!-- where the subscript $\text{subset}\in\{\text{largest}, \text{smallest}\}$. 
-As before, we perform one-sided and two-sided tests: -->
+where the subscript $\text{subset}\in\{\text{largest}, \text{smallest}\}$. 
+As before, we perform one-sided and two-sided tests:
 
 <!-- - Two-sided: The success probabilities are different
 $$
