@@ -328,11 +328,11 @@ Additionally, Figure 3 of the paper, reproduced below, reports substantial perfo
 {{< figure library="true" src="fig3_gsm.png" title="Figure 3 from Mirzadeh et al. (2024).</b>" numbered="false">}}
 
 
-The right tool to determine whether these differences are statistically significant is hypothesis testing. For each model $m$, we want to test whether its success probability on GSM8K, denoted $p^{8K}_{m}$, equals its success probability on GSM-Symbolic, denoted $p^{Symb}_{m}$. This equality forms our null hypothesis. Our alternative hypothesis can take two forms:
+<!-- The right tool to determine whether these differences are statistically significant is hypothesis testing. For each model $m$, we want to test whether its success probability on GSM8K, denoted $p^{8K}_{m}$, equals its success probability on GSM-Symbolic, denoted $p^{Symb}_{m}$. This equality forms our null hypothesis. Our alternative hypothesis can take two forms: -->
 
 - Two-sided alternative: The success probabilities are different
 
-$$H_0: p^{8K}_{m} = p^{Symb}_{m} ~~~~~~ H^{two-sided}_A: p^{8K}_{m} \neq p^{Symb}_{m}.$$
+$$H_0: p^{8K}_{m} = p^{Symb}_{m} \quad\quad\quad H^{two-sided}_A: p^{8K}_{m} \neq p^{Symb}_{m}.$$
 
 - One-sided alternative: The success probability on GSM8K is greater than that on GSM-Symbolic
 
