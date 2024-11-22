@@ -199,7 +199,7 @@ To understand what "expected" variation means under our assumption, we can const
 The number of correct answers (out of 100 questions) on the GSM8K questions are reported in the second column of Table 1 in the Appendix of the paper. 
 We denote this estimate as $p^{8K}_{m}$ to indicate that it is computed from the GSM8K dataset.
 
-There are different ways to construct CI for the [Binomial proportion](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval). The next figure shows [Wilson score](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) intervals, with more results included in the Appendix. To put this variability into perspective, we also include the average of the 50 point estimates for the model performance on GSM-Symbolic, which we denote as $p^{Symb}_{m}$.[^1] 
+There are different ways to construct CI for the [Binomial proportion](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval). The next figure shows [Wilson score](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) intervals, with more results included in the Appendix. To put this variability into perspective, we also include the average of the 50 point estimates for the model performance on GSM-Symbolic, which we denote as $p^{Symb}_m$.[^1] 
 
 [^1]: Similarly to $p^{8K}_m$, we obtain maximum likelihood estimates of $p^{Symb}_m$ from the average accuracy on GSM-Symbolic, reported in Table 1 of the paper. 
 
