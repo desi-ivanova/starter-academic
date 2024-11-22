@@ -190,22 +190,16 @@ Unfortunately, since the paper does not provide question-level performance data,
 
 Thus, an LM answering questions is modelled as an independent and identically distributed Bernoulli trial with a model-specific success probability $p_m$.
 Under this assumption, the total number of correct answers on a dataset of size $N=100$ is
-
 $$\text{Binomial}(N, p_m).$$
-
 The variance of this distribution is **fully determined by the success probability $p_m$** and equals 
-
 $$N \cdot p_m \cdot (1-p_m).$$
-
 This variance is maximised when $p_m=1/2$ and goes to $0$ as $p_m$ approaches $0$ or $1$.
 
-To understand what "expected" variation means under our assumption, we can construct confidence intervals (CIs) for the point estimates of $p_m$ on the GSM8K dataset. 
-We highlight that the paper does not report such point estimates, but we can calculate the maximum likelihood estimates of $p_m$ by dividing the number of correct answers by the total number of questions.
+To understand what "expected" variation means under our assumption, we can construct confidence intervals (CIs) for the point estimates of $p_m$ on the GSM8K dataset. We highlight that the paper does not report such point estimates, but we can calculate the maximum likelihood estimates of $p_m$ by dividing the number of correct answers by the total number of questions.
 The number of correct answers (out of 100 questions) on the GSM8K questions are reported in the second column of Table 1 in the Appendix of the paper. 
 We denote this estimate as $p^{8K}_{m}$ to indicate that it is computed from the GSM8K dataset.
 
-There are different ways to construct CI for the [Binomial proportion](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval). The next figure shows [Wilson score](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) intervals, with more results included in the Appendix. 
-To put this variability into perspective, we also include the average of the 50 point estimates for the model performance on GSM-Symbolic, which we denote as $p^{Symb}_{m}$.[^1] 
+There are different ways to construct CI for the [Binomial proportion](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval). The next figure shows [Wilson score](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) intervals, with more results included in the Appendix. To put this variability into perspective, we also include the average of the 50 point estimates for the model performance on GSM-Symbolic, which we denote as $p^{Symb}_{m}$.[^1] 
 
 [^1]: Similarly to $p^{8K}\\_{m}$, we obtain maximum likelihood estimates of $p^{Symb}\\_{m}$ from the average accuracy on GSM-Symbolic, reported in Table 1 of the paper. 
 
@@ -387,7 +381,6 @@ Whilst the test is valid, inaccurate measurements of the estimated success proba
 Let's define the vectors of success probabilities on GSM8K and GSM-Symbolic as $p^{8K}_{\text{subset}}=[p^{8K}_{1}, \dots, p^{8K}_{7}]$ and $p^{Symb}_{\text{subset}}= [p^{Symb}_{1}, \dots, p^{Symb}_{7}]$, where the subscript $\text{subset} \in \{\text{largest}, \text{smallest}\}$. As before, we perform one-sided and two-sided tests:
 
 - Two-sided: The success probabilities are different
-
 $$
 \begin{aligned}
 H_0: p^{8K}_{\text{subset}} = p^{Symb}_{\text{subset}} \quad\quad\quad H_A^\text{two-sided}: p^{8K}_{\text{subset}} \neq p^{Symb}_{\text{subset}}.
@@ -395,7 +388,6 @@ H_0: p^{8K}_{\text{subset}} = p^{Symb}_{\text{subset}} \quad\quad\quad H_A^\text
 $$
 
 - One-sided: The success probability on GSM8K is greater than that on GSM-Symbolic
-
 $$
 H_0: p^{8K}_{\text{subset}} = p^{Symb}_{\text{subset}} \quad\quad\quad H_A^\text{one-sided}: p^{8K}_{\text{subset}} > p^{Symb}_{\text{subset}}.
 $$
@@ -535,9 +527,7 @@ We sample a set of such filler-values $V \sim \mathbb{P}_{V\vert T}(\cdot \vert 
 
 We are interested in whether a language model $m$ answers a question correctly. 
 We model this with the random variable $X_m$, defined as 
-
-$$X_m = \mathbb{I}\left(m(T(V)_Q) = T(V)_A\right),$$  
-
+$$X_m = \mathbb{I}\left(m(T(V)_Q) = T(V)_A\right),$$
 where $\mathbb{I}$ is the indicator function. 
 The accuracy of model $m$, denoted as $p_m$, is then the expected value of $X_m$, i.e., $p_m = \mathbb{E}[X_m]$. 
 The variable $X_m$ follows a $\text{Bernoulli}(p_m)$ distribution.
