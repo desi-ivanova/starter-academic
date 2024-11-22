@@ -376,20 +376,20 @@ This gives us two sets of 7 models, with differences between the two sets indica
 Whilst the test is valid, inaccurate measurements of the estimated success probabilities would lead to invalid conclusions.  
 
 
-Let's define the vectors of success probabilities on GSM8K and GSM-Symbolic as $p^{8K}_\text{subset}=[p^{8K}_1, \dots, p^{8K}_7]$ and $p^{Symb}_{subset}=[p^{Symb}_1, \dots, p^{Symb}_7]$, where the subscript $\text{subset}\in\{\text{largest}, \text{smallest}\}$. 
-As before, we perform one-sided and two-sided tests:
-<!-- 
+Let's define the vectors of success probabilities on GSM8K and GSM-Symbolic as $p^{8K}_\text{subset}=[p^{8K}_1, \dots, p^{8K}_7]$
 
-- Two-sided: The success probabilities are different
+and $p^{Symb}_\text{subset}=[p^{Symb}_1, \dots, p^{Symb}_7]$, 
+<!-- where the subscript $\text{subset}\in\{\text{largest}, \text{smallest}\}$. 
+As before, we perform one-sided and two-sided tests: -->
+
+<!-- - Two-sided: The success probabilities are different
 $$
-\begin{aligned}
-H_0: p^{8K}_\text{subset} = p^{Symb}_\text{subset} \quad\quad\quad H_A^{two-sided}: p^{8K}_\text{subset} \neq p^{Symb}_\text{subset}.
-\end{aligned}
+H_0: p^{8K}_\text{subset} = p^{Symb}_\text{subset} \quad\quad\quad H_A^\text{two-sided}: p^{8K}_\text{subset} \neq p^{Symb}_\text{subset}.
 $$
 
 - One-sided: The success probability on GSM8K is greater than that on GSM-Symbolic
 $$
-H_0: p^{8K}_\text{subset} = p^{Symb}_\text{subset} \quad\quad\quad H_A^{one-sided}: p^{8K}_\text{subset} > p^{Symb}_\text{subset}.
+H_0: p^{8K}_\text{subset} = p^{Symb}_\text{subset} \quad\quad\quad H_A^\text{one-sided}: p^{8K}_\text{subset} > p^{Symb}_\text{subset}.
 $$ -->
 
 The results of the hypothesis tests are given in the following table:
