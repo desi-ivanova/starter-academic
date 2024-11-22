@@ -222,7 +222,7 @@ Conversely, models with success probabilities closer to 0 or 1 (Gemma2b, GPT-4o,
 {{< figure library="true" src="fig2_gsm.png" title="<b>Figure 2 from Mirzadeh et al. (2024).</b> Note that the x-axis scales are different for different models." numbered="false">}}
 
 
-For the models shown in this figure, the GSM8K accuracy, $p^{8K}_{m}$, (represented by the dashed line) varies from $74\%$ for the weakest model, Llama3-8B-instruct, to 95% for the strongest model, GPT-4o. The range of accuracies achieved on the 50 GSM-Symbolic datasets is relatively *wide* for Llama3-8B-instruct (approximately between $69\%$ and $81\%$) and relatively *narrow* for GPT-4o (approximately between $91\%$ and $98\%$).
+For the models shown in this figure, the GSM8K accuracy, $p_{m}^{8K}$, (represented by the dashed line) varies from 74% for the weakest model, Llama3-8B-instruct, to 95% for the strongest model, GPT-4o. The range of accuracies achieved on the 50 GSM-Symbolic datasets is relatively *wide* for Llama3-8B-instruct (approximately between $69\%$ and $81\%$) and relatively *narrow* for GPT-4o (approximately between $91\%$ and $98\%$).
 Importantly, for both models, **the variation in GSM-Symbolic performance falls well within the Wilson score CIs of GSM8K performance that we calculated earlier!**  We visualise this in the next figure, showing the overlap between the $95\%$ Wilson score CIs for $p^{8K}_{m}$ and the accuracy ranges on GSM-Symbolic for the models that had results reported in the paper (note that this does not include all 25 models).
 
 
@@ -343,9 +343,9 @@ Our *alternative hypothesis* can take two forms:
 
 - Two-sided alternative: The success probabilities are different
 
-$$
-  H_0: p^{8K}_{m} = p^{Symb}_{m} \quad\quad\quad H^\text{two-sided}_A: p^{8K}_{m} \neq p^{Symb}_{m}.
-$$
+\[
+H_0: p^{8K}_{m} = p^{Symb}_{m} \quad\quad\quad H^\text{two-sided}_A: p^{8K}_{m} \neq p^{Symb}_{m}.
+\]
 
 - One-sided alternative: The success probability on GSM8K is greater than that on GSM-Symbolic
 
@@ -400,13 +400,13 @@ As before, we perform one-sided and two-sided tests:
 - Two-sided: The success probabilities are different
 
 $$
-  H_0: p^{8K}_{\text{subset}} = p^{Symb}_{\text{subset}} \quad\quad\quad H_A^\text{two-sided}: p^{8K}_{\text{subset}} \neq p^{Symb}_{\text{subset}}.
+H_0: p^{8K}_{\text{subset}} = p^{Symb}_{\text{subset}} \quad\quad\quad H_A^\text{two-sided}: p^{8K}_{\text{subset}} \neq p^{Symb}_{\text{subset}}.
 $$
 
 - One-sided: The success probability on GSM8K is greater than that on GSM-Symbolic
 
 $$
-  H_0: p^{8K}_{\text{subset}} = p^{Symb}_{\text{subset}} \quad\quad\quad H_A^\text{one-sided}: p^{8K}_{\text{subset}} > p^{Symb}_{\text{subset}}.
+H_0: p^{8K}_{\text{subset}} = p^{Symb}_{\text{subset}} \quad\quad\quad H_A^\text{one-sided}: p^{8K}_{\text{subset}} > p^{Symb}_{\text{subset}}.
 $$
 
 The results of the hypothesis tests are given in the following table:
