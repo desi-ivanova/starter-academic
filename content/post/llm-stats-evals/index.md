@@ -190,7 +190,7 @@ Unfortunately, since the paper does not provide question-level performance data,
 
 Thus, an LM answering questions is modelled as an independent and identically distributed Bernoulli trial with a model-specific success probability $p_m$.
 Under this assumption, the total number of correct answers on a dataset of size $N=100$ is
-$$\text{Binomial}(N, p_m).$$
+$$Binomial(N, p_m).$$
 The variance of this distribution is **fully determined by the success probability $p_m$** and equals 
 $$N \cdot p_m \cdot (1-p_m).$$
 This variance is maximised when $p_m=1/2$ and goes to $0$ as $p_m$ approaches $0$ or $1$.
@@ -334,11 +334,11 @@ The right tool to determine whether these differences are statistically signific
 
 - Two-sided alternative: The success probabilities are different
 
-$$H_0: p^{8K}_{m} = p^{Symb}_{m} \quad\quad\quad H^\text{two-sided}_A: p^{8K}_{m} \neq p^{Symb}_{m}.$$
+$$H_0: p^{8K}_{m} = p^{Symb}_{m} \quad\quad\quad H^{two-sided}_A: p^{8K}_{m} \neq p^{Symb}_{m}.$$
 
 - One-sided alternative: The success probability on GSM8K is greater than that on GSM-Symbolic
 
-$$H_0: p^{8K}_{m} = p^{Symb}_{m} \quad\quad\quad H^\text{one-sided}_A: p^{8K}_{m} > p^{Symb}_{m}.$$
+$$H_0: p^{8K}_{m} = p^{Symb}_{m} \quad\quad\quad H^{one-sided}_A: p^{8K}_{m} > p^{Symb}_{m}.$$
 
 We use Fisher exact test for the binomial proportion for all models, reporting the p-values in the next figure.
 
@@ -378,18 +378,18 @@ This gives us two sets of 7 models, with differences between the two sets indica
 Whilst the test is valid, inaccurate measurements of the estimated success probabilities would lead to invalid conclusions.  
 
 
-Let's define the vectors of success probabilities on GSM8K and GSM-Symbolic as $p^{8K}_{\text{subset}}=[p^{8K}_{1}, \dots, p^{8K}_{7}]$ and $p^{Symb}_{\text{subset}}= [p^{Symb}_{1}, \dots, p^{Symb}_{7}]$, where the subscript $\text{subset} \in \{\text{largest}, \text{smallest}\}$. As before, we perform one-sided and two-sided tests:
+Let's define the vectors of success probabilities on GSM8K and GSM-Symbolic as $p^{8K}_{subset}=[p^{8K}_{1}, \dots, p^{8K}_{7}]$ and $p^{Symb}_{subset}= [p^{Symb}_{1}, \dots, p^{Symb}_{7}]$, where the subscript $subset \in \{largest, smallest\}$. As before, we perform one-sided and two-sided tests:
 
 - Two-sided: The success probabilities are different
 $$
 \begin{aligned}
-H_0: p^{8K}_{\text{subset}} = p^{Symb}_{\text{subset}} \quad\quad\quad H_A^\text{two-sided}: p^{8K}_{\text{subset}} \neq p^{Symb}_{\text{subset}}.
+H_0: p^{8K}_{subset} = p^{Symb}_{subset} \quad\quad\quad H_A^{two-sided}: p^{8K}_{subset} \neq p^{Symb}_{subset}.
 \end{aligned}
 $$
 
 - One-sided: The success probability on GSM8K is greater than that on GSM-Symbolic
 $$
-H_0: p^{8K}_{\text{subset}} = p^{Symb}_{\text{subset}} \quad\quad\quad H_A^\text{one-sided}: p^{8K}_{\text{subset}} > p^{Symb}_{\text{subset}}.
+H_0: p^{8K}_{subset} = p^{Symb}_{subset} \quad\quad\quad H_A^{one-sided}: p^{8K}_{subset} > p^{Symb}_{subset}.
 $$
 
 The results of the hypothesis tests are given in the following table:
@@ -429,13 +429,12 @@ Mirzadeh et al. (2024) highlights the fact that performance decreases and varian
 
 The figure above shows the results for four datasets: the baseline GSM-Symbolic, GSM-M1 (Minus 1), which removes a clause, and GSM-P1 (Plus 1) and GSM-P2 (Plus 2), which add one and two clauses respectively. 
 It is reasonable to expect that a model will perform better on easier datasets and worse on more difficult ones.
-As before, we assume that a model $m$ answers questions of varying difficulty levels $\text{dif}=-1, 0, 1, 2$ as independent and identically distributed Bernoulli trials with a success probability of $p^{\text{dif}}_{m}$. 
-The distribution of the total number of correct answers follows a binomial distribution $\text{Bin}(N=100, p^\text{dif}_{m})$, with variance equal to $N \cdot p^\text{dif}_{m} \cdot (1 - p^\text{dif}_{m})$.
+As before, we assume that a model $m$ answers questions of varying difficulty levels $dif=-1, 0, 1, 2$ as independent and identically distributed Bernoulli trials with a success probability of $p^{dif}_{m}$. The distribution of the total number of correct answers follows a binomial distribution $Bin(N=100, p^{dif}_{m})$, with variance equal to $N \cdot p^{dif}_{m} \cdot (1 - p^{dif}_{m})$.
 
-If the probabilities of success decrease with increasing question complexity, i.e. $p^{\text{dif}=-1}_{m} > p^{\text{dif}=0}_{m} > p^{\text{dif}=1}_{m} > p^{\text{dif}=2}_{m} > 0.5$, the corresponding variances *must increase*.[^3]
+If the probabilities of success decrease with increasing question complexity, i.e. $p^{dif=-1}_{m} > p^{dif=0}_{m} > p^{dif=1}_{m} > p^{dif=2}_{m} > 0.5$, the corresponding variances *must increase*.[^3]
 We believe that this is precisely what we observe in Figure 6: the increase in variance is a trivial consequence of the decrease in probabilities of success, rather than a sign of "pattern-matching" becoming harder.
 
-[^3]: We note that the average success probability on GSM-P2, $p^{\text{dif}=2}\\_{m}$, does fall below 0.5 for the models in the first row of Figure 6. Our point is still valid in these cases since $p^{\text{dif}=2}\\_{m}$ is closer to 0.5 than $p^{\text{dif}=1}\\_{m}$ and hence the variability on GSM-P2 is still expected to be larger than on GSM-P1. We would expect to see decrease in variance in cases where $0.5 > p^{\text{dif}=-1}\\_{m} > p^{\text{dif}=0}\\_{m} > p^{\text{dif}=1}\\_{m} > p^{\text{dif}=2}\\_{m}$.
+[^3]: We note that the average success probability on GSM-P2, $p^{dif=2}\\_{m}$, does fall below 0.5 for the models in the first row of Figure 6. Our point is still valid in these cases since $p^{dif=2}\\_{m}$ is closer to 0.5 than $p^{dif=1}\\_{m}$ and hence the variability on GSM-P2 is still expected to be larger than on GSM-P1. We would expect to see decrease in variance in cases where $0.5 > p^{dif=-1}\\_{m} > p^{dif=0}\\_{m} > p^{dif=1}\\_{m} > p^{dif=2}\\_{m}$.
 
 
 
@@ -523,14 +522,14 @@ First, we assume that the questions from GSM8k and GSM-Symbolic are obtained fro
 1. We sample a _template_ $T$ from some distribution $\mathbb{P}_T$. 
 A template here is defined in the sense of <d-cite key="mirzadeh2024gsm"></d-cite>, that is, it is a mathematical word problem, in which numerical values (e.g. number of toys) and certain other objects (e.g. names of people) are marked as variables, to be filled-in later. 
 2. The template $T$ gives rise to a conditional distribution $\mathbb{P}_{V\vert T}$ over the admissible _filler-values_. 
-We sample a set of such filler-values $V \sim \mathbb{P}_{V\vert T}(\cdot \vert T)$ and plug them into the template, producing a pair of a question and an answer $\left(T(V)_Q, T(V)_A\right)$.
+We sample a set of such filler-values $V \sim \mathbb{P}_{V \vert T}(\cdot \vert T)$ and plug them into the template, producing a pair of a question and an answer $(T(V)_Q, T(V)_A)$.
 
 We are interested in whether a language model $m$ answers a question correctly. 
 We model this with the random variable $X_m$, defined as 
 $$X_m = \mathbb{I}\left(m(T(V)_Q) = T(V)_A\right),$$
 where $\mathbb{I}$ is the indicator function. 
 The accuracy of model $m$, denoted as $p_m$, is then the expected value of $X_m$, i.e., $p_m = \mathbb{E}[X_m]$. 
-The variable $X_m$ follows a $\text{Bernoulli}(p_m)$ distribution.
+The variable $X_m$ follows a $Bernoulli(p_m)$ distribution.
 
 In fact, since we care about the difference in model performance on GSM8K and GSM-Symbolic, we postulate that we have two random variables  $V^{8K}$ and $V^{Symb}$, governed by two conditional distributions $\mathbb{P}^{8K}_{V \vert T}$ and 
 $\mathbb{P}^{Symb}_{V \vert T}$, respectively. 
@@ -569,7 +568,7 @@ DRI: Yes exactly, but this is because we are using what is called "greedy decodi
 -->
 
 Under this model, we have
-$X_m^{8K} \sim \text{Bernoulli}\left(p_m^{8K}\right)$ and $X_m^{Symb} \sim \text{Bernoulli}\left(p_m^{Symb}\right)$, where $p_m^{8K}, p_m^{Symb} \in [0, 1]$ are our main parameters of interest.
+$X_m^{8K} \sim Bernoulli\left(p_m^{8K}\right)$ and $X_m^{Symb} \sim Bernoulli\left(p_m^{Symb}\right)$, where $p_m^{8K}, p_m^{Symb} \in [0, 1]$ are our main parameters of interest.
 
 In this framework, we can describe the experimental setup of Mirzadeh et al. (2024) <d-cite key=mirzadeh2024gsm></d-cite> and the data obtained from it as follows: 
 - **Templates $T$**: 100 templates $t_1, t_2, \dots, t_{100}$ sampled independently from $\mathbb{P}_T$
