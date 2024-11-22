@@ -598,16 +598,9 @@ $$\mathbb{P}^{Symb}_{V | t_i} \quad \text{for} \quad 1 \le i \le 100$$
 [^6]: We note that this raw data is not made publicly available.
 
 - **Accuracy estimates**: from these observations, maximum likelihood estimates can be computed as 
-
-\[
-\begin{aligned}
-\hat{p}_m^{8K} = \frac{1}{100}\sum_{i=1}^{100} {x^{8K}_{m,t_i}}
-\end{aligned}
-\]
-
 $$
 \begin{aligned}
-\hat{p}_m^{8K} = \frac{1}{100}\sum_{i=1}^{100} {x^{8K}_{m,t_i}}
+\hat{p}\_m^{8K} = \frac{1}{100}\sum\_{i=1}^{100} {x^{8K}\_{m,t\_i}}
 \end{aligned}
 $$
 
@@ -615,7 +608,6 @@ and
 
 $$\hat{p}_{m, j}^{Symb} = \frac{1}{100}\sum_{i=1}^{100} x^{Symb}_{m,t_i, j}, \; 1 \leq j \leq 50$$
 
-\hat{p}<sup>Symb</sup><sub>m, j</sub> $= \frac{1}{100}\sum_{i=1}^{100}$ x<sup>Symb</sup><sub>m,t_i, j</sub>, $1 \leq j \leq 50$
 
 We note that only $\hat{p}_m^{8K}$ and the average $\overline{\hat{p}_m^{Symb}}=\frac{1}{50}\sum_{j=1}^{50}\hat{p}_{m,j}^{Symb}$ are reported in the paper (Table 1, Appendix A.2 in Mirzadeh et al. (2024)).
 
