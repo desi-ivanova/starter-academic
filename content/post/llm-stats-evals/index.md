@@ -601,6 +601,12 @@ $$\mathbb{P}^{Symb}_{V | t_i} \quad \text{for} \quad 1 \le i \le 100$$
 
 $$\hat{p}_m^{8K} = \frac{1}{100}\sum_{i=1}^{100} x^{8K}_{m,t_i}$$
 
+$$\hat{p}_m^{8K} = \frac{1}{100}\sum_{i=1}^{100} x^{8K}_{m,{t_i}}$$
+
+$$\hat{p}_m^{\text{8K}} = \frac{1}{100}\sum_{i=1}^{100} x^{\text{8K}}_{m, t_i}$$
+
+$$\hat{p}_m^{\text{8K}} = \frac{1}{100}\sum_{i=1}^{100} x^{\text{8K}}_{m, t_i}$$
+
 and 
 
 $$\hat{p}_{m, j}^{Symb} = \frac{1}{100}\sum_{i=1}^{100} x^{Symb}_{m,t_i, j}, \; 1 \leq j \leq 50$$
