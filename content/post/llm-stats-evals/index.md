@@ -197,7 +197,7 @@ This variance is maximised when $p_m=1/2$ and goes to $0$ as $p_m$ approaches $0
 
 To understand what "expected" variation means under our assumption, we can construct confidence intervals (CIs) for the point estimates of $p_m$ on the GSM8K dataset. We highlight that the paper does not report such point estimates, but we can calculate the maximum likelihood estimates of $p_m$ by dividing the number of correct answers by the total number of questions.
 The number of correct answers (out of 100 questions) on the GSM8K questions are reported in the second column of Table 1 in the Appendix of the paper. 
-We denote this estimate as $p^{8K}_{m}$ to indicate that it is computed from the GSM8K dataset.
+We denote this estimate as $p^{8K}_m$ to indicate that it is computed from the GSM8K dataset.
 
 There are different ways to construct CI for the [Binomial proportion](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval). The next figure shows [Wilson score](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) intervals, with more results included in the Appendix. To put this variability into perspective, we also include the average of the 50 point estimates for the model performance on GSM-Symbolic, which we denote as $p^{Symb}_m$.[^1] 
 
@@ -216,8 +216,8 @@ Conversely, models with success probabilities closer to 0 or 1 (Gemma2b, GPT-4o,
 {{< figure library="true" src="fig2_gsm.png" title="<b>Figure 2 from Mirzadeh et al. (2024).</b> Note that the x-axis scales are different for different models." numbered="false">}}
 
 
-For the models shown in this figure, the GSM8K accuracy, $p_{m}^{8K}$, (represented by the dashed line) varies from 74% for the weakest model, Llama3-8B-instruct, to 95% for the strongest model, GPT-4o. The range of accuracies achieved on the 50 GSM-Symbolic datasets is relatively wide for Llama3-8B-instruct (approximately between 69% and 81%) and relatively narrow for GPT-4o (approximately between 91% and 98%).
-Importantly, for both models, the variation in GSM-Symbolic performance falls well within the Wilson score CIs of GSM8K performance that we calculated earlier! We visualise this in the next figure, showing the overlap between the 95% Wilson score CIs for $p^{8K}_{m}$ and the accuracy ranges on GSM-Symbolic for the models that had results reported in the paper (note that this does not include all 25 models).
+For the models shown in this figure, the GSM8K accuracy, $p_m^{8K}$, (represented by the dashed line) varies from 74% for the weakest model, Llama3-8B-instruct, to 95% for the strongest model, GPT-4o. The range of accuracies achieved on the 50 GSM-Symbolic datasets is relatively wide for Llama3-8B-instruct (approximately between 69% and 81%) and relatively narrow for GPT-4o (approximately between 91% and 98%).
+Importantly, for both models, the variation in GSM-Symbolic performance falls well within the Wilson score CIs of GSM8K performance that we calculated earlier! We visualise this in the next figure, showing the overlap between the 95% Wilson score CIs for $p^{8K}_m$ and the accuracy ranges on GSM-Symbolic for the models that had results reported in the paper (note that this does not include all 25 models).
 
 
 {{< figure library="true" src="ci_vs_reported.png" title="<b>95% Wilson score confidence intervals for the point estimates of p<sup>8K</sup><sub>m</sub> (red), along with the average (over 50 datasets) point estimate of p<sup>Symb</sup><sub>m</sub> (blue).</b> The latter ranges are not explicitly reported; we approximate them from the histograms in Figure 1 of Mirzadeh et al. (2024), as well as Figures 10 and 12 from the Appendix of the paper. Since such histograms are not available for all models, we only show the subset of the models for which they are." numbered="false">}}
@@ -537,7 +537,7 @@ We sample a set of such filler-values $V \sim \mathbb{P}_{V \vert T}(\cdot \vert
 
 We are interested in whether a language model $m$ answers a question correctly. 
 We model this with the random variable $X_m$, defined as 
-$$X_m = \mathbb{I}\left(m(T(V)_Q) = T(V)_A\right),$$
+$$X_m = \mathbb{I}\(m(T(V)_Q) = T(V)_A),$$
 where $\mathbb{I}$ is the indicator function. 
 The accuracy of model $m$, denoted as $p_m$, is then the expected value of $X_m$, i.e., $p_m = \mathbb{E}[X_m]$. 
 The variable $X_m$ follows a $Bernoulli(p_m)$ distribution.
@@ -577,21 +577,26 @@ where, for the purpose of this analysis, the bottom-most arrows denote determini
 DRI: Yes exactly, but this is because we are using what is called "greedy decoding" (which is generally the norm when you interact with these models)
 -->
 
-Under this model, we have $X_m^{8K} \sim Bernoulli\left(p_m^{8K}\right)$ and $X_m^{Symb} \sim Bernoulli\left(p_m^{Symb}\right)$, where $p_m^{8K}, p_m^{Symb} \in [0, 1]$ are our main parameters of interest.
+Under this model, we have $X_m^{8K} \sim Bernoulli(p_m^{8K})$ and $X_m^{Symb} \sim Bernoulli(p_m^{Symb})$, where $p_m^{8K}, p_m^{Symb} \in [0, 1]$ are our main parameters of interest.
 
 In this framework, we can describe the experimental setup of Mirzadeh et al. (2024) <d-cite key=mirzadeh2024gsm></d-cite> and the data obtained from it as follows: 
 
 - **Templates $T$**: 100 templates $t_1, t_2, \dots, t_{100}$ sampled independently from $\mathbb{P}_T$
 
-- **Filler-values $V^{8K}$**: one sample $v^{8K}_i$ from each conditional $\mathbb{P}^{8K}_{V \vert t_i}$ for $1 \le i \le 100$
-- **Filler-values $V^{Symb}$**: 50 i.i.d. samples $v^{Symb}_{i, j}, 1\le j \le 50$ from each conditional $\mathbb{P}^{Symb}_{V \vert t_i}$ for $1 \le i \le 100$
+- **Filler-values $V^{8K}$**: one sample $v^{8K}_i$ from each conditional 
 
-- **Observed data**: for each of these sets of filler-values and each model $m$ (in a pre-determined set of 25 language models), we have corresponding observations $x^{8K}_{m,t_i}$ and $x^{Symb}_{m, t_i, j}$ --- that is, whether model $m$ answered correctly the questions $t_i(v^{8K}_i)$ and $t_i\left(v^{Symb}_{i, j}\right)$, respectively.<d-footnote>We note that this raw data is not made publicly available.</d-footnote>
+$$\mathbb{P}^{8K}_{V \vert t_i} \; \text{for} \; 1 \le i \le 100$$
+
+- **Filler-values $V^{Symb}$**: 50 i.i.d. samples $v^{Symb}_{i,j}, 1 \le j \le 50$ from each conditional $\mathbb{P}^{Symb}_{V | t_i}$ for $1 \le i \le 100$
+
+- **Observed data**: for each of these sets of filler-values and each model $m$ (in a pre-determined set of 25 language models), we have corresponding observations $x^{8K}_{m,t_i}$ and $x^{Symb}_{m, t_i, j}$---that is, whether model $m$ answered correctly the questions $t_i(v^{8K}_i)$ and $t_i(v^{Symb}_{i, j})$, respectively.[^6]
+
+[^6]: We note that this raw data is not made publicly available.
 
 - **Accuracy estimates**: from these observations, maximum likelihood estimates can be computed as $\hat{p}_m^{8K} = \frac{1}{100}\sum_{i=1}^{100} x^{8K}_{m,t_i}$ and 
-$\hat{p}_{m, j}^{Symb} = \frac{1}{100}\sum_{i=1}^{100} x^{Symb}_{m,t_i, j}, \; 1 \leq j \leq 50$. We note that only $\hat{p}_m^{8K}$ and the average $\overline{\hat{p}_m^{Symb}} = \frac{1}{50}\sum_{j=1}^{50}\hat{p}_{m, j}^{Symb}$ are reported in the paper (Table 1, Appendix A.2 in <d-cite key=mirzadeh2024gsm></d-cite>).
+$\hat{p}_{m, j}^{Symb} = \frac{1}{100}\sum_{i=1}^{100} x^{Symb}_{m,t_i, j}, \; 1 \leq j \leq 50$. We note that only $\hat{p}_m^{8K}$ and the average $\overline{\hat{p}_m^{Symb}} = \frac{1}{50}\sum_{j=1}^{50}\hat{p}_{m, j}^{Symb}$ are reported in the paper (Table 1, Appendix A.2 in Mirzadeh et al. (2024)).
 
-Under the assumptions of this mathematical model, we can think of $\hat{p}_m^{8K}$ as an observation from a random variable $\hat{P}^{8K}_m \sim \frac{1}{100}Bin\left(100,p^{8K}_m\right)$. Similarly, each $\hat{p}_{m, j}^{Symb}, \; 1 \le j \le 50$ is an observation of $\hat{P}^{Symb}_m \sim \frac{1}{100} Bin\left(100,p^{Symb}_m\right)$. We can't assume that these observations are independent, due to the shared templates.  
+Under the assumptions of this mathematical model, we can think of $\hat{p}_m^{8K}$ as an observation from a random variable $\hat{P}^{8K}_m \sim \frac{1}{100}Bin(100,p^{8K}_m)$. Similarly, each $\hat{p}_{m, j}^{Symb}, \; 1 \le j \le 50$ is an observation of $\hat{P}^{Symb}_m \sim \frac{1}{100} Bin(100,p^{Symb}_m)$. We can't assume that these observations are independent, due to the shared templates.  
 
 In this blogpost, the main question we've tackled is: given these observed $\hat{p}_m^{8K}$ and $\overline{\hat{p}_m^{Symb}}$, what evidence is there to believe that $p^{8K}_m \neq p^{Symb}_m$ or that $p^{8K}_m > p^{Symb}_m$?
 
