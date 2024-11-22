@@ -328,15 +328,15 @@ Additionally, Figure 3 of the paper, reproduced below, reports substantial perfo
 {{< figure library="true" src="fig3_gsm.png" title="Figure 3 from Mirzadeh et al. (2024).</b>" numbered="false">}}
 
 
-<!-- The right tool to determine whether these differences are statistically significant is hypothesis testing. For each model $m$, we want to test whether its success probability on GSM8K, denoted $p^{8K}_{m}$, equals its success probability on GSM-Symbolic, denoted $p^{Symb}_{m}$. This equality forms our null hypothesis. Our alternative hypothesis can take two forms: -->
+The right tool to determine whether these differences are statistically significant is hypothesis testing. For each model $m$, we want to test whether its success probability on GSM8K, denoted $p^{8K}_m$, equals its success probability on GSM-Symbolic, denoted $p^{Symb}_m$. This equality forms our null hypothesis. Our alternative hypothesis can take two forms:
 
 - Two-sided alternative: The success probabilities are different
 
-$$H_0: p^{8K}_m = p^{Symb}_m \quad\quad\quad H^{two-sided}_A: p^{8K}_m \neq p^{Symb}_m.$$
+$$H_0: p^{8K}_m = p^{Symb}_m \quad\quad\quad H^{\text{two-sided}}_A: p^{8K}_m \neq p^{Symb}_m.$$
 
 - One-sided alternative: The success probability on GSM8K is greater than that on GSM-Symbolic
 
-$$H_0: p^{8K}_m = p^{Symb}_m ~~~~~~ H^{one-sided}_A: p^{8K}_m > p^{Symb}_m.$$
+$$H_0: p^{8K}_m = p^{Symb}_m \quad\quad\quad H^{\text{one-sided}}_A: p^{8K}_m > p^{Symb}_m.$$
 
 We use Fisher exact test for the binomial proportion for all models, reporting the p-values in the next figure.
 
