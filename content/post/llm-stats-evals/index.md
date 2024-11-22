@@ -543,21 +543,8 @@ where $\mathbb{I}$ is the indicator function.
 The accuracy of model $m$, denoted as $p_m$, is then the expected value of $X_m$, i.e., $p_m = \mathbb{E}[X_m]$. 
 The variable $X_m$ follows a $Bernoulli(p_m)$ distribution.
 
-In fact, since we care about the difference in model performance on GSM8K and GSM-Symbolic, we postulate that we have two random variables  $V^{8K}$ and $V^{Symb}$, governed by two conditional distributions $\mathbb{P}^{8K}_{V|T}$ 
-<!-- and $\mathbb{P}^{Symb}_{V \,|\, T}$, respectively.  -->
+In fact, since we care about the difference in model performance on GSM8K and GSM-Symbolic, we postulate that we have two random variables $V^{8K}$ and $V^{Symb}$, governed by two conditional distributions: $\mathbb{P}^{8K}_{V|T}$, corresponding to GSM8K, and $\mathbb{P}^{Symb}_{V|T}$, corresponding to GSM-Symbolic.
 These two distributions may be the same or different.
-
-$\mathbb{P}^{8K}_{V|T}$ and $\mathbb{P}^{Symb}_{V|T}$.  
-
-$\mathbb{P}^{8K}_{V|T} \text{ and } \mathbb{P}^{Symb}_{V|T}$.
-
-$\mathbb{P}^{8K}_{V|T}$ \ and \ $\mathbb{P}^{Symb}_{V|T}$.  
-
-\$\mathbb{P}^{8K}_{V|T}$ and $\mathbb{P}^{Symb}_{V|T}\$.  
-
-\(\mathbb{P}^{8K}_{V|T}$ and $\mathbb{P}^{Symb}_{V|T}\).  
-
-\[\mathbb{P}^{8K}_{V|T}$ and $\mathbb{P}^{Symb}_{V|T}\].  
 
 
 This setup can be represented by the following directed probabilistic graphical model: 
@@ -606,7 +593,7 @@ $$\mathbb{P}^{8K}_{V \vert t_i} \quad \text{for} \quad 1 \le i \le 100$$
 
 $$\mathbb{P}^{Symb}_{V | t_i} \quad \text{for} \quad 1 \le i \le 100$$
 
-- **Observed data**: for each of these sets of filler-values and each model $m$ (in a pre-determined set of 25 language models), we have corresponding observations $x^{8K}_{m,t_i}$ and $x^{Symb}_{m,t_i,j}$---that is, whether model $m$ answered correctly the questions $t_i(v^{8K}_i)$ and $t_i(v^{Symb}_{i,j})$, respectively.[^6]
+- **Observed data**: for each of these sets of filler-values and each model $m$ (in a pre-determined set of 25 language models), we have corresponding observations $x^{8K}_{m,t_i}$ for the GSM8K questions and $x^{Symb}_{m,t_i,j}$ for the GSM-Symbolic questions---that is, whether model $m$ answered correctly the questions $t_i(v^{8K}_i)$ and $t_i(v^{Symb}_{i,j})$, respectively.[^6]
 
 [^6]: We note that this raw data is not made publicly available.
 
