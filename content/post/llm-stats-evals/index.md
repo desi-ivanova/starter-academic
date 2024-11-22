@@ -615,6 +615,8 @@ and
 
 $$\hat{p}_{m, j}^{Symb} = \frac{1}{100}\sum_{i=1}^{100} x^{Symb}_{m,t_i, j}, \; 1 \leq j \leq 50$$
 
+\hat{p}<sup>Symb</sup><sub>m, j</sub> $= \frac{1}{100}\sum_{i=1}^{100}$ x<sup>Symb</sup><sub>m,t_i, j</sub>, $1 \leq j \leq 50$
+
 We note that only $\hat{p}_m^{8K}$ and the average $\overline{\hat{p}_m^{Symb}}=\frac{1}{50}\sum_{j=1}^{50}\hat{p}_{m,j}^{Symb}$ are reported in the paper (Table 1, Appendix A.2 in Mirzadeh et al. (2024)).
 
 Under the assumptions of this mathematical model, we can think of $\hat{p}_m^{8K}$ as an observation from a random variable $\hat{P}^{8K}_m\sim\frac{1}{100}Bin(100,p^{8K}_m)$. 
@@ -647,8 +649,6 @@ For completeness, we include 99% confidence intervals for the point estimates of
 
 
 {{< figure library="true" src="clopper_0.99.png" title="<b>99% Clopper-Pearson confidence intervals for the point estimates of p<sup>8K</sup><sub>m</sub> (red dots), along with point estimates of p<sup>Symb</sup><sub>m</sub> (blue triangles).</b> The point estimates of p<sup>8K</sup><sub>m</sub> and p<sup>Symb</sup><sub>m</sub> estimated from the data reported in Table 1 in the Appendix of Mirzadeh et al. (2024)." numbered="false">}}
-
-
 
 
 
