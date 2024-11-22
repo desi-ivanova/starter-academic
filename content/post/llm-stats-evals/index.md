@@ -388,11 +388,9 @@ $$
 p^{Symb}_\text{subset}=[p^{Symb}_1,\dots,p^{Symb}_7],
 $$
 
-respectively, where the subscript $\text{subset}\in\{\text{largest},\text{smallest}\}$. 
+respectively, where the subscript $\text{subset}\in\{\text{largest},\text{smallest}\}$. As before, we perform one-sided and two-sided tests: 
 
-As before, we perform one-sided and two-sided tests: 
-
-<!-- - Two-sided: The success probabilities are different
+- Two-sided: The success probabilities are different
 $$
 H_0: p^{8K}_\text{subset} = p^{Symb}_\text{subset} \quad\quad\quad H_A^\text{two-sided}: p^{8K}_\text{subset} \neq p^{Symb}_\text{subset}.
 $$
@@ -400,7 +398,7 @@ $$
 - One-sided: The success probability on GSM8K is greater than that on GSM-Symbolic
 $$
 H_0: p^{8K}_\text{subset} = p^{Symb}_\text{subset} \quad\quad\quad H_A^\text{one-sided}: p^{8K}_\text{subset} > p^{Symb}_\text{subset}.
-$$ -->
+$$
 
 The results of the hypothesis tests are given in the following table:
 
