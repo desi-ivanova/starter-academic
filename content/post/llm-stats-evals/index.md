@@ -427,12 +427,12 @@ Mirzadeh et al. (2024) highlights the fact that performance decreases and varian
 
 The figure above shows the results for four datasets: the baseline GSM-Symbolic, GSM-M1 (Minus 1), which removes a clause, and GSM-P1 (Plus 1) and GSM-P2 (Plus 2), which add one and two clauses respectively. 
 It is reasonable to expect that a model will perform better on easier datasets and worse on more difficult ones.
-As before, we assume that a model $m$ answers questions of varying difficulty levels $dif=-1, 0, 1, 2$ as independent and identically distributed Bernoulli trials with a success probability of $p^{dif}_{m}$. The distribution of the total number of correct answers follows a binomial distribution $Bin(N=100, p^{dif}_{m})$, with variance equal to $N \cdot p^{dif}_{m} \cdot (1 - p^{dif}_{m})$.
+As before, we assume that a model $m$ answers questions of varying difficulty levels $\text{dif}=-1, 0, 1, 2$ as independent and identically distributed Bernoulli trials with a success probability of $p^\text{dif}_m$. The distribution of the total number of correct answers follows a binomial distribution $Bin(N=100, p^\text{dif}_m)$, with variance equal to $N \cdot p^\text{dif}_m \cdot (1 - p^\text{dif}_m)$.
 
-If the probabilities of success decrease with increasing question complexity, i.e. $p^{dif=-1}_m > p^{dif=0}_m > p^{dif=1}_m > p^{dif=2}_{m} > 0.5$, the corresponding variances *must increase*.[^3]
+If the probabilities of success decrease with increasing question complexity, i.e. $p^\text{dif=-1}_m > p^\text{dif=0}_m > p^\text{dif=1}_m > p^\text{dif=2}_m > 0.5$, the corresponding variances *must increase*.[^3]
 We believe that this is precisely what we observe in Figure 6: the increase in variance is a trivial consequence of the decrease in probabilities of success, rather than a sign of "pattern-matching" becoming harder.
 
-[^3]: We note that the average success probability on GSM-P2, $p^{dif=2}_m$
+[^3]: We note that the average success probability on GSM-P2, $p^{\text{dif}=2}_m$
  <!-- $p^{dif=2}_m$, does fall below 0.5 for the models in the first row of Figure 6. Our point is still valid in these cases since $p^{\text{dif=2}}_{m}$ is closer to 0.5 than $p^{dif=1}_{m}$ and hence the variability on GSM-P2 is still expected to be larger than on GSM-P1. We would expect to see decrease in variance in cases where  -->
 <!-- $0.5 > p^{dif=-1}_{m} > p^{dif=0}_{m} > p^{dif=1}_{m} > p^{dif=2}_{m}$. -->
 
