@@ -210,7 +210,7 @@ To put this variability into perspective, we also include the average of the 50 
 [^1]: Similarly to $p^{8K}_{m}$, we obtain maximum likelihood estimates of $p^{Symb}_{m}$ from the average accuracy on GSM-Symbolic, reported in Table 1 of the paper. 
 
 
-{{< figure library="true" src="wilson_0.95.png" title="<b>95% Wilson score confidence intervals for the point estimates of $p^{8K}_{m}$ (red dots), along with the average (over 50 datasets) point estimate of $p^{Symb}_{m}$ (blue triangles).</b>" numbered="false">}}
+{{< figure library="true" src="wilson_0.95.png" title="<b>95% Wilson score confidence intervals for the point estimates of $p^{8K}\\_{m}$ (red dots), along with the average (over 50 datasets) point estimate of $p^{Symb}\\_{m}$ (blue triangles).</b>" numbered="false">}}
 
 
 
