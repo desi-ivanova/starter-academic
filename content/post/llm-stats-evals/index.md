@@ -336,8 +336,7 @@ Additionally, Figure 3 of the paper, reproduced below, reports substantial perfo
 {{< figure library="true" src="fig3_gsm.png" title="Figure 3 from Mirzadeh et al. (2024).</b>" numbered="false">}}
 
 
-The right tool to determine whether these differences are statistically significant is hypothesis testing.
-For each model $m$, we want to test whether its success probability on GSM8K, denoted $p^{8K}_{m}$, equals its success probability on GSM-Symbolic, denoted $p^{Symb}_{m}$. This equality forms our _null hypothesis_. Our _alternative hypothesis_ can take two forms:
+The right tool to determine whether these differences are statistically significant is hypothesis testing. For each model $m$, we want to test whether its success probability on GSM8K, denoted $p^{8K}_{m}$, equals its success probability on GSM-Symbolic, denoted $p^{Symb}_{m}$. This equality forms our _null hypothesis_. Our _alternative hypothesis_ can take two forms:
 
 - Two-sided alternative: The success probabilities are different
 
@@ -351,10 +350,7 @@ We use Fisher exact test for the binomial proportion for all models, reporting t
 
 {{< figure library="true" src="fisher_pvalues.png" title="<b>Fisher exact test: p-values for two-sided and one-sided tests across models.</b> The grey line represents the 5% significance level, and the black line represents the 1% significance level. Models marked with (*) indicate that the null hypothesis can be rejected at the 5% significance level in favor of the two-sided alternative; these models are Gemma-7b, Mistral-7b-instruct-v0.1, Phi-2, and Llama3-8b. The models for which the null hypothesis can be rejected in favour of the one-sided alternative are Gemma-7b, Mistral-7b-instruct-v0.1, and Phi-2. Llama3-8b performs statistically better on GSM-Symbolic than on GSM8K." numbered="false">}}
 
-When analysing the models independently at the 5% significance level, we find that four models---Gemma-7b, Mistral-7b-instruct-v0.1, Phi-2, and Llama3-8b (indicated with (*) in the figure above)---exhibit statistically significant differences 
-in performance based on the two-sided test.
-Among these four models, Llama3-8b performs statistically better on GSM-Symbolic compared to GSM8K, whilst the other three perform worse on GSM-Symbolic.
-The remaining 21 out of 25 models do not show a statistically significant difference in performance between GSM8K and GSM-Symbolic.
+When analysing the models independently at the 5% significance level, we find that four models---Gemma-7b, Mistral-7b-instruct-v0.1, Phi-2, and Llama3-8b (indicated with (*) in the figure above)---exhibit statistically significant differences in performance based on the two-sided test. Among these four models, Llama3-8b performs statistically better on GSM-Symbolic compared to GSM8K, whilst the other three perform worse on GSM-Symbolic. The remaining 21 out of 25 models do not show a statistically significant difference in performance between GSM8K and GSM-Symbolic.
 
 
 ### 4.2.3 Considering all models together: Is the decline in performance statistically significant?
@@ -388,13 +384,14 @@ This gives us two sets of 7 models, with differences between the two sets indica
 Whilst the test is valid, inaccurate measurements of the estimated success probabilities would lead to invalid conclusions.  
 
 
-Let's define the vectors of success probabilities on GSM8K and GSM-Symbolic as $p^{8K}_{\text{subset}}=[p^{8K}_{1}, \dots, p^{8K}_{7}]$ and $p^{Symb}_{\text{subset}}= [p^{Symb}_{1}, \dots, p^{Symb}_{7}]$, where the subscript $\text{subset} \in \{\text{largest}, \text{smallest}\}$.
-As before, we perform one-sided and two-sided tests:
+Let's define the vectors of success probabilities on GSM8K and GSM-Symbolic as $p^{8K}_{\text{subset}}=[p^{8K}_{1}, \dots, p^{8K}_{7}]$ and $p^{Symb}_{\text{subset}}= [p^{Symb}_{1}, \dots, p^{Symb}_{7}]$, where the subscript $\text{subset} \in \{\text{largest}, \text{smallest}\}$. As before, we perform one-sided and two-sided tests:
 
 - Two-sided: The success probabilities are different
 
 $$
+\begin{aligned}
 H_0: p^{8K}_{\text{subset}} = p^{Symb}_{\text{subset}} \quad\quad\quad H_A^\text{two-sided}: p^{8K}_{\text{subset}} \neq p^{Symb}_{\text{subset}}.
+\end{aligned}
 $$
 
 - One-sided: The success probability on GSM8K is greater than that on GSM-Symbolic
