@@ -332,11 +332,11 @@ Additionally, Figure 3 of the paper, reproduced below, reports substantial perfo
 
 - Two-sided alternative: The success probabilities are different
 
-$$H_0: p^{8K}_{m} = p^{Symb}_{m} \quad\quad\quad H^{two-sided}_A: p^{8K}_{m} \neq p^{Symb}_{m}.$$
+$$H_0: p^{8K}_m = p^{Symb}_m \quad\quad\quad H^{two-sided}_A: p^{8K}_m \neq p^{Symb}_m.$$
 
 - One-sided alternative: The success probability on GSM8K is greater than that on GSM-Symbolic
 
-$$H_0: p^{8K}_{m} = p^{Symb}_{m} ~~~~~~ H^{one-sided}_A: p^{8K}_{m} > p^{Symb}_{m}.$$
+$$H_0: p^{8K}_m = p^{Symb}_m ~~~~~~ H^{one-sided}_A: p^{8K}_m > p^{Symb}_m.$$
 
 We use Fisher exact test for the binomial proportion for all models, reporting the p-values in the next figure.
 
@@ -429,10 +429,10 @@ The figure above shows the results for four datasets: the baseline GSM-Symbolic,
 It is reasonable to expect that a model will perform better on easier datasets and worse on more difficult ones.
 As before, we assume that a model $m$ answers questions of varying difficulty levels $dif=-1, 0, 1, 2$ as independent and identically distributed Bernoulli trials with a success probability of $p^{dif}_{m}$. The distribution of the total number of correct answers follows a binomial distribution $Bin(N=100, p^{dif}_{m})$, with variance equal to $N \cdot p^{dif}_{m} \cdot (1 - p^{dif}_{m})$.
 
-If the probabilities of success decrease with increasing question complexity, i.e. $p^{dif=-1}_{m} > p^{dif=0}_{m} > p^{dif=1}_{m} > p^{dif=2}_{m} > 0.5$, the corresponding variances *must increase*.[^3]
+If the probabilities of success decrease with increasing question complexity, i.e. $p^{dif=-1}_m > p^{dif=0}_m > p^{dif=1}_m > p^{dif=2}_{m} > 0.5$, the corresponding variances *must increase*.[^3]
 We believe that this is precisely what we observe in Figure 6: the increase in variance is a trivial consequence of the decrease in probabilities of success, rather than a sign of "pattern-matching" becoming harder.
 
-[^3]: We note that the average success probability on GSM-P2,$p_m$
+[^3]: We note that the average success probability on GSM-P2, $p^{dif}_m$
  <!-- $p^{dif=2}_m$, does fall below 0.5 for the models in the first row of Figure 6. Our point is still valid in these cases since $p^{\text{dif=2}}_{m}$ is closer to 0.5 than $p^{dif=1}_{m}$ and hence the variability on GSM-P2 is still expected to be larger than on GSM-P1. We would expect to see decrease in variance in cases where  -->
 <!-- $0.5 > p^{dif=-1}_{m} > p^{dif=0}_{m} > p^{dif=1}_{m} > p^{dif=2}_{m}$. -->
 
@@ -566,14 +566,17 @@ where, for the purpose of this analysis, the bottom-most arrows denote determini
 DRI: Yes exactly, but this is because we are using what is called "greedy decoding" (which is generally the norm when you interact with these models)
 -->
 
-Under this model, we have
-$X_m^{8K} \sim Bernoulli\left(p_m^{8K}\right)$ and $X_m^{Symb} \sim Bernoulli\left(p_m^{Symb}\right)$, where $p_m^{8K}, p_m^{Symb} \in [0, 1]$ are our main parameters of interest.
+Under this model, we have $X_m^{8K} \sim Bernoulli\left(p_m^{8K}\right)$ and $X_m^{Symb} \sim Bernoulli\left(p_m^{Symb}\right)$, where $p_m^{8K}, p_m^{Symb} \in [0, 1]$ are our main parameters of interest.
 
 In this framework, we can describe the experimental setup of Mirzadeh et al. (2024) <d-cite key=mirzadeh2024gsm></d-cite> and the data obtained from it as follows: 
+
 - **Templates $T$**: 100 templates $t_1, t_2, \dots, t_{100}$ sampled independently from $\mathbb{P}_T$
+
 - **Filler-values $V^{8K}$**: one sample $v^{8K}_i$ from each conditional $\mathbb{P}^{8K}_{V \vert t_i}$ for $1 \le i \le 100$
 - **Filler-values $V^{Symb}$**: 50 i.i.d. samples $v^{Symb}_{i, j}, 1\le j \le 50$ from each conditional $\mathbb{P}^{Symb}_{V \vert t_i}$ for $1 \le i \le 100$
+
 - **Observed data**: for each of these sets of filler-values and each model $m$ (in a pre-determined set of 25 language models), we have corresponding observations $x^{8K}_{m,t_i}$ and $x^{Symb}_{m, t_i, j}$ --- that is, whether model $m$ answered correctly the questions $t_i(v^{8K}_i)$ and $t_i\left(v^{Symb}_{i, j}\right)$, respectively.<d-footnote>We note that this raw data is not made publicly available.</d-footnote>
+
 - **Accuracy estimates**: from these observations, maximum likelihood estimates can be computed as $\hat{p}_m^{8K} = \frac{1}{100}\sum_{i=1}^{100} x^{8K}_{m,t_i}$ and 
 $\hat{p}_{m, j}^{Symb} = \frac{1}{100}\sum_{i=1}^{100} x^{Symb}_{m,t_i, j}, \; 1 \leq j \leq 50$. We note that only $\hat{p}_m^{8K}$ and the average $\overline{\hat{p}_m^{Symb}} = \frac{1}{50}\sum_{j=1}^{50}\hat{p}_{m, j}^{Symb}$ are reported in the paper (Table 1, Appendix A.2 in <d-cite key=mirzadeh2024gsm></d-cite>).
 
