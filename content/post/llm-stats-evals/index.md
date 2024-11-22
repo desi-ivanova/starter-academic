@@ -332,11 +332,11 @@ The right tool to determine whether these differences are statistically signific
 
 - Two-sided alternative: The success probabilities are different
 
-$$H_0: p^{8K}_{m} = p^{Symb}_{m} \quad\quad\quad H^{two-sided}_A: p^{8K}_{m} \neq p^{Symb}_{m}.$$
+$$H_0: p^{8K}_{m} = p^{Symb}_{m} ~~~~~~ H^{two-sided}_A: p^{8K}_{m} \neq p^{Symb}_{m}.$$
 
 - One-sided alternative: The success probability on GSM8K is greater than that on GSM-Symbolic
 
-$$H_0: p^{8K}_{m} = p^{Symb}_{m} \quad\quad\quad H^{one-sided}_A: p^{8K}_{m} > p^{Symb}_{m}.$$
+$$H_0: p^{8K}_{m} = p^{Symb}_{m} ~~~~~~ H^{one-sided}_A: p^{8K}_{m} > p^{Symb}_{m}.$$
 
 We use Fisher exact test for the binomial proportion for all models, reporting the p-values in the next figure.
 
