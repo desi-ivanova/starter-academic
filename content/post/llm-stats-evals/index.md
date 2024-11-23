@@ -593,7 +593,15 @@ $$\mathbb{P}^{8K}_{V \vert t_i} \quad \text{for} \quad 1 \le i \le 100$$
 
 $$\mathbb{P}^{Symb}_{V | t_i} \quad \text{for} \quad 1 \le i \le 100$$
 
-- **Observed data**: for each of these sets of filler-values and each model $m$ (in a pre-determined set of 25 language models), we have corresponding observations $x^{8K}_{m,t_i}$ for the GSM8K questions and $x^{Symb}_{m,t_i,j}$ for the GSM-Symbolic questions---that is, whether model $m$ answered correctly the questions $t_i(v^{8K}_i)$ and $t_i(v^{Symb}_{i,j})$, respectively.[^6]
+- **Observed data**: for each of these sets of filler-values and each model $m$ (in a pre-determined set of 25 language models), we have corresponding observations 
+$$
+x^{8K}_{m,t_i} \quad \text{and} \quad x^{Symb}_{m,t_i,j}
+$$
+for the GSM8K questions and the GSM-Symbolic questions---that is, whether model $m$ answered correctly the questions 
+$$
+t_i(v^{8K}_i) \quad \text{and} \quad t_i(v^{Symb}_{i,j}),
+$$
+respectively.[^6]
 
 [^6]: We note that this raw data is not made publicly available.
 
@@ -603,10 +611,12 @@ $$
 \hat{p}\_m^{8K} = \frac{1}{100}\sum\_{i=1}^{100} {x^{8K}\_{m,t\_i}}
 \end{aligned}
 $$
-
 and 
-
-$$\hat{p}_{m, j}^{Symb} = \frac{1}{100}\sum_{i=1}^{100} x^{Symb}_{m,t_i, j}, \; 1 \leq j \leq 50$$
+$$
+\begin{aligned}
+\hat{p}\_{m, j}^{Symb} = \frac{1}{100}\sum\_{i=1}^{100} x^{Symb}\_{m,t\_i, j}, \; 1 \leq j \leq 50
+\end{aligned}
+$$
 
 
 We note that only $\hat{p}_m^{8K}$ and the average $\overline{\hat{p}_m^{Symb}}=\frac{1}{50}\sum_{j=1}^{50}\hat{p}_{m,j}^{Symb}$ are reported in the paper (Table 1, Appendix A.2 in Mirzadeh et al. (2024)).
