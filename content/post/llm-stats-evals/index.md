@@ -533,8 +533,8 @@ First, we assume that the questions from GSM8k and GSM-Symbolic are obtained fro
 
 1. We sample a _template_ $T$ from some distribution $\mathbb{P}_T$. 
 A template here is defined in the sense of <d-cite key="mirzadeh2024gsm"></d-cite>, that is, it is a mathematical word problem, in which numerical values (e.g. number of toys) and certain other objects (e.g. names of people) are marked as variables, to be filled-in later. 
-2. The template $T$ gives rise to a conditional distribution $\mathbb{P}_{V\vert T}$ over the admissible _filler-values_. 
-We sample a set of such filler-values $V \sim \mathbb{P}_{V \vert T}(\cdot \vert T)$ and plug them into the template, producing a pair of a question and an answer $(T(V)_Q, T(V)_A)$.
+2. The template $T$ gives rise to a conditional distribution $\mathbb{P}\_{V \vert T}$ over the admissible _filler-values_. 
+We sample a set of such filler-values $V \sim \mathbb{P}\_{V \vert T}(\cdot \vert T)$ and plug them into the template, producing a pair of a question and an answer $(T(V)\_Q, T(V)\_A)$.
 
 We are interested in whether a language model $m$ answers a question correctly. 
 We model this with the random variable $X_m$, defined as 
@@ -543,7 +543,7 @@ where $\mathbb{I}$ is the indicator function.
 The accuracy of model $m$, denoted as $p_m$, is then the expected value of $X_m$, i.e., $p_m = \mathbb{E}[X_m]$. 
 The variable $X_m$ follows a $Bernoulli(p_m)$ distribution.
 
-In fact, since we care about the difference in model performance on GSM8K and GSM-Symbolic, we postulate that we have two random variables $V^{8K}$ and $V^{Symb}$, governed by two conditional distributions: $\mathbb{P}^{8K}_{V|T}$, corresponding to GSM8K, and $\mathbb{P}^{Symb}_{V|T}$, corresponding to GSM-Symbolic.
+In fact, since we care about the difference in model performance on GSM8K and GSM-Symbolic, we postulate that we have two random variables $V^{8K}$ and $V^{Symb}$, governed by two conditional distributions: $\mathbb{P}^{8K}\_{V|T}$, corresponding to GSM8K, and $\mathbb{P}^{Symb}\_{V|T}$, corresponding to GSM-Symbolic.
 These two distributions may be the same or different.
 
 
