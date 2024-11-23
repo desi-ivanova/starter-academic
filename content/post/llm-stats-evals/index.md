@@ -599,7 +599,6 @@ $$
 x^{8K}\_{m,t\_i} \quad \text{and} \quad x^{Symb}\_{m,t\_i,j}
 \end{aligned}
 $$
-
 for the GSM8K questions and the GSM-Symbolic questions---that is, whether model $m$ answered correctly the questions 
 $$
 \begin{aligned}
@@ -624,9 +623,9 @@ $$
 $$
 
 
-We note that only $\hat{p}_m^{8K}$ and the average $\overline{\hat{p}_m^{Symb}}=\frac{1}{50}\sum_{j=1}^{50}\hat{p}_{m,j}^{Symb}$ are reported in the paper (Table 1, Appendix A.2 in Mirzadeh et al. (2024)).
+We note that only $\hat{p}\_m^{8K}$ and the average $\overline{\hat{p}\_m^{Symb}}=\frac{1}{50}\sum\_{j=1}^{50}\hat{p}\_{m,j}^{Symb}$ are reported in the paper (Table 1, Appendix A.2 in Mirzadeh et al. (2024)).
 
-Under the assumptions of this mathematical model, we can think of $\hat{p}_m^{8K}$ as an observation from a random variable 
+Under the assumptions of this mathematical model, we can think of $\hat{p}\_m^{8K}$ as an observation from a random variable 
 $$
 \begin{aligned}
 \hat{P}^{8K}\_m\sim\frac{1}{100}Bin(100,p^{8K}\_m).
