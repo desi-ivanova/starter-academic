@@ -595,11 +595,16 @@ $$\mathbb{P}^{Symb}_{V | t_i} \quad \text{for} \quad 1 \le i \le 100$$
 
 - **Observed data**: for each of these sets of filler-values and each model $m$ (in a pre-determined set of 25 language models), we have corresponding observations 
 $$
-x^{8K}_{m,t_i} \quad \text{and} \quad x^{Symb}_{m,t_i,j}
+\begin{aligned}
+x^{8K}\_{m,t\_i} \quad \text{and} \quad x^{Symb}\_{m,t\_i,j}
+\end{aligned}
 $$
+
 for the GSM8K questions and the GSM-Symbolic questions---that is, whether model $m$ answered correctly the questions 
 $$
-t_i(v^{8K}_i) \quad \text{and} \quad t_i(v^{Symb}_{i,j}),
+\begin{aligned}
+t\_i(v^{8K}\_i) \quad \text{and} \quad t\_i(v^{Symb}\_{i,j}),
+\end{aligned}
 $$
 respectively.[^6]
 
@@ -621,8 +626,18 @@ $$
 
 We note that only $\hat{p}_m^{8K}$ and the average $\overline{\hat{p}_m^{Symb}}=\frac{1}{50}\sum_{j=1}^{50}\hat{p}_{m,j}^{Symb}$ are reported in the paper (Table 1, Appendix A.2 in Mirzadeh et al. (2024)).
 
-Under the assumptions of this mathematical model, we can think of $\hat{p}_m^{8K}$ as an observation from a random variable $\hat{P}^{8K}_m\sim\frac{1}{100}Bin(100,p^{8K}_m)$. 
-Similarly, each $\hat{p}_{m,j}^{Symb}, 1 \le j \le 50$ is an observation of $\hat{P}^{Symb}_m\sim\frac{1}{100} Bin(100,p^{Symb}_m)$. 
+Under the assumptions of this mathematical model, we can think of $\hat{p}_m^{8K}$ as an observation from a random variable 
+$$
+\begin{aligned}
+\hat{P}^{8K}\_m\sim\frac{1}{100}Bin(100,p^{8K}\_m).
+\end{aligned}
+$$
+Similarly, each $\hat{p}_{m,j}^{Symb}, 1 \le j \le 50$ is an observation of 
+$$
+\begin{aligned}
+\hat{P}^{Symb}\_m\sim\frac{1}{100} Bin(100,p^{Symb}\_m).
+\end{aligned}
+$$
 We can't assume that these observations are independent, due to the shared templates.  
 
 In this blogpost, the main question we've tackled is: given these observed $\hat{p}_m^{8K}$ and $\overline{\hat{p}_m^{Symb}}$, what evidence is there to believe that $p^{8K}_m \neq p^{Symb}_m$ or that $p^{8K}_m > p^{Symb}_m$?
