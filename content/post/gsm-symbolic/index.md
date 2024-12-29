@@ -32,9 +32,12 @@ authors:
 
 tags:
 - Machine learning
+- AI
 - Language models
 - LLM
 - Statistics
+- Reasoning
+- Evals
 
 categories:
 - ML

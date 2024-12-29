@@ -31,9 +31,10 @@ authors:
 - admin
 
 tags:
-- Academic
+- Opinion
 - Machine learning
-- BOED
+- AI
+- Bayesian
 
 categories:
 - ML
