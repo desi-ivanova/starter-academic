@@ -42,7 +42,7 @@ categories:
 - ML
 ---
 
-This is an extended and more thoughtful version of [On Some (Fixable) Limitations of "Understanding the Limitations of Mathematical Reasoning in LLMs"](https://desirivanova.com/post/gsm-symbolic/).
+This is an extended and more thoughtful version of [On Some (Fixable) Limitations of "Understanding the Limitations of Mathematical Reasoning in LLMs"](https://desirivanova.com/post/gsm-symbolic/). [You can also read this on Substack](https://probapproxincorrect.substack.com/p/towards-more-rigorous-evaluations).
 
 # 1. Introduction
 
