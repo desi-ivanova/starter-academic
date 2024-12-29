@@ -8,10 +8,10 @@ summary: Bayesian methods have undeniable value, e.g. in data analysis, but they
 projects: []
 
 # Date published
-date: "2020-11-19T00:00:00Z"
+date: "2024-12-29T00:00:00Z"
 
 # Date updated
-lastmod: "2020-11-21T00:00:00Z"
+lastmod: "2024-12-29T00:00:00Z"
 
 # Is this an unpublished draft?
 draft: false
@@ -39,6 +39,6 @@ categories:
 - ML
 ---
 
-Read the [full post on Substack](https://probapproxincorrect.substack.com/p/some-thoughts-on-the-role-of-bayesianism).
+Read the full post on [Probably Approximately Incorrect](https://probapproxincorrect.substack.com/p/some-thoughts-on-the-role-of-bayesianism).
 
 I'll soon write a post on where Bayes can really shine :-)
