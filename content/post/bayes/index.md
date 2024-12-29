@@ -8,7 +8,7 @@ summary: Bayesian methods have undeniable value, e.g. in data analysis, but they
 projects: []
 
 # Date published
-date: "2024-12-29T00:00:00Z"
+date: "2024-11-29T00:00:00Z"
 
 # Date updated
 lastmod: "2024-12-29T00:00:00Z"
