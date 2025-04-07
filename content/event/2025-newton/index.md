@@ -1,10 +1,10 @@
 ---
-title: "The Languages for Inference Workshop (POPL 2025)"
+title: "Representing, calibrating & leveraging prediction uncertainty from statistics to machine learning"
 
-event: The Languages for Inference Workshop (POPL 2025)
-event_url: https://popl25.sigplan.org/home/lafi-2025
+event: Representing, calibrating & leveraging prediction uncertainty from statistics to machine learning
+event_url: https://www.newton.ac.uk/event/rcl/
 
-location: Denver, Colorado
+location: Newton Institute, Cambrdige, UK
 #address:
 #  street:
 #  city:
@@ -17,8 +17,8 @@ summary: ""
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2025-02-19T09:00:00Z"
-date_end: "2025-02-19T18:00:00Z"
+date: "2025-05-01T09:00:00Z"
+date_end: "2025-08-31T18:00:00Z"
 all_day: true
 
 # Schedule page publish date (NOT talk date).
