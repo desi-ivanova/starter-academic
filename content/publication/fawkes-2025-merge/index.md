@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Is merging worth it? Securely evaluating the information gain for causal dataset acquisition"
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
@@ -29,7 +29,7 @@ publishDate: "2023-02-01T00:00:00Z"
 publication_types: ["1"]
 
 # Publication name and optional abbreviated publication name.
-publication: ICML
+publication: AISTATS
 publication_short:
 
 abstract: Merging datasets across institutions is a lengthy and costly procedure, especially when it involves private information. Data hosts may therefore want to prospectively gauge which datasets are most beneficial to merge with, without revealing sensitive information. For causal estimation this is particularly challenging as the value of a merge will depend not only on the reduction in epistemic uncertainty but also the improvement in overlap. To address this challenge, we introduce the first cryptographically secure information-theoretic approach for quantifying the value of a merge in the context of heterogeneous treatment effect estimation. We do this by evaluating the Expected Information Gain (EIG) and utilising multi-party computation to ensure it can be securely computed without revealing any raw data. As we demonstrate, this can be used with differential privacy (DP) to ensure privacy requirements whilst preserving more accurate computation than naive DP alone. To the best of our knowledge, this work presents the first privacy-preserving method for dataset acquisition tailored to causal estimation. We demonstrate the effectiveness and reliability of our method on a range of simulated and realistic benchmarks.
